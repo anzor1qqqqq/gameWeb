@@ -1,0 +1,113 @@
+// out: "../style/header.css", compress: true, sourceMap: false
+
+@bgc: #06030e;
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background-color: @bgc;
+    color: white;
+    max-width: 1920px;
+    width: 80%;
+    margin: auto;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    
+    &_nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 0 ;
+
+        &_bar > nav > ul {
+            padding: 0;
+            margin: 0;
+
+            & > a:not(:last-child) {
+                margin-right: 30px;
+            }
+        }
+
+        &_user_img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-left: 25px;
+        }
+    }
+}
+
+.header_nav_savings_account {
+    display: flex;
+    align-items: center;
+
+    & > a {
+         margin-left: 10px;
+    }
+
+    &_arrow_select {
+        position: relative;
+        z-index: 0;
+        border: none;
+        background-color: @bgc;
+    }
+
+    &_lang {
+        position: relative;
+        z-index: 99;
+        margin-right: 2px;
+    }
+}
+
+.header_search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &_contant {
+        display: flex;
+        align-items: center;
+
+        &_like_busket {
+            display: flex;
+        }
+
+        &_like_busket > .like {
+            margin-right: 25px;
+        }
+    }
+
+    &_contant_logo {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 32px;
+        line-height: 90%;
+        color: #FFFFFF;
+        margin-left: 5px;
+    }
+
+    &_contant_input {
+        display: flex;
+        flex: 0.6;
+        position: relative;
+
+        & > input {
+            width: 100%;
+            background: rgba(196, 196, 196, 0.05);
+            border-radius: 15px;
+            border: none;
+            padding: 10px 45px 10px 15px;
+            outline: none;
+            color: white;
+        }
+
+        &_img {
+            position: absolute;
+            right: 13px;
+            top: 7px;
+            cursor: pointer;
+        }
+    }
+}
