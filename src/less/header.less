@@ -42,6 +42,7 @@ body {
 .header_nav_savings_account {
     display: flex;
     align-items: center;
+    position: relative;
 
     & > a {
          margin-left: 10px;
@@ -52,6 +53,11 @@ body {
         z-index: 0;
         border: none;
         background-color: @bgc;
+        transition: transform 0.5s;
+
+        &.active {
+            transform: rotateX(180deg);
+        }
     }
 
     &_lang {
@@ -59,6 +65,14 @@ body {
         z-index: 99;
         margin-right: 2px;
     }
+}
+
+.lang {
+    min-width: 22px;
+}
+
+.valute {
+    min-width: 12px;
 }
 
 .header_search {
@@ -109,5 +123,51 @@ body {
             top: 7px;
             cursor: pointer;
         }
+    }
+}
+
+.ul_valute.active {
+    position: absolute;
+    display: inline-block;
+    top: 100%;
+    background: #100D18;
+    z-index: 99;
+    border-radius: 5px;
+}
+
+.ul_valute_list {
+    padding: 10px 20px;
+    list-style: none;
+
+    &_btn_lang {
+        width: 100%;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 130%;
+        color: #FFFFFF;
+        border: none;
+        background: #100D18;
+        border-radius: 5px;
+
+        &.active {
+            background: #77BE1D;
+        }
+    }
+}
+
+.btn_valute {
+    background: #100D18;
+    border-radius: 5px;
+    border: none;
+    padding: 4px 11px;
+    color: #FFFFFF;
+
+    &:not(:last-child) {
+        margin-right: 7px;
+    }
+
+    &.active {
+        background: #77BE1D;
     }
 }

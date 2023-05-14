@@ -3,37 +3,62 @@
 .contant_img {
     width: inherit;
     height: inherit;
+    position: relative;
+    filter: brightness(0.5);
+    border-radius: 20px;
 
     &_block {
+        position: absolute;
+        top: 20%;
+        left: 12%;
         width: 50%;
-        padding: 10% 100px;
 
-        & > img {
-            margin-bottom: 20px;
+        &_logo {
+            margin-bottom: 25px;
         }
 
-        & > p {
+        &_parag {
             font-style: normal;
             font-weight: 400;
             font-size: 24px;
             line-height: 160%;
             color:#FFFFFF;
         }
+        
+        &_info {
+            margin-bottom: 50px;
+        }
     }
 }
 
-.one {
-    background: url('../img/slider/1.jpg') center/100% no-repeat;
+.contant_price {
+    margin-bottom: 40px;
 }
 
-.two {
-    background: url('../img/slider/2.jpg') center/100% no-repeat;
+.contant_btn_buy {
+    background: #FFFFFF;
+    border-radius: 15px;
+    padding: 20px 40px;
+    border: none;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 130%;
+    color: #000000;
 }
 
-.three {
-    background: url('../img/slider/3.jpg') center/100% no-repeat;
+.contant_btn_favor {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: none;
+    padding: 20px 45px;
+    margin-left: 10px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 130%;
+    color: #FFFFFF;
 }
-
 .price {
     font-style: normal;
     font-weight: 800;
@@ -58,4 +83,44 @@
     font-size: 20px;
     line-height: 130%;
     color: rgba(255, 255, 255, 0.3);
+}
+
+.swiper-pagination-bullet {
+    height: 3px;
+    width: 20px;
+    border-radius: 0;
+
+    &-active {
+        background-color: #FFFFFF;
+    }
+}
+
+.swiper-button-next {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(196, 196, 196, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+
+    &:after {
+        content: url('../img/slider/Vector.svg');
+        position: relative;
+        bottom: 10px;
+    }
+}
+
+.swiper-button-prev {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(196, 196, 196, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+
+    &:after {
+        content: url('../img/slider/vector2.svg');
+        position: relative;
+        bottom: 10px;
+    }
 }

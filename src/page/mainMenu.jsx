@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 import SwiperSlider from '../components/swiper';
-import 'swiper/css';
 
 const MainMenu = () => {
+    const style = {
+        marginTop: 40,
+    }
     return (
-        <main className='main'>
+        <main style={style} className='main'>
             <SwiperSlider/>
         </main>
     );

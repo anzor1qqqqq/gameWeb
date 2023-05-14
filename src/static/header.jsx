@@ -1,30 +1,77 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeValute, changeLang } from '../global/redux';
 import NavLi from '../UI/navLi';
 import user from '../img/user.png';
 import logoBall from '../img/logoBall.png'
+import '../style/header.css';
 
 const Header = () => {
+    const stateValue = useSelector(state => state);
+    const dispatch = useDispatch();
+
+    const refUl = useRef(false);
+    const refbtn = useRef(false);
+
+    const showUl = () => {
+        if (refUl.current.className === 'ul_valute d-none') {
+            refUl.current.className = 'ul_valute active';
+            refbtn.current.className = 'header_nav_savings_account_arrow_select active';
+        } else {
+            refUl.current.className = 'ul_valute d-none';
+            refbtn.current.className = 'header_nav_savings_account_arrow_select';
+        };
+    };
+
+    useEffect(() => {
+        const elemValute = document.querySelectorAll('.btn_valute');
+        const elemLang = document.querySelectorAll('.ul_valute_list_btn_lang');
+
+        for (let i = 0; i < 3; i++) {
+            if (i !== 2) elemLang[i].classList.remove('active');
+            elemValute[i].classList.remove('active');
+        };
+
+        for (let i = 0; i < 3; i++) {
+            if (i !== 2) {
+                const text = elemLang[i].textContent.split('').slice(elemLang[i].textContent.split('').indexOf('(')+1, -1).join('');
+
+                if (text === stateValue.lang) {
+                    elemLang[i].classList.add('active');
+                    document.querySelector('.lang').textContent = text;
+                };
+            };
+
+            if (elemValute[i].textContent === stateValue.valute) {
+                elemValute[i].classList.add('active');
+                document.querySelector('.valute').textContent = elemValute[i].textContent;
+            };
+        };
+    }, [stateValue.valute, stateValue.lang]);
+
     return (
         <header className='header'>
             <div className='header_nav'>
                 <div className='header_nav_savings_account'>
-                    <span className='header_nav_savings_account_lang'>RU/₽</span>
-                    <button className='header_nav_savings_account_arrow_select'>
+                    <span className='header_nav_savings_account_lang lang'>RU</span>
+                    <span className='header_nav_savings_account_lang'>/</span>
+                    <span className='header_nav_savings_account_lang valute'>₽</span>
+                    <button className='header_nav_savings_account_arrow_select' onClick={() => showUl()} ref={refbtn}>
                         <svg width="8" height="5" viewBox="0 0 8 5" xmlns="http://www.w3.org/2000/svg">
                             <path fillRule="evenodd" clipRule="evenodd" d="M4 2.59454L1.2543 5L0 3.50432L4 0L8 3.50432L6.7457 5L4 2.59454Z" fill="#77BE1D"/>
                         </svg>
                     </button>
                     <NavLi text={'Накопительный'}/>
 
-                    <div className='d-none'>
-                        <ul>
-                            <li><a href="">Русский(RU)</a></li>
-                            <li><a href="">English(EN)</a></li>
-                            <hr />
+                    <div className='ul_valute d-none' ref={refUl}>
+                        <ul className='ul_valute_list'>
+                            <li style={{marginBottom: 5}}><button className='ul_valute_list_btn_lang' onClick={() => dispatch(changeLang('RU'))}>Русский(RU)</button></li>
+                            <li><button className='ul_valute_list_btn_lang' onClick={() => dispatch(changeLang('EN'))}>English(EN)</button></li>
+                            <hr style={{background: "rgb(73 64 92)"}} />
                             <div>
-                                <button>$</button>
-                                <button>€</button>
-                                <button>₽</button>
+                                <button className='btn_valute' onClick={() => dispatch(changeValute('$'))}>$</button>
+                                <button className='btn_valute' onClick={() => dispatch(changeValute('€'))}>€</button>
+                                <button className='btn_valute' onClick={() => dispatch(changeValute('₽'))}>₽</button>
                             </div>
                         </ul>
                     </div>
