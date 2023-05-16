@@ -1,8 +1,9 @@
 // out: "../style/mainMenu.css", compress: true, sourceMap: false
 
 .container_card_top_four {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
 }
 
 .section_contant_main {
@@ -15,4 +16,25 @@
         font-size: 32px;
         line-height: 130%;
     }
+}
+
+.container_card_all {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.btn_link_catalogy {
+    width: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 7px;
+    background-color: #06030e;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 130%;
+    text-align: center;
+    color: #366EDC;
+    padding: 15px 0;
+    margin-top: 40px;
 }

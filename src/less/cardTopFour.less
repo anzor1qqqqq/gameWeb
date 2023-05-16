@@ -1,13 +1,5 @@
 // out: "../style/cardTopFour.css", compress: true, sourceMap: false
 
-.block_card {
-    width: 25%;
-
-    &:not(:last-child) {
-        margin-right: 30px;
-    }
-}
-
 .contant_card {
     position: relative;
     height: 450px;
@@ -45,7 +37,7 @@
                 }
             }
 
-            &.top {            
+            &.top, &.new, &.hit {            
                 top: 5%;
                 left: 10%;
                 font-style: normal;
@@ -53,9 +45,20 @@
                 font-size: 16px;
                 line-height: 130%;
                 font-style: italic;
-                background-color: #06030e;
                 padding: 5px 10px;
                 border-radius: 5px;
+            }
+
+            &.top {
+                background-color: #06030e;
+            }
+
+            &.new {
+                background: #FF4C00;
+            }
+
+            &.hit {
+                background: #FF3030;
             }
 
             &.favorite {            
@@ -69,6 +72,10 @@
                 &:hover {
                     transform: scale(1.1);
                 }
+            }
+
+            &.new {
+                
             }
         }
     }
