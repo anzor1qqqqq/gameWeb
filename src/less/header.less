@@ -2,6 +2,19 @@
 
 @bgc: #06030e;
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #06030e;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(87, 87, 87);
+    border-radius: 10px;
+}
+
 body {
     font-family: 'Manrope', sans-serif;
     background-color: @bgc;
@@ -45,7 +58,7 @@ body {
     position: relative;
 
     & > a {
-         margin-left: 10px;
+        margin-left: 10px;
     }
 
     &_arrow_select {
@@ -86,9 +99,30 @@ body {
 
         &_like_busket {
             display: flex;
+
+            &-like, &-busket {
+                position: relative;
+                cursor: pointer;
+            }
+
+            &-count {
+                position: absolute;
+                right: -50%;
+                top: -50%;
+                background: rgba(21, 15, 38, 0.35);
+                z-index: 99;
+                backdrop-filter: blur(5px);
+                border-radius: 5px;
+                padding: 4px;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 130%;
+                color: #77BE1D;
+            }
         }
 
-        &_like_busket > .like {
+        &_like_busket > .header_search_contant_like_busket-like {
             margin-right: 25px;
         }
     }

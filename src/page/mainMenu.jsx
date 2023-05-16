@@ -34,8 +34,8 @@ const MainMenu = () => {
                 <SwiperSlider/>
             </section>
             
-            <section>
-                <h2>TOP 4</h2>
+            <section className='section_contant_main'>
+                <h2 className='section_contant_main_title'>Топ 4</h2>
                     <div className='container_card_top_four'>
                         <CardTopFour dataB={defaultData} id={0}/>
                         <CardTopFour dataB={defaultData} id={1}/>
