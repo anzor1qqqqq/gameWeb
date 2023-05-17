@@ -66,10 +66,11 @@ body {
         z-index: 0;
         border: none;
         background-color: @bgc;
+        transform: rotateX(180deg);
         transition: transform 0.5s;
 
         &.active {
-            transform: rotateX(180deg);
+            transform: rotateX(0deg);
         }
     }
 
@@ -160,13 +161,21 @@ body {
     }
 }
 
-.ul_valute.active {
+.ul_valute {
     position: absolute;
     display: inline-block;
+    opacity: 0;
     top: 100%;
+    visibility: hidden;
     background: #100D18;
     z-index: 99;
     border-radius: 5px;
+    transition: 0.5s;
+}
+
+.ul_valute.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 .ul_valute_list {

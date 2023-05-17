@@ -1,35 +1,15 @@
-import React, { useState, useMemo } from 'react';
-import Loading from '../components/loading';
+import React, { useState } from 'react';
 import SwiperSlider from '../components/swiper';
 import CardProduct from '../components/cardProduct'; 
+import { useLoaderData } from 'react-router-dom';
 import '../style/mainMenu.css'
 
 const MainMenu = () => {
-    const [defaultData, modifiedData] = useState([]);
-
-    const style = {
-        marginTop: 40,
-    };
-
-    const getData = async () => {
-        const data = await fetch('src/json/data-base.json').then(response => response.json()).then(obj => obj);
-        modifiedData(data);
-    };
-
-    useMemo(() => {
-        getData();
-    }, []);
-
-    if (!defaultData.length) {
-        return (
-            <main style={style} className='main'>
-                <Loading/>
-            </main>
-        );
-    };
+    const loader = useLoaderData();
+    const [defaultData, modifiedData] = useState([...loader]);
 
     return (
-        <main style={style} className='main'>
+        <>
             <section>
                 <SwiperSlider/>
             </section>
@@ -59,12 +39,12 @@ const MainMenu = () => {
                     <CardProduct dataB={defaultData} id={4} spanText={'Новинкa'}/>
                     <CardProduct dataB={defaultData} id={3} spanText={'Топ 4'}/>
                     <CardProduct dataB={defaultData} id={5}/>
+                    <CardProduct dataB={defaultData} id={11} spanText={'Новинкa'}/>
                 </div>
 
                 <button className='btn_link_catalogy'>Перейти в каталог</button>
             </section> 
-            
-        </main>
+        </>
     );
 }
  
