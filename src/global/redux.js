@@ -22,7 +22,6 @@ const slice = createSlice({
 
             state.favority.find(item => {
                 if (item === action.payload) {
-                    alert('Данный товар уже сохранен в избранном');
                     bool = false;
                 } 
             })
