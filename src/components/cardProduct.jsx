@@ -3,18 +3,22 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addFavorite, addBusket } from '../global/redux';
 import { useNavigate, useResolvedPath } from 'react-router-dom';
 import { IntlNum } from '../class/intlNum';
-import A from './a';
+import CardBtnActive from './cardBtnActive';
 import '../style/cardTopFour.css'
 
 const CardProduct = memo(({dataB, index, spanText}) => {
     const navig = useNavigate();
     const pathLink = useResolvedPath();
 
+
     const dispatch = useDispatch(); 
     const stateValue = useSelector(state => state);
 
     const data = dataB[index];
     const intl = new IntlNum(data.price, data.sale);
+
+    let basket = stateValue.basket.find(item => item.id === index);
+    let favority = stateValue.favority.includes(index);
 
     const addFavorProduct = useCallback((idProduct, target) => {
         if (target.closest('.add') || target.classList.contains('add')) {
@@ -33,8 +37,8 @@ const CardProduct = memo(({dataB, index, spanText}) => {
     }, []);
 
     return (
-        <div className='block_card' key={index}>
-            <A addBusketProduct={addBusketProduct} addFavorProduct={addFavorProduct} data={data} stateValue={stateValue} index={index} spanText={spanText}/>
+        <div className='block_card'>
+            <CardBtnActive addBusketProduct={addBusketProduct} addFavorProduct={addFavorProduct} data={data} aboutBasket={basket} aboutFavority={favority} index={index} spanText={spanText}/>
             
             <div className='block_info'>
                 <div className='block_info_value'>

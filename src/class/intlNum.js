@@ -5,7 +5,7 @@ export class IntlNum {
     };
 
     getPrice() {
-        const price = Intl.NumberFormat("ru", {
+        const price = new Intl.NumberFormat("ru", {
             maximumFractionDigits: 0,
             style: 'currency',
             currency: 'RUB',
@@ -15,7 +15,7 @@ export class IntlNum {
     };
 
     getProcent() {
-        const percentNum = Intl.NumberFormat("ru", {
+        const percentNum = new Intl.NumberFormat("ru", {
             style: 'percent',
         });
 
@@ -23,7 +23,7 @@ export class IntlNum {
     };
 
     getPriceSale() {
-        const price = Intl.NumberFormat("ru", {
+        const price = new Intl.NumberFormat("ru", {
             maximumFractionDigits: 0,
             style: 'currency',
             currency: 'RUB',
