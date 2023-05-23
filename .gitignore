@@ -1,6 +1,5 @@
 # Logs
-logs
-*.json
+logs    
 *.log
 *.cjs
 *.config.js
