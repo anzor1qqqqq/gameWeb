@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
-import logoBall from '../img/logoBall.png';
-import '../style/header.css';
+import logoBall from '../../img/logoBall.png';
+import '../../style/header.css';
 
 const HeaderSearch = memo(({stateValueFavor, stateValueBusket}) => {
     return (  

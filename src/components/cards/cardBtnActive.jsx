@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import '../style/cardTopFour.css'
+import '../../style/cardTopFour.css'
 
 const CardBtnActive = memo(({addBusketProduct, addFavorProduct, data, aboutBasket, aboutFavority, index, spanText}) => {
     return (

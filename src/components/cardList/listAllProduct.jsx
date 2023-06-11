@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
-import CardProduct from '../components/cardProduct'; 
-import '../style/mainMenu.css'
+import CardProduct from '../cards/cardProduct'; 
+import '../../style/mainMenu.css'
 
 const ListAllProduct = memo(({dataB}) => {
     return (    

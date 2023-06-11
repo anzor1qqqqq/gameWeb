@@ -1,17 +1,17 @@
 import React from 'react';
-import { addBusket, addFavorite } from '../global/redux';
+import { addBusket, addFavorite } from '../../global/redux';
 import { useDispatch, useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper';
 import { useNavigate, useResolvedPath } from 'react-router-dom';
-import logo from '../img/slider/b10d8aa265c089eb54d1e1666fef2c17 1.svg';
-import img1 from '../img/slider/1.jpg';
-import img2 from '../img/slider/2.jpg';
-import img3 from '../img/slider/3.jpg'
+import logo from '../../img/slider/b10d8aa265c089eb54d1e1666fef2c17 1.svg';
+import img1 from '../../img/slider/1.jpg';
+import img2 from '../../img/slider/2.jpg';
+import img3 from '../../img/slider/3.jpg'
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import '../style/swiperSlider.css';
+import '../../style/swiperSlider.css';
 
 const SwiperSlider = () => {
     const dispatch = useDispatch();

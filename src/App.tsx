@@ -1,13 +1,12 @@
-import React from 'react'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import ErrorPage from './page/error';
 import MainMenu from './page/mainMenu';
-import Static from './static/static';
+import Static from './page/static/static';
 import BasketPage from './page/basket';
 import FavorityPage from './page/favority';
 import './style/header.css'
 
-function App() {
+const App = (): JSX.Element => {
   const router = createBrowserRouter([{
     path: '/',
     element: <Static/>,

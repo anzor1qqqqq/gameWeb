@@ -1,4 +1,5 @@
-import { createSlice, configureStore } from "@reduxjs/toolkit";
+import { createSlice, configureStore, PayloadAction } from "@reduxjs/toolkit";
+import { IStateStore, IBasketStore } from "../types/types";
 
 const slice = createSlice({
     name: 'globalInfo',
@@ -17,7 +18,7 @@ const slice = createSlice({
             if (state.lang !== action.payload) state.lang = action.payload;
         },
 
-        addFavorite: (state, action) => {
+        addFavorite: (state: IStateStore, action: PayloadAction<number>) => {
             let bool = true;
 
             state.favority.find(item => {
@@ -29,10 +30,10 @@ const slice = createSlice({
             bool ? state.favority.push(action.payload) : '';
         },
 
-        addBusket: (state, action) => {
+        addBusket: (state: IStateStore, action: PayloadAction<number>) => {
             let bool = true;
 
-            const newObj = state.basket.filter(item => {
+            const newObj = state.basket.filter((item: IBasketStore): IBasketStore => {
                 if (item.id === action.payload) {
                     bool = false;
 

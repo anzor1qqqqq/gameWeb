@@ -1,20 +1,20 @@
 import React, { useRef, useEffect, memo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeValute, changeLang } from '../global/redux';
+import { changeValute, changeLang } from '../../global/redux';
 import { ScrollRestoration } from "react-router-dom";
-import HeaderSearch from '../components/headerSearch';
-import NavLi from '../UI/navLi';
-import user from '../img/user.png';
-import masterCard from '../img/footer/mastercard.png'
-import mir from '../img/footer/mir.png'
-import payPal from '../img/footer/paypal.png'
-import visa from '../img/footer/Visa.png'
-import webMoney from '../img/footer/webMoney.png'
-import verified from '../img/footer/Subtract.png'
-import safeBrowsing from '../img/footer/g.png'
+import HeaderSearch from '../../components/header/headerSearch';
+import NavLi from '../../UI/navLi';
+import user from '../../img/user.png';
+import masterCard from '../../img/footer/mastercard.png'
+import mir from '../../img/footer/mir.png'
+import payPal from '../../img/footer/paypal.png'
+import visa from '../../img/footer/Visa.png'
+import webMoney from '../../img/footer/webMoney.png'
+import verified from '../../img/footer/Subtract.png'
+import safeBrowsing from '../../img/footer/g.png'
 import { Outlet } from 'react-router-dom';
-import styles from '../less/footer.module.less'
-import '../style/header.css';
+import styles from '../../less/footer.module.less'
+import '../../style/header.css';
 
 const Static = memo(() => {
     const stateValue = useSelector(state => state);
@@ -113,7 +113,7 @@ const Static = memo(() => {
                 <ScrollRestoration/>
                 <Outlet/>
             </main>
-            
+
             <footer className={styles.footer}>
                 <div>
                     <div className={styles.contantPay}>

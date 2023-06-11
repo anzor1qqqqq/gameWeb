@@ -1,15 +1,14 @@
 import React, { memo, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addFavorite, addBusket } from '../global/redux';
+import { addFavorite, addBusket } from '../../global/redux';
 import { useNavigate, useResolvedPath } from 'react-router-dom';
-import { IntlNum } from '../class/intlNum';
+import { IntlNum } from '../../class/intlNum';
 import CardBtnActive from './cardBtnActive';
-import '../style/cardTopFour.css'
+import '../../style/cardTopFour.css'
 
 const CardProduct = memo(({dataB, index, spanText}) => {
     const navig = useNavigate();
     const pathLink = useResolvedPath();
-
 
     const dispatch = useDispatch(); 
     const stateValue = useSelector(state => state);
