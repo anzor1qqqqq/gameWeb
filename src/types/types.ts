@@ -12,3 +12,11 @@ export interface IBasketStore {
     id: number;
     counter: number;
 }
+
+export interface IpropsSVG {
+    aboutBasket: IBasketStore;
+    aboutFavority: boolean;
+    callbackBasket: (idProduct: number, target: EventTarget) => void;
+    callbackFavor: (idProduct: number, target: EventTarget) => void;
+    index: number;
+}

@@ -8,7 +8,8 @@ const NavLi = ({text}) => {
         lineHeight: '130%',
         color: '#FFFFFF',
         textDecoration: 'none',
-    }
+    };
+    
     return (
         <>
             <a href="#" style={style}>{text}</a>
