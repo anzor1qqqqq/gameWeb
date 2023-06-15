@@ -1,12 +1,44 @@
 // out: "../style/swiperSlider.css", compress: true, sourceMap: false
 
+.contant_btn {
+    @media screen and (max-width: 700px) {
+        display: none;
+    }
+}
+
+.swiper {
+    height: 700px;
+    border-radius: 20px;
+
+    @media screen and (min-width: 1201px) {
+        height: 700px;
+    }
+
+    @media screen and (max-width: 1200px) {
+        height: 500px;
+    }
+
+    @media screen and (max-width: 1000px) {
+        height: 400px;
+    }
+
+    @media screen and (max-width: 700px) {
+        height: 300px;
+        border-radius: 10px;
+    }
+
+    @media screen and (max-width: 500px) {
+        height: 200px;
+        border-radius: 5px;
+    }
+}
+
 .contant_img {
     width: inherit;
     height: inherit;
     position: relative;
     filter: brightness(0.5);
-    border-radius: 20px;
-
+    
     &_block {
         position: absolute;
         top: 20%;
@@ -14,25 +46,107 @@
         width: 50%;
 
         &_logo {
-            margin-bottom: 25px;
+
+            @media screen and (min-width: 1201px) {
+                margin-bottom: 25px;
+            }
+
+            @media screen and (max-width: 1200px) {
+                width: 40%;
+                margin-bottom: 20px;
+            }
+
+            @media screen and (max-width: 1000px) {
+                width: 30%;
+                margin-bottom: 15px;
+            }
+
+            @media screen and (max-width: 700px) {
+                width: 20%;
+                margin-bottom: 10px;
+            }
+
+            @media screen and (max-width: 500px) {
+                margin-bottom: 7px;
+            }
         }
 
         &_parag {
-            font-style: normal;
-            font-weight: 400;
-            font-size: 24px;
-            line-height: 160%;
-            color:#FFFFFF;
+            @media screen and (min-width: 1201px) {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 160%;
+                color:#FFFFFF;
+            }
+
+            @media screen and (max-width: 1200px) {
+                font-size: 17px;
+                line-height: 140%;
+            }
+
+            @media screen and (max-width: 1000px) {
+                font-size: 15px;
+                line-height: 130%;
+            }
+
+            @media screen and (max-width: 700px) {
+                font-size: 12px;
+                line-height: 150%;
+            }
+
+            @media screen and (max-width: 700px) {
+                font-size: 10px;
+                line-height: 150%;
+            }
+
+            @media screen and (max-width: 500px) {
+                font-size: 7px;
+            }
         }
         
         &_info {
-            margin-bottom: 50px;
+            @media screen and (min-width: 1201px) {
+                margin-bottom: 50px;
+            }
+        
+            @media screen and (max-width: 1200px) {
+                margin-bottom: 20px;
+            }
+
+            @media screen and (max-width: 1000px) {
+                margin-bottom: 15px;
+            }
+
+            @media screen and (max-width: 700px) {
+                margin-bottom: 10px;
+            }
+
+            @media screen and (max-width: 500px) {
+                margin-bottom: 7px;
+            }
         }
     }
 }
 
 .contant_price {
     margin-bottom: 40px;
+
+    @media screen and (max-width: 1200px) {
+        margin-bottom: 20px;
+    }
+
+    @media screen and (max-width: 1000px) {
+        margin-bottom: 15px;
+    }
+
+    @media screen and (max-width: 700px) {
+        margin-bottom: 10px;
+    }
+
+    @media screen and (max-width: 500px) {
+        margin-bottom: 7px;
+    }
 }
 
 .contant_btn_buy {
@@ -49,6 +163,20 @@
 
     &:active {
         transform: scale(1.2);
+    }
+
+    @media screen and (max-width: 1200px) {
+        border-radius: 10px;
+        padding: 15px 35px;
+        font-size: 15px;
+        line-height: 120%;
+    }
+
+    @media screen and (max-width: 1000px) {
+        border-radius: 7px;
+        padding: 10px 30px;
+        font-size: 10px;
+        line-height: 100%;
     }
 }
 
@@ -68,6 +196,20 @@
     &:active {
         transform: scale(1.2);
     }
+
+    @media screen and (max-width: 1200px) {
+        border-radius: 10px;
+        padding: 15px 35px;
+        font-size: 15px;
+        line-height: 120%;
+    }
+
+    @media screen and (max-width: 1000px) {
+        border-radius: 7px;
+        padding: 10px 30px;
+        font-size: 10px;
+        line-height: 100%;
+    }
 }
 .price {
     font-style: normal;
@@ -76,6 +218,29 @@
     line-height: 130%;
     color:#FFFFFF;
     margin-right: 20px;
+
+    @media screen and (max-width: 1200px) {
+        font-size: 25px;
+        line-height: 120%;
+        margin-right: 15px;
+    }
+
+    @media screen and (max-width: 1000px) {
+        font-size: 15px;
+        line-height: 100%;
+        margin-right: 10px;
+    }
+
+    @media screen and (max-width: 1000px) {
+        font-size: 10px;
+        line-height: 100%;
+        margin-right: 5px;
+    }
+
+    @media screen and (max-width: 500px) {
+        font-size: 7px;
+        line-height: 100%;
+    }
 }
 
 .sale {
@@ -85,6 +250,27 @@
     line-height: 130%;
     color: #77BE1D; 
     margin-right: 20px;
+
+    @media screen and (max-width: 1200px) {
+        font-size: 15px;
+        line-height: 120%;
+        margin-right: 16px;
+    }
+
+    @media screen and (max-width: 1000px) {
+        font-size: 10px;
+        line-height: 100%;
+        margin-right: 10px;
+    }
+
+    @media screen and (max-width: 1000px) {
+        font-size: 7px;
+        margin-right: 8px;
+    }
+
+    @media screen and (max-width: 500px) {
+        font-size: 5px;
+    }
 }
 
 .prev_price {
@@ -93,6 +279,24 @@
     font-size: 20px;
     line-height: 130%;
     color: rgba(255, 255, 255, 0.3);
+
+    @media screen and (max-width: 1200px) {
+        font-size: 15px;
+        line-height: 120%;
+    }
+
+    @media screen and (max-width: 1000px) {
+        font-size: 10px;
+        line-height: 100%;
+    }
+
+    @media screen and (max-width: 1000px) {
+        font-size: 7px;
+    }
+
+    @media screen and (max-width: 500px) {
+        font-size: 5px;
+    }
 }
 
 .swiper-pagination-bullet {
@@ -118,6 +322,10 @@
         position: relative;
         bottom: 10px;
     }
+
+    @media screen and (max-width: 1000px) {
+        display: none;
+    }
 }
 
 .swiper-button-prev {
@@ -132,5 +340,9 @@
         content: url('../img/slider/vector2.svg');
         position: relative;
         bottom: 10px;
+    }
+
+    @media screen and (max-width: 1000px) {
+        display: none;
     }
 }

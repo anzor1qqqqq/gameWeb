@@ -4,10 +4,24 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
+
+    @media screen and (max-width: 700px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    @media screen and (max-width: 500px) {
+        align-items: self-start;
+    }
 }
 
 .section_contant_main {
     margin-top: 70px;
+
+    @media screen and (max-width: 500px) {
+        margin-top: 30px;
+    }
 
     &_title {
         margin-bottom: 20px;
@@ -15,6 +29,18 @@
         font-weight: 600;
         font-size: 32px;
         line-height: 130%;
+
+        @media screen and (max-width: 1200px) {
+            margin-top: 50px;
+            font-size: 25px;
+            line-height: 120%;
+        }
+
+        @media screen and (max-width: 500px) {
+            margin-bottom: 15px;
+            font-size: 20px;
+            line-height: 100%;
+        }
     }
 }
 
@@ -22,6 +48,16 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+
+    @media screen and (max-width: 700px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    @media screen and (max-width: 500px) {
+        align-items: self-start;
+    }
 }
 
 .btn_link_catalogy {
@@ -37,4 +73,19 @@
     color: #366EDC;
     padding: 15px 0;
     margin-top: 40px;
+
+    @media screen and (max-width: 1000px) {
+        border-radius: 6px;
+        font-size: 15px;
+        padding: 13px 0;
+        margin-top: 35px;
+    }
+
+    @media screen and (max-width: 700px) {
+        width: 100%;
+        border-radius: 5px;
+        font-size: 10px;
+        padding: 10px 0;
+        margin-top: 30px;
+    }
 }

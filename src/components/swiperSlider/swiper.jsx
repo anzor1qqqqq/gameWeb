@@ -20,10 +20,6 @@ const SwiperSlider = () => {
     const navig = useNavigate();
     const pathLink = useResolvedPath();
 
-    const style = {
-        height: 700,
-    };
-
     const busketUpdate = target => {
         target.classList.contains('add') ? pathLink.pathname === '/' ? navig('/basket') : navig(pathLink.pathname + '/basket') : dispatch(addBusket(11));
     };
@@ -33,7 +29,7 @@ const SwiperSlider = () => {
     } ;
 
     return (
-        <Swiper style={style}
+        <Swiper className='swiper_style'
             modules={[Autoplay, Pagination, Navigation]}
             spaceBetween={50}
             slidesPerView={1}
@@ -43,8 +39,7 @@ const SwiperSlider = () => {
                 clickable: true,
             }}
             navigation
-            speed={700}
-            
+            speed={700}  
         >
             <SwiperSlide>
                 <img className='contant_img' src={img1} alt="" />
