@@ -35,8 +35,6 @@ const Static = memo(() => {
     }, []);
 
     const switchBurgerMenu = useCallback(() => {
-        //if (window.innerWidth <= 500) document.body.style.overflowY = 'hidden';
-
         if (refBurger.current.classList.contains('active')) {
             if (window.innerWidth <= 500) document.body.style.overflowY = '';
 

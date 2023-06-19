@@ -1,12 +1,15 @@
 import { createSlice, configureStore, PayloadAction } from "@reduxjs/toolkit";
 import { IStateStore, IBasketStore } from "../types/types";
+import { saveBasket } from "./localStorage/saveBasket";
+
+const localBasket: IBasketStore[] = JSON.parse(localStorage.getItem('basket') || '') || [];
 
 const slice = createSlice({
     name: 'globalInfo',
     initialState: {
         lang: 'RU',
         valute: '₽',
-        basket: [],
+        basket: localBasket,
         favority: [],
     },
     reducers: {
@@ -45,6 +48,15 @@ const slice = createSlice({
             });
 
             bool ? state.basket.push({id: action.payload, counter: 1}) : state.basket = newObj;
+            
+            saveBasket(state.basket);
+        },
+
+        removeProductBasket: (state: IStateStore, action: PayloadAction<number>) => {
+            const obj = state.basket.filter(item => item.id !== action.payload);
+
+            state.basket = obj;
+            saveBasket(obj);
         }
     }
 });
@@ -53,4 +65,4 @@ export const store = configureStore({
     reducer: slice.reducer,
 });
 
-export const { changeLang, changeValute, addFavorite, addBusket } = slice.actions;
+export const { changeLang, changeValute, addFavorite, addBusket, removeProductBasket } = slice.actions;

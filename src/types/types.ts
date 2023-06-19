@@ -20,3 +20,14 @@ export interface IpropsSVG {
     callbackFavor: (idProduct: number, target: EventTarget) => void;
     index: number;
 }
+
+export interface ILoaderData {
+    id: number,
+    name: string,
+    price: number,
+    sale: number,
+    img: string,
+    tags: string[],
+    ganre: string,
+    counter?: number,
+}

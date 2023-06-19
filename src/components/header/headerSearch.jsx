@@ -10,8 +10,8 @@ const HeaderSearch = ({callback}) => {
     const navig = useNavigate();
 
     const switchStatus = () => setSwitchToInput(prev => !prev);
-
     const goHome = () => navig(-1);
+    const goBasket = () => navig('/basket');
 
     if (switchToInput) {
         return (
@@ -67,7 +67,7 @@ const HeaderSearch = ({callback}) => {
                             {stateValue.favority.length ? <span className='header_search_contant_like_busket-count'>{stateValue.favority.length}</span> : ''}
                         </div>
 
-                        <div className='header_search_contant_like_busket-busket icon-indent'>
+                        <div className='header_search_contant_like_busket-busket icon-indent' onClick={() => goBasket()}>
                             <svg  className='icon_svg' viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fillRule="evenodd" clipRule="evenodd" d="M2.65953 2.60856L0 2.36418L0.22549 0L4.49329 0.392171L5.59618 3.89179L24 5.58293L23.164 14.3485L7.19617 17.0039L2.65953 2.60856ZM6.37019 6.34781L8.88113 14.3153L20.9285 12.3119L21.3659 7.72578L6.37019 6.34781Z" fill="#77BE1D"/>
                                 <path fillRule="evenodd" clipRule="evenodd" d="M18.7707 22.6255C19.1047 22.6255 19.3755 22.3597 19.3755 22.0319C19.3755 21.704 19.1047 21.4382 18.7707 21.4382C18.4367 21.4382 18.1659 21.704 18.1659 22.0319C18.1659 22.3597 18.4367 22.6255 18.7707 22.6255ZM18.7707 25C20.4408 25 21.7947 23.6711 21.7947 22.0319C21.7947 20.3926 20.4408 19.0637 18.7707 19.0637C17.1006 19.0637 15.7468 20.3926 15.7468 22.0319C15.7468 23.6711 17.1006 25 18.7707 25Z" fill="#77BE1D"/>
