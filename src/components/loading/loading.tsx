@@ -1,7 +1,6 @@
-import React from 'react';
 import '../../style/loading.css'
 
-const Loading = () => {
+const Loading = (): JSX.Element => {
     return (  
         <>
             <div className="loader">

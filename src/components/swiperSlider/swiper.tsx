@@ -1,9 +1,9 @@
-import React from 'react';
 import { addBusket, addFavorite } from '../../global/redux';
 import { useDispatch, useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper';
 import { useNavigate, useResolvedPath } from 'react-router-dom';
+import { IStateStore } from '../../types/types';
 import logo from '../../img/slider/b10d8aa265c089eb54d1e1666fef2c17 1.svg';
 import img1 from '../../img/slider/1.jpg';
 import img2 from '../../img/slider/2.jpg';
@@ -13,19 +13,25 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import '../../style/swiperSlider.css';
 
-const SwiperSlider = () => {
+const SwiperSlider = (): JSX.Element => {
     const dispatch = useDispatch();
-    const stateValue = useSelector(state => state);
+    const stateValue = useSelector((state: IStateStore) => state);
 
     const navig = useNavigate();
-    const pathLink = useResolvedPath();
+    const pathLink = useResolvedPath(location.pathname);
 
-    const busketUpdate = target => {
-        target.classList.contains('add') ? pathLink.pathname === '/' ? navig('/basket') : navig(pathLink.pathname + '/basket') : dispatch(addBusket(11));
+    const busketUpdate = (target: HTMLElement) => {
+        target.classList.contains('add') 
+        ? pathLink.pathname === '/' ? navig('/basket') 
+        : navig(pathLink.pathname + '/basket') 
+        : dispatch(addBusket(11));
     };
 
-    const favorUpdate = target => {
-        target.classList.contains('add') ? pathLink.pathname === '/' ? navig('/favority') : navig(pathLink.pathname + '/favority') : dispatch(addFavorite(11));
+    const favorUpdate = (target: HTMLElement) => {
+        target.classList.contains('add') 
+        ? pathLink.pathname === '/' ? navig('/favority') 
+        : navig(pathLink.pathname + '/favority') 
+        : dispatch(addFavorite(11));
     } ;
 
     return (
@@ -57,12 +63,12 @@ const SwiperSlider = () => {
 
                         <div className='contant_btn'>
                             {stateValue.basket.find(item => item.id === 11) 
-                            ? <button className='contant_btn_buy add' onClick={event => busketUpdate(event.target)}>Добавлено</button>
-                            : <button className='contant_btn_buy' onClick={event => busketUpdate(event.target)}>В корзину</button>}
+                            ? <button className='contant_btn_buy add' onClick={event => busketUpdate(event.target as HTMLElement)}>Добавлено</button>
+                            : <button className='contant_btn_buy' onClick={event => busketUpdate(event.target as HTMLElement)}>В корзину</button>}
 
                             {stateValue.favority.find(item => item === 11)
-                            ? <button className='contant_btn_favor add' onClick={event => favorUpdate(event.target)}>Сохранен</button>
-                            : <button className='contant_btn_favor' onClick={event => favorUpdate(event.target)}>В избранное</button>}
+                            ? <button className='contant_btn_favor add' onClick={event => favorUpdate(event.target as HTMLElement)}>Сохранен</button>
+                            : <button className='contant_btn_favor' onClick={event => favorUpdate(event.target as HTMLElement)}>В избранное</button>}
                         </div>
                     </div>
             </SwiperSlide>
@@ -83,12 +89,12 @@ const SwiperSlider = () => {
 
                         <div className='contant_btn'>
                             {stateValue.basket.find(item => item.id === 11) 
-                            ? <button className='contant_btn_buy add' onClick={event => busketUpdate(event.target)}>Добавлено</button>
-                            : <button className='contant_btn_buy' onClick={event => busketUpdate(event.target)}>В корзину</button>}
+                            ? <button className='contant_btn_buy add' onClick={event => busketUpdate(event.target as HTMLElement)}>Добавлено</button>
+                            : <button className='contant_btn_buy' onClick={event => busketUpdate(event.target as HTMLElement)}>В корзину</button>}
 
                             {stateValue.favority.find(item => item === 11) 
-                            ? <button className='contant_btn_favor add' onClick={event => favorUpdate(event.target)}>Сохранен</button>
-                            : <button className='contant_btn_favor' onClick={event => favorUpdate(event.target)}>В избранное</button>}
+                            ? <button className='contant_btn_favor add' onClick={event => favorUpdate(event.target as HTMLElement)}>Сохранен</button>
+                            : <button className='contant_btn_favor' onClick={event => favorUpdate(event.target as HTMLElement)}>В избранное</button>}
                         </div>
                     </div>
             </SwiperSlide>
@@ -109,12 +115,12 @@ const SwiperSlider = () => {
 
                         <div className='contant_btn'>
                             {stateValue.basket.find(item => item.id  === 11) 
-                            ? <button className='contant_btn_buy add' onClick={event => busketUpdate(event.target)}>Добавлено</button>
-                            : <button className='contant_btn_buy' onClick={event => busketUpdate(event.target)}>В корзину</button>}
+                            ? <button className='contant_btn_buy add' onClick={event => busketUpdate(event.target as HTMLElement)}>Добавлено</button>
+                            : <button className='contant_btn_buy' onClick={event => busketUpdate(event.target as HTMLElement)}>В корзину</button>}
 
                             {stateValue.favority.find(item => item === 11)
-                            ? <button className='contant_btn_favor add' onClick={event => favorUpdate(event.target)}>Сохранен</button>
-                            : <button className='contant_btn_favor' onClick={event => favorUpdate(event.target)}>В избранное</button>}
+                            ? <button className='contant_btn_favor add' onClick={event => favorUpdate(event.target as HTMLElement)}>Сохранен</button>
+                            : <button className='contant_btn_favor' onClick={event => favorUpdate(event.target as HTMLElement)}>В избранное</button>}
                         </div>
                     </div>
             </SwiperSlide>

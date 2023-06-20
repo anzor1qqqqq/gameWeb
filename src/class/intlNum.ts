@@ -1,8 +1,5 @@
 export class IntlNum {
-    constructor(num, percent) {
-        this.num = num;
-        this.percent = percent;
-    };
+    constructor(public price: number, public percent: number) {};
 
     getPrice() {
         const price = new Intl.NumberFormat("ru", {
@@ -11,7 +8,7 @@ export class IntlNum {
             currency: 'RUB',
         });
 
-        return price.format(this.num);
+        return price.format(this.price);
     };
 
     getProcent() {
@@ -19,7 +16,7 @@ export class IntlNum {
             style: 'percent',
         });
 
-        return percentNum.format(this.percent / 100);
+        return '-' + percentNum.format(this.percent / 100);
     };
 
     getPriceSale() {
@@ -29,7 +26,7 @@ export class IntlNum {
             currency: 'RUB',
         });
 
-        return price.format(this.num - (this.num * (this.percent / 100)));
+        return price.format(this.price - (this.price * (this.percent / 100)));
     };
 };
 

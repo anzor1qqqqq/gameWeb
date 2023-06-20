@@ -1,6 +1,6 @@
-import React from 'react';
 
-const FavorityPage = () => {
+
+const FavorityPage = (): JSX.Element => {
     return (
         <h1>Favority</h1>
     );

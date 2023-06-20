@@ -1,8 +1,10 @@
-import React, { memo } from 'react';
+import * as React from 'react';
 import CardProduct from '../cards/cardProduct'; 
+import { FC } from 'react';
+import { IpropsList } from '../../types/types';
 import '../../style/mainMenu.css'
 
-const ListTopProduct = memo(({dataB}) => {
+const ListTopProduct: FC<IpropsList> = React.memo(({dataB}) => {
     return (  
         <>
             <h2 className='section_contant_main_title'>Топ 4</h2>

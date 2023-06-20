@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, memo, useCallback } from 'react';
+import * as React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeValute, changeLang } from '../../global/redux';
 import { ScrollRestoration } from "react-router-dom";
@@ -13,42 +13,40 @@ import webMoney from '../../img/footer/webMoney.png'
 import verified from '../../img/footer/Subtract.png'
 import safeBrowsing from '../../img/footer/g.png'
 import { Outlet } from 'react-router-dom';
+import { IStateStore } from '../../types/types';
 import styles from '../../less/footer.module.less'
 import '../../style/header.css';
 
-const Static = memo(() => {
-    const stateValue = useSelector(state => state);
+const Static = React.memo(() => {
+    const stateValue = useSelector((state: IStateStore) => state);
     const dispatch = useDispatch();
 
-    const refUl = useRef(false);
-    const refbtn = useRef(false);
-    const refBurger = useRef(false);
+    const refUl = React.useRef<HTMLDivElement | null>(null);
+    const refbtn = React.useRef<HTMLButtonElement | null>(null);
+    const refBurger = React.useRef<HTMLDivElement | null>(null);
 
-    const showUl = useCallback(() => {
-        if (refUl.current.className === 'ul_valute') {
-            refUl.current.className = 'ul_valute active';
-            refbtn.current.className = 'header_nav_savings_account_arrow_select active';
-        } else {
-            refUl.current.className = 'ul_valute';
-            refbtn.current.className = 'header_nav_savings_account_arrow_select';
-        };
+    const showUl = React.useCallback(() => {
+        if (refUl.current?.classList.contains('ul_valute')) {
+            refUl.current.classList.add('active');
+            refbtn.current?.classList.add('active')
+        }
     }, []);
 
-    const switchBurgerMenu = useCallback(() => {
-        if (refBurger.current.classList.contains('active')) {
+    const switchBurgerMenu = React.useCallback(() => {
+        if (refBurger.current?.classList.contains('active')) {
             if (window.innerWidth <= 500) document.body.style.overflowY = '';
 
             refBurger.current.classList.remove('active')
         } else {
             if (window.innerWidth <= 500) document.body.style.overflowY = 'hidden';
 
-            refBurger.current.classList.add('active')
+            refBurger.current?.classList.add('active')
         };
     }, []);
 
-    useEffect(() => {
-        const elemValute = document.querySelectorAll('.btn_valute');
-        const elemLang = document.querySelectorAll('.ul_valute_list_btn_lang');
+    React.useEffect(() => {
+        const elemValute = document.querySelectorAll('.btn_valute') as NodeListOf<HTMLElement>;
+        const elemLang = document.querySelectorAll('.ul_valute_list_btn_lang') as NodeListOf<HTMLElement>;
 
         for (let i = 0; i < 3; i++) {
             if (i !== 2) elemLang[i].classList.remove('active');
@@ -57,17 +55,17 @@ const Static = memo(() => {
 
         for (let i = 0; i < 3; i++) {
             if (i !== 2) {
-                const text = elemLang[i].textContent.split('').slice(elemLang[i].textContent.split('').indexOf('(')+1, -1).join('');
+                const text = (elemLang[i].textContent as string).split('').slice((elemLang[i].textContent as string).split('').indexOf('(')+1, -1).join('');
 
                 if (text === stateValue.lang) {
                     elemLang[i].classList.add('active');
-                    document.querySelector('.lang').textContent = text;
+                    (document.querySelector('.lang') as HTMLElement).textContent = text;
                 };
             };
 
             if (elemValute[i].textContent === stateValue.valute) {
                 elemValute[i].classList.add('active');
-                document.querySelector('.valute').textContent = elemValute[i].textContent;
+                (document.querySelector('.valute') as HTMLElement).textContent = elemValute[i].textContent;
             };
         };
     }, [stateValue.valute, stateValue.lang]);

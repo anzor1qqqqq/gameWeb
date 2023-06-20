@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
+import * as React from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import logoBall from '../../img/logoBall.png';
+import { FC } from 'react';
+import { IPropsHeaderSearch, IStateStore } from '../../types/types';
 import '../../style/header.css';
 
-const HeaderSearch = ({callback}) => {
-    const [switchToInput, setSwitchToInput] = useState(false);
-    const stateValue = useSelector(state => state);
+const HeaderSearch: FC<IPropsHeaderSearch> = ({callback}): JSX.Element => {
+    const [switchToInput, setSwitchToInput] = React.useState(false);
+    const stateValue = useSelector((state: IStateStore) => state);
     const navig = useNavigate();
 
     const switchStatus = () => setSwitchToInput(prev => !prev);
-    const goHome = () => navig(-1);
+    const goHome = () => navig('/');
     const goBasket = () => navig('/basket');
 
     if (switchToInput) {

@@ -57,6 +57,28 @@ const slice = createSlice({
 
             state.basket = obj;
             saveBasket(obj);
+        },
+
+        minusCounter: (state: IStateStore, action: PayloadAction<number>) => {
+            state.basket.forEach((item, index) => {
+              if (item.id === action.payload) {
+                if (item.counter === 1) {
+                    state.basket.splice(index, 1);
+                    return 0;
+                } else {
+                    state.basket[index].counter--;
+                    return 0;
+                }
+              }  
+            })
+        },
+
+        plusCounter: (state: IStateStore, action: PayloadAction<number>) => {
+            state.basket.find((item, index) => {
+              if (item.id === action.payload) {
+                state.basket[index].counter++;
+              }  
+            })
         }
     }
 });
@@ -65,4 +87,4 @@ export const store = configureStore({
     reducer: slice.reducer,
 });
 
-export const { changeLang, changeValute, addFavorite, addBusket, removeProductBasket } = slice.actions;
+export const { changeLang, changeValute, addFavorite, addBusket, removeProductBasket, minusCounter, plusCounter } = slice.actions;

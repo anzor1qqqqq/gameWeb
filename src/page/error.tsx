@@ -1,8 +1,9 @@
-import React from 'react';
 import { useRouteError } from 'react-router-dom';
+import { IErrorPage } from '../types/types';
 
-const ErrorPage = () => {
-    const error = useRouteError();
+const ErrorPage = (): JSX.Element => {
+    const error = useRouteError() as IErrorPage;
+
     return (
         <div>
             <p><b>Error</b  ></p>
