@@ -1,0 +1,214 @@
+// out: false, compress: true, sourceMap: false
+
+.MARGINRIGHT {
+    margin-right: 15px;
+}
+
+.BtnBasket {
+    position: absolute;
+    background-color: #06030e;
+    border: none;
+}
+
+.containerBasket {
+    display: flex;
+    margin-bottom: 30px;
+    position: relative;
+
+    &Img {
+        width: 20%;
+        height: 200px;
+
+        @media screen and (max-width: 1200px) {
+            height: 150px;
+        }
+
+        @media screen and (max-width: 1000px) {
+            height: 140px;
+        }
+
+        &Picture {
+            object-fit: cover;
+            width: 100%;
+            height: inherit;
+            border-radius: 10px;
+
+            @media screen and (max-width: 1000px) {
+                border-radius: 7px;
+            }
+
+            @media screen and (max-width: 500px) {
+                height: 70%;
+            }
+        }
+    }
+}
+
+.contantBasketAboutProduct {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    margin-left: 30px;
+
+    @media screen and (max-width: 500px) {
+        justify-content: start;
+    }
+
+    &Price {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 35px;
+
+        @media screen and (max-width: 1000px) {
+            margin-bottom: 20px;
+        }
+
+        @media screen and (max-width: 500px) {
+            margin-bottom: 15px;
+        }
+
+        &Sale {
+            font-size: 30px;
+            line-height: 100%;
+            color: #FFFFFF;
+            .MARGINRIGHT();
+
+            @media screen and (max-width: 1200px) {
+                font-size: 25px;
+            }
+
+            @media screen and (max-width: 1000px) {
+                font-size: 15px;
+            }
+
+            @media screen and (max-width: 500px) {
+                font-size: 10px;
+            }
+        }
+
+        &Procent {
+            font-size: 20px;
+            line-height: 100%;
+            color: #77BE1D;
+            .MARGINRIGHT();
+
+            @media screen and (max-width: 1200px) {
+                font-size: 15px;
+            }
+
+            @media screen and (max-width: 1000px) {
+                font-size: 10px
+            }
+
+            @media screen and (max-width: 500px) {
+                font-size: 7px;
+            }
+        }
+
+        &Old {
+            font-size: 20px;
+            line-height: 100%;
+            color: #FFFFFF;
+            opacity: 0.2;
+
+            @media screen and (max-width: 1200px) {
+                font-size: 15px;
+            }
+
+            @media screen and (max-width: 1000px) {
+                font-size: 10px
+            }
+
+            @media screen and (max-width: 500px) {
+                font-size: 7px;
+            }
+        }
+
+        &Counter {
+            @media screen and (max-width: 500px) {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+            
+            &Num {
+                display: inline-block;
+                margin: 0 15px;
+                width: 10px;
+                font-size: 10px;
+            }
+
+            &Btn {
+                background-color: #06030e;
+                border: none;
+            }
+        }
+    }
+
+    &Name {
+        font-size: 25px;
+        line-height: 100%;
+        color: #FFFFFF;
+        margin-bottom: 30px;
+
+        @media screen and (max-width: 1200px) {
+            margin-bottom: 25px;
+        }
+
+        @media screen and (max-width: 1000px) {
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        @media screen and (max-width: 500px) {
+            margin-bottom: 10px;
+            font-size: 10px;
+        }
+    }
+
+    &Info {
+        display: flex;
+        flex-direction: column;
+
+        &Region, &Service {
+            font-size: 15px;
+            line-height: 100%;
+            color: rgba(255, 255, 255, 0.3);
+            margin-bottom: 10px;
+
+            @media screen and (max-width: 1200px) {
+                font-size: 10px;
+                margin-bottom: 9px;
+            }
+
+            @media screen and (max-width: 1000px) {
+                font-size: 8px;
+            }
+
+            @media screen and (max-width: 500px) {
+                font-size: 7px;
+            }
+
+            & > b {
+                color: #FFFFFF;
+            } 
+        }
+    }
+}
+
+.hr {
+    border: 1px solid #13101B;
+    margin-top: 30px;
+}
+
+.btnCLose {
+    .BtnBasket();
+    right: 0;
+}
+
+.btnLike {
+    .BtnBasket();
+    bottom: 0;
+    right: 0;
+}

@@ -5,7 +5,7 @@
         "price": 5999,
         "sale": 5,
         "img": "https://play-lh.googleusercontent.com/bW71VrpnDqzGg0HS-_E-LPFFYggr7Ui47c9uNHgLT8D2E1TZq7Gm7Evj8VYJ8rQOafc=w3840-h2160-rw",
-        "tags": ["Аккаунт", "Аккаунт Steam"],
+        "tags": ["Microsoft Store", "Ключ"],
         "ganre": "Песочница"
     },
     {
@@ -14,7 +14,7 @@
         "price": 399,
         "sale": 10,
         "img": "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/en_US/games/switch/s/shape-of-the-world-switch/hero",
-        "tags": ["Буст", "Origin"],
+        "tags": ["Origin", "Буст"],
         "ganre": "Инди"
     },
     {
@@ -23,7 +23,7 @@
         "price": 500,
         "sale": 50,
         "img": "https://png.pngtree.com/thumb_back/fw800/20160920/pngtree-desert-in-hopes-background-photo-666938.jpg",
-        "tags": ["Ключ", "Аккаунт стим"],
+        "tags": ["Steam", "Ключ"],
         "ganre": "Приключенческая игра"
     },
     {
@@ -32,7 +32,7 @@
         "price": 199,
         "sale": 0,
         "img": "https://image.api.playstation.com/vulcan/ap/rnd/202109/1515/2dRV04Oe5azrGYbw5pwwdlE4.jpg",
-        "tags": ["Ключ", "Аккаунт стим"],
+        "tags": ["Steam", "Ключ"],
         "ganre": "Приключенческая игра"
     },
     {
@@ -41,7 +41,7 @@
         "price": 260,
         "sale": 70,
         "img": "https://www.spawnfirst.com/wp-content/uploads/2014/07/Flower.jpg",
-        "tags": ["Ключ", "Аккаунт стим"],
+        "tags": ["Steam", "Ключ"],
         "ganre": "Приключенческая игра"
     },
     {
@@ -50,7 +50,7 @@
         "price": 699,
         "sale": 0,
         "img": "https://i.playground.ru/p/X6m5TVpqc7fcdTS0167sDg.png",
-        "tags": ["Ключ", "Аккаунт Origin"],
+        "tags": ["Origin", "Ключ"],
         "ganre": "Приключенческая игра"
     },
     {
@@ -59,7 +59,7 @@
         "price": 880,
         "sale": 0,
         "img": "https://i.ytimg.com/vi/DT6sVEf1fz4/maxresdefault.jpg",
-        "tags": ["Буст", "Origin"],
+        "tags": ["Origin", "Буст"],
         "ganre": "Приключенческая игра"
     },
     {
@@ -68,16 +68,16 @@
         "price": 999,
         "sale": 15,
         "img": "https://idpixel.ru/news/873/main_2x.jpg",
-        "tags": ["Ключ", "Аккаунт стим"],
+        "tags": ["Steam", "Ключ"],
         "ganre": "Платформер"
     },
     {
         "id": 8,
-        "name": "unravel",
+        "name": "Unravel",
         "price": 999,
         "sale": 0,
         "img": "https://www.ferra.ru/images/465/465809.jpg",
-        "tags": ["Ключ", "Аккаунт стим"],
+        "tags": ["Steam", "Ключ"],
         "ganre": "Головоломка"
     },
     {
@@ -86,7 +86,7 @@
         "price": 349,
         "sale": 0,
         "img": "https://www.readjunk.com/wp-content/uploads/2017/06/SeasonsCover.jpg",
-        "tags": ["Ключ", "Аккаунт стим"],
+        "tags": ["Steam", "Ключ"],
         "ganre": "Инди"
     },
     {
@@ -95,7 +95,7 @@
         "price": 450,
         "sale": 5,
         "img": "https://img.opencritic.com/game/4509/o/sHW9AkqW.jpg",
-        "tags": ["Аккаунт", "Аккаунт Steam"],
+        "tags": ["Steam", "Аккаунт"],
         "ganre": "Инди"
     },
     {
@@ -104,7 +104,7 @@
         "price": 3999,
         "sale": 15,
         "img": "https://pic.rutubelist.ru/video/88/71/8871482860d4152a819f485116f12b24.jpg",
-        "tags": ["Ключ", "Аккаунт Origin"],
+        "tags": ["Origin", "Ключ"],
         "ganre": "Инди"
     }
 ]

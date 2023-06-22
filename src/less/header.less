@@ -2,6 +2,10 @@
 
 @bgc: #06030e;
 
+a {
+    text-decoration: none;
+}
+
 .styleInput() {
     width: 100%;
     background: rgba(196, 196, 196, 0.05);
@@ -171,9 +175,12 @@ body {
     }
 
     &_contant {
-        display: flex;
-        align-items: center;
-        cursor: pointer;
+        & > a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        
+        }
 
         @media screen and (max-width: 500px) {
             margin-right: auto;
@@ -194,7 +201,7 @@ body {
                 right: -50%;
                 top: -50%;
                 background: rgba(21, 15, 38, 0.35);
-                z-index: 99;
+                z-index: 2;
                 backdrop-filter: blur(5px);
                 border-radius: 5px;
                 padding: 4px;
