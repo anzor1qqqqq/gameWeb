@@ -2,7 +2,7 @@ import { createSlice, configureStore, PayloadAction } from "@reduxjs/toolkit";
 import { IStateStore, ILoaderData, TLocalStorage } from "../types/types";
 import { saveBasket } from "./localStorage/saveBasket";
 
-const localBasket: ILoaderData[] = JSON.parse(localStorage.getItem('basket') || '') || [];
+const localBasket: ILoaderData[] = JSON.parse(localStorage.getItem('basket') || '1') && [];
 
 const slice = createSlice({
     name: 'globalInfo',
