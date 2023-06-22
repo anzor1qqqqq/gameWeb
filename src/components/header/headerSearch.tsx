@@ -1,19 +1,16 @@
 import * as React from 'react';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import logoBall from '../../img/logoBall.png';
+import { Link } from 'react-router-dom';
 import { FC } from 'react';
 import { IPropsHeaderSearch, IStateStore } from '../../types/types';
+import logoBall from '../../img/logoBall.png';
 import '../../style/header.css';
 
 const HeaderSearch: FC<IPropsHeaderSearch> = ({callback}): JSX.Element => {
     const [switchToInput, setSwitchToInput] = React.useState(false);
     const stateValue = useSelector((state: IStateStore) => state);
-    const navig = useNavigate();
 
     const switchStatus = () => setSwitchToInput(prev => !prev);
-    const goHome = () => navig('/');
-    const goBasket = () => navig('/basket');
 
     if (switchToInput) {
         return (
@@ -40,9 +37,11 @@ const HeaderSearch: FC<IPropsHeaderSearch> = ({callback}): JSX.Element => {
                         <span className='burger_menu_line'></span>
                     </div>
 
-                    <div className='header_search_contant' onClick={() => goHome()}>
-                        <img className='main_logo' src={logoBall} alt="" />
-                        <span className='header_search_contant_logo'>Playnchill</span>
+                    <div className='header_search_contant'>
+                        <Link to={'/'}>
+                            <img className='main_logo' src={logoBall} alt="" />
+                            <span className='header_search_contant_logo'>Playnchill</span>
+                        </Link>
                     </div>
 
                     <div className='header_search_contant_input'>
@@ -69,14 +68,16 @@ const HeaderSearch: FC<IPropsHeaderSearch> = ({callback}): JSX.Element => {
                             {stateValue.favority.length ? <span className='header_search_contant_like_busket-count'>{stateValue.favority.length}</span> : ''}
                         </div>
 
-                        <div className='header_search_contant_like_busket-busket icon-indent' onClick={() => goBasket()}>
-                            <svg  className='icon_svg' viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fillRule="evenodd" clipRule="evenodd" d="M2.65953 2.60856L0 2.36418L0.22549 0L4.49329 0.392171L5.59618 3.89179L24 5.58293L23.164 14.3485L7.19617 17.0039L2.65953 2.60856ZM6.37019 6.34781L8.88113 14.3153L20.9285 12.3119L21.3659 7.72578L6.37019 6.34781Z" fill="#77BE1D"/>
-                                <path fillRule="evenodd" clipRule="evenodd" d="M18.7707 22.6255C19.1047 22.6255 19.3755 22.3597 19.3755 22.0319C19.3755 21.704 19.1047 21.4382 18.7707 21.4382C18.4367 21.4382 18.1659 21.704 18.1659 22.0319C18.1659 22.3597 18.4367 22.6255 18.7707 22.6255ZM18.7707 25C20.4408 25 21.7947 23.6711 21.7947 22.0319C21.7947 20.3926 20.4408 19.0637 18.7707 19.0637C17.1006 19.0637 15.7468 20.3926 15.7468 22.0319C15.7468 23.6711 17.1006 25 18.7707 25Z" fill="#77BE1D"/>
-                                <path fillRule="evenodd" clipRule="evenodd" d="M9.09413 22.6255C9.42814 22.6255 9.69891 22.3597 9.69891 22.0319C9.69891 21.704 9.42814 21.4382 9.09413 21.4382C8.76011 21.4382 8.48934 21.704 8.48934 22.0319C8.48934 22.3597 8.76011 22.6255 9.09413 22.6255ZM9.09413 25C10.7642 25 12.1181 23.6711 12.1181 22.0319C12.1181 20.3926 10.7642 19.0637 9.09413 19.0637C7.42405 19.0637 6.07019 20.3926 6.07019 22.0319C6.07019 23.6711 7.42405 25 9.09413 25Z" fill="#77BE1D"/>
-                            </svg>
+                        <div className='header_search_contant_like_busket-busket icon-indent'>
+                            <Link to={'/basket'} preventScrollReset={true}>
+                                <svg  className='icon_svg' viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fillRule="evenodd" clipRule="evenodd" d="M2.65953 2.60856L0 2.36418L0.22549 0L4.49329 0.392171L5.59618 3.89179L24 5.58293L23.164 14.3485L7.19617 17.0039L2.65953 2.60856ZM6.37019 6.34781L8.88113 14.3153L20.9285 12.3119L21.3659 7.72578L6.37019 6.34781Z" fill="#77BE1D"/>
+                                    <path fillRule="evenodd" clipRule="evenodd" d="M18.7707 22.6255C19.1047 22.6255 19.3755 22.3597 19.3755 22.0319C19.3755 21.704 19.1047 21.4382 18.7707 21.4382C18.4367 21.4382 18.1659 21.704 18.1659 22.0319C18.1659 22.3597 18.4367 22.6255 18.7707 22.6255ZM18.7707 25C20.4408 25 21.7947 23.6711 21.7947 22.0319C21.7947 20.3926 20.4408 19.0637 18.7707 19.0637C17.1006 19.0637 15.7468 20.3926 15.7468 22.0319C15.7468 23.6711 17.1006 25 18.7707 25Z" fill="#77BE1D"/>
+                                    <path fillRule="evenodd" clipRule="evenodd" d="M9.09413 22.6255C9.42814 22.6255 9.69891 22.3597 9.69891 22.0319C9.69891 21.704 9.42814 21.4382 9.09413 21.4382C8.76011 21.4382 8.48934 21.704 8.48934 22.0319C8.48934 22.3597 8.76011 22.6255 9.09413 22.6255ZM9.09413 25C10.7642 25 12.1181 23.6711 12.1181 22.0319C12.1181 20.3926 10.7642 19.0637 9.09413 19.0637C7.42405 19.0637 6.07019 20.3926 6.07019 22.0319C6.07019 23.6711 7.42405 25 9.09413 25Z" fill="#77BE1D"/>
+                                </svg>
 
-                            {stateValue.basket.length ? <span className='header_search_contant_like_busket-count'>{stateValue.basket.length}</span> : ''}
+                                {stateValue.basket.length ? <span className='header_search_contant_like_busket-count'>{stateValue.basket.length}</span> : ''}
+                            </Link>
                         </div>
                     </div>
                 </div>

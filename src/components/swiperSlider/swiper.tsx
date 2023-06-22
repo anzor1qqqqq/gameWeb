@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper';
 import { useNavigate, useResolvedPath } from 'react-router-dom';
-import { IStateStore } from '../../types/types';
+import { dataFetch } from '../../utilities/auxFunc';
+import { IStateStore, TLocalStorage } from '../../types/types';
 import logo from '../../img/slider/b10d8aa265c089eb54d1e1666fef2c17 1.svg';
 import img1 from '../../img/slider/1.jpg';
 import img2 from '../../img/slider/2.jpg';
@@ -21,17 +22,24 @@ const SwiperSlider = (): JSX.Element => {
     const pathLink = useResolvedPath(location.pathname);
 
     const busketUpdate = (target: HTMLElement) => {
-        target.classList.contains('add') 
-        ? pathLink.pathname === '/' ? navig('/basket') 
-        : navig(pathLink.pathname + '/basket') 
-        : dispatch(addBusket(11));
+        if (target.classList.contains('add')) {
+            navig('/basket')
+        } else {
+            const foo = async() => {
+                const a = await dataFetch('certain', 11) as TLocalStorage;
+
+                dispatch(addBusket(a));
+            };
+
+            foo();
+        };
     };
 
     const favorUpdate = (target: HTMLElement) => {
-        target.classList.contains('add') 
+        /* target.classList.contains('add') 
         ? pathLink.pathname === '/' ? navig('/favority') 
-        : navig(pathLink.pathname + '/favority') 
-        : dispatch(addFavorite(11));
+        : navig('/favority') 
+        : dispatch(addFavorite(11)); */
     } ;
 
     return (

@@ -2,8 +2,9 @@ import * as React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFavorite, addBusket } from '../../global/redux';
 import { useNavigate, useResolvedPath } from 'react-router-dom';
+import { dataFetch } from '../../utilities/auxFunc';
 import { FC } from 'react';
-import { IStateStore, IpropsCard } from '../../types/types';
+import { IStateStore, IpropsCard, TLocalStorage } from '../../types/types';
 import CardBtnActive from './cardBtnActive';
 
 const CardProduct: FC<IpropsCard> = React.memo(({dataB, index, spanText}) => {
@@ -30,7 +31,13 @@ const CardProduct: FC<IpropsCard> = React.memo(({dataB, index, spanText}) => {
         if (target.classList.contains('add')) {
             pathLink.pathname === '/' ? navig('/basket') : navig(pathLink.pathname + '/basket');
         } else {
-            dispatch(addBusket(idProduct));
+            const dataBase = async() => {
+                const data = await dataFetch('certain', idProduct) as TLocalStorage;
+
+                dispatch(addBusket(data));
+            };
+
+            dataBase();
         };
     }, []);
 

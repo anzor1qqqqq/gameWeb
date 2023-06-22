@@ -1,5 +1,7 @@
+import { IIntlString } from "../types/types";
+
 export class IntlNum {
-    constructor(public price: number, public percent: number) {};
+    constructor(public price: number, public percent: number = 0) {};
 
     getPrice() {
         const price = new Intl.NumberFormat("ru", {
@@ -30,3 +32,12 @@ export class IntlNum {
     };
 };
 
+export class IntlString {
+    constructor(public value: number, public variants: IIntlString , public locale: string = 'ru-RU'){}
+
+    getWord() {
+        const key = new Intl.PluralRules(this.locale).select(this.value) as 'one' | 'few' | 'many';
+
+        return this.variants[key] || '';
+    }
+};

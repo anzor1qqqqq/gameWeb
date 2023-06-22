@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IntlNum } from '../../../class/intlNum';
+import { IntlNum } from '../../../utilities/Intl';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { removeProductBasket, addFavorite, minusCounter, plusCounter } from '../../../global/redux';
@@ -35,8 +35,6 @@ const BasketCard: FC<IPropsBasketCard> = React.memo(({nameProduct, id, price, sa
 
     return (
         <>
-        <hr className={styles.hr} />
-
             <div className={styles.containerBasket}>
                 <div className={styles.containerBasketImg}>
                     <img className={styles.containerBasketImgPicture} src={img} alt="" />
@@ -71,6 +69,8 @@ const BasketCard: FC<IPropsBasketCard> = React.memo(({nameProduct, id, price, sa
                 : addFavor(id)
                 }><BtnLike checkBtnLike={checkBtnLike}/></button>
             </div>
+
+            <hr className={styles.hr} />
         </>
     );
 })

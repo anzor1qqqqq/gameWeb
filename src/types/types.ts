@@ -1,26 +1,3 @@
-export interface IStateStore {
-    lang: string;
-    valute: string;
-    basket: {
-        id: number;
-        counter: number;
-    }[];
-    favority: number[];
-}
-
-export interface IBasketStore {
-    id: number;
-    counter: number;
-}
-
-export interface IpropsSVG {
-    aboutBasket: IBasketStore | undefined;
-    aboutFavority: boolean;
-    callbackBasket: (idProduct: number, target: HTMLElement) => void;
-    callbackFavor: (idProduct: number, target: HTMLElement) => void;
-    index: number;
-}
-
 export interface ILoaderData {
     id: number,
     name: string,
@@ -29,8 +6,26 @@ export interface ILoaderData {
     img: string,
     tags: string[],
     ganre: string,
-    counter?: number,
+    counter: number,
 }
+
+export interface IStateStore {
+    lang: string,
+    valute: string,
+    basket: ILoaderData[],
+    sumProduct: number,
+    favority: number[],
+}
+
+export interface IpropsSVG {
+    aboutBasket: ILoaderData | undefined;
+    aboutFavority: boolean;
+    callbackBasket: (idProduct: number, target: HTMLElement) => void;
+    callbackFavor: (idProduct: number, target: HTMLElement) => void;
+    index: number;
+}
+
+export type TLocalStorage = Omit<ILoaderData, 'counter'>
 
 export interface IBasketRender extends ILoaderData {
     counter: number,
@@ -44,7 +39,7 @@ export interface IPropsBtnActive {
     addBusketProduct: (idProduct: number, target: HTMLElement) => void,
     addFavorProduct: (idProduct: number, target: HTMLElement) => void,
     data: ILoaderData,
-    aboutBasket: IBasketStore | undefined,
+    aboutBasket: ILoaderData | undefined,
     aboutFavority: boolean,
     index: number,
     spanText?: string,
@@ -80,4 +75,10 @@ export interface IPropsBasketCard {
     tags: string,
     counter: number,
     checkBtnLike: boolean,
+}
+
+export interface IIntlString {
+    one: string,
+    few: string,
+    many: string,
 }

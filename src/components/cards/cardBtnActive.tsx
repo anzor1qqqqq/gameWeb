@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IntlNum } from '../../class/intlNum';
+import { IntlNum } from '../../utilities/Intl';
 import SVGBasketMobile from '../../svg/basketMobile';
 import { FC } from 'react';
 import { IPropsBtnActive } from '../../types/types';

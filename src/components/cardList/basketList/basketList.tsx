@@ -32,7 +32,9 @@ const BasketList: FC<IPropsBasketList> = ({loader}): JSX.Element => {
     };
 
     return (
-        <div style={{marginTop: 50}}>
+        <div style={{marginTop: 20}}>
+            <hr style={{border: '1px solid #13101B', marginBottom: 30}}/>
+            
             {basketRender.map(item => 
                 <BasketCard 
                 key={item.id} 
