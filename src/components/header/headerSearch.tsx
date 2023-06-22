@@ -38,7 +38,7 @@ const HeaderSearch: FC<IPropsHeaderSearch> = ({callback}): JSX.Element => {
                     </div>
 
                     <div className='header_search_contant'>
-                        <Link to={'/'}>
+                        <Link to={'/'} style={{textDecoration: 'none'}}>
                             <img className='main_logo' src={logoBall} alt="" />
                             <span className='header_search_contant_logo'>Playnchill</span>
                         </Link>
