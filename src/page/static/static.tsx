@@ -21,15 +21,20 @@ const Static = React.memo(() => {
     const stateValue = useSelector((state: IStateStore) => state);
     const dispatch = useDispatch();
 
-    const refUl = React.useRef<HTMLDivElement | null>(null);
-    const refbtn = React.useRef<HTMLButtonElement | null>(null);
-    const refBurger = React.useRef<HTMLDivElement | null>(null);
+    const refUl = React.useRef<HTMLDivElement>(null);
+    const refbtn = React.useRef<HTMLButtonElement>(null);
+    const refBurger = React.useRef<HTMLDivElement>(null);
 
     const showUl = React.useCallback(() => {
-        if (refUl.current?.classList.contains('ul_valute')) {
+        if (refUl.current !== null && refbtn.current !== null && refUl.current.className === 'ul_valute') {
             refUl.current.classList.add('active');
-            refbtn.current?.classList.add('active')
-        }
+            refbtn.current.classList.add('active')
+        } else {
+            if (refUl.current !== null && refbtn.current !== null) {
+                refUl.current.className = 'ul_valute';
+                refbtn.current.className = 'header_nav_savings_account_arrow_select';
+            };
+        };
     }, []);
 
     const switchBurgerMenu = React.useCallback(() => {
