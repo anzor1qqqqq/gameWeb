@@ -2,7 +2,7 @@ import { addBusket, addFavorite } from '../../global/redux';
 import { useDispatch, useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper';
-import { useNavigate, useResolvedPath } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { dataFetch } from '../../utilities/auxFunc';
 import { IStateStore, TLocalStorage } from '../../types/types';
 import logo from '../../img/slider/b10d8aa265c089eb54d1e1666fef2c17 1.svg';
@@ -19,27 +19,33 @@ const SwiperSlider = (): JSX.Element => {
     const stateValue = useSelector((state: IStateStore) => state);
 
     const navig = useNavigate();
-    const pathLink = useResolvedPath(location.pathname);
 
     const busketUpdate = (target: HTMLElement) => {
         if (target.classList.contains('add')) {
             navig('/basket')
         } else {
-            const foo = async() => {
-                const a = await dataFetch('certain', 11) as TLocalStorage;
+            const data = async() => {
+                const dataB = await dataFetch('certain', 11) as TLocalStorage;
 
-                dispatch(addBusket(a));
+                dispatch(addBusket(dataB));
             };
 
-            foo();
+            data();
         };
     };
 
     const favorUpdate = (target: HTMLElement) => {
-        /* target.classList.contains('add') 
-        ? pathLink.pathname === '/' ? navig('/favority') 
-        : navig('/favority') 
-        : dispatch(addFavorite(11)); */
+        if (target.classList.contains('add')) {
+            navig('/favority');
+        } else {
+            const data = async() => {
+                const dataB = await dataFetch('certain', 11) as TLocalStorage;
+
+                dispatch(addFavorite(dataB));
+            };
+
+            data();
+        };
     } ;
 
     return (
@@ -74,7 +80,7 @@ const SwiperSlider = (): JSX.Element => {
                             ? <button className='contant_btn_buy add' onClick={event => busketUpdate(event.target as HTMLElement)}>Добавлено</button>
                             : <button className='contant_btn_buy' onClick={event => busketUpdate(event.target as HTMLElement)}>В корзину</button>}
 
-                            {stateValue.favority.find(item => item === 11)
+                            {stateValue.favority.find(item => item.id === 11)
                             ? <button className='contant_btn_favor add' onClick={event => favorUpdate(event.target as HTMLElement)}>Сохранен</button>
                             : <button className='contant_btn_favor' onClick={event => favorUpdate(event.target as HTMLElement)}>В избранное</button>}
                         </div>
@@ -100,7 +106,7 @@ const SwiperSlider = (): JSX.Element => {
                             ? <button className='contant_btn_buy add' onClick={event => busketUpdate(event.target as HTMLElement)}>Добавлено</button>
                             : <button className='contant_btn_buy' onClick={event => busketUpdate(event.target as HTMLElement)}>В корзину</button>}
 
-                            {stateValue.favority.find(item => item === 11) 
+                            {stateValue.favority.find(item => item.id === 11) 
                             ? <button className='contant_btn_favor add' onClick={event => favorUpdate(event.target as HTMLElement)}>Сохранен</button>
                             : <button className='contant_btn_favor' onClick={event => favorUpdate(event.target as HTMLElement)}>В избранное</button>}
                         </div>
@@ -126,7 +132,7 @@ const SwiperSlider = (): JSX.Element => {
                             ? <button className='contant_btn_buy add' onClick={event => busketUpdate(event.target as HTMLElement)}>Добавлено</button>
                             : <button className='contant_btn_buy' onClick={event => busketUpdate(event.target as HTMLElement)}>В корзину</button>}
 
-                            {stateValue.favority.find(item => item === 11)
+                            {stateValue.favority.find(item => item.id === 11)
                             ? <button className='contant_btn_favor add' onClick={event => favorUpdate(event.target as HTMLElement)}>Сохранен</button>
                             : <button className='contant_btn_favor' onClick={event => favorUpdate(event.target as HTMLElement)}>В избранное</button>}
                         </div>

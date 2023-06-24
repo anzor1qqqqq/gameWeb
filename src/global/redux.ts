@@ -1,8 +1,9 @@
 import { createSlice, configureStore, PayloadAction } from "@reduxjs/toolkit";
 import { IStateStore, ILoaderData, TLocalStorage } from "../types/types";
-import { saveBasket } from "./localStorage/saveBasket";
+import { saveBasket, saveFavority } from "./localStorage/saveLocalStorage";
 
-const localBasket: ILoaderData[] = JSON.parse(localStorage.getItem('basket') || '') || [];
+const localBasket: ILoaderData[] = JSON.parse(localStorage.getItem('basket') as string) || [];
+const localFavority: TLocalStorage[] = JSON.parse(localStorage.getItem('favority') as string) || [];
 
 const slice = createSlice({
     name: 'globalInfo',
@@ -11,7 +12,7 @@ const slice = createSlice({
         valute: '₽',
         basket: localBasket,
         sumProduct: 0,
-        favority: [],
+        favority: localFavority,
     },
     reducers: {
         changeValute: (state, action) => {
@@ -22,16 +23,16 @@ const slice = createSlice({
             if (state.lang !== action.payload) state.lang = action.payload;
         },
 
-        addFavorite: (state: IStateStore, action: PayloadAction<number>) => {
+        addFavorite: (state: IStateStore, action: PayloadAction<TLocalStorage>) => {
             let bool = true;
 
             state.favority.find(item => {
-                if (item === action.payload) {
-                    bool = false;
-                } 
+                if (item.id === action.payload.id) bool = false;
             })
 
             bool ? state.favority.push(action.payload) : '';
+            
+            saveFavority(state.favority)
         },
 
         addBusket: (state: IStateStore, action: PayloadAction<TLocalStorage>) => {
@@ -58,7 +59,15 @@ const slice = createSlice({
 
             state.basket = obj;
 
-            saveBasket(obj);
+            saveBasket(state.basket);
+        },
+
+        removeProductFavority: (state: IStateStore, action: PayloadAction<number>) => {
+            const obj = state.favority.filter(item => item.id !== action.payload);
+
+            state.favority = obj;
+
+            saveFavority(state.favority);
         },
 
         minusCounter: (state: IStateStore, action: PayloadAction<number>) => {
@@ -93,4 +102,4 @@ export const store = configureStore({
     reducer: slice.reducer,
 });
 
-export const { changeLang, changeValute, addFavorite, addBusket, removeProductBasket, minusCounter, plusCounter } = slice.actions;
+export const { changeLang, changeValute, addFavorite, addBusket, removeProductBasket, removeProductFavority, minusCounter, plusCounter } = slice.actions;

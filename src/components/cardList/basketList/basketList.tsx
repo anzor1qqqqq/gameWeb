@@ -26,14 +26,14 @@ const BasketList: FC<IPropsBasketList> = ({loader}): JSX.Element => {
     if (basketRender.length === 0) {
         return (
             <div style={{height: 500, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                <p>Пусто</p>
+                <h2>Пусто</h2>
             </div>
         );
     };
 
     return (
         <div style={{marginTop: 20}}>
-            <hr style={{border: '1px solid #13101B', marginBottom: 30}}/>
+            <hr style={{border: '1px solid #13101B'}}/>
             
             {basketRender.map(item => 
                 <BasketCard 
@@ -45,7 +45,7 @@ const BasketList: FC<IPropsBasketList> = ({loader}): JSX.Element => {
                 img={item.img}
                 tags={item.tags[0]}
                 counter={item?.counter}
-                checkBtnLike={stateValue.favority.includes(item.id)}
+                checkBtnLike={stateValue.favority.find(elem => elem.id === item.id)}
             />
             )} 
         </div>

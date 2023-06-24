@@ -2,9 +2,10 @@ import * as React from 'react';
 import { IntlNum } from '../../../utilities/Intl';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { dataFetch } from '../../../utilities/auxFunc';
 import { removeProductBasket, addFavorite, minusCounter, plusCounter } from '../../../global/redux';
 import { FC } from 'react';
-import { IPropsBasketCard } from '../../../types/types';
+import { IPropsBasketCard, TLocalStorage } from '../../../types/types';
 import BasketCounterMinus from '../../../svg/basketCounterMinus';
 import BasketCounterPlus from '../../../svg/basketCounter';
 import BtnClose from '../../../svg/btnClose';
@@ -22,7 +23,13 @@ const BasketCard: FC<IPropsBasketCard> = React.memo(({nameProduct, id, price, sa
     }, []);
 
     const addFavor = React.useCallback((id: number) => {
-        dispatch(addFavorite(id))
+        const dataBase = async() => {
+            const data = await dataFetch('certain', id) as TLocalStorage;
+
+            dispatch(addFavorite(data));
+        };
+
+        dataBase();
     }, []);
 
     const switchCounter = (method: string) => {
@@ -59,7 +66,7 @@ const BasketCard: FC<IPropsBasketCard> = React.memo(({nameProduct, id, price, sa
 
                     <div className={styles.contantBasketAboutProductInfo}>
                         <p className={styles.contantBasketAboutProductInfoRegion}>Регион активации<b> Россия и страны СНГ</b></p>
-                        <p className={styles.contantBasketAboutProductInfoService}>Сервис активации<b> {tags}</b></p>
+                        <p className={styles.contantBasketAboutProductInfoService}>Сервис активации<b>{tags}</b></p>
                     </div>
                 </div>
                 

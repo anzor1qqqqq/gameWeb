@@ -1,6 +1,7 @@
 import '../style/btnClose.css'
+import { TLocalStorage } from '../types/types';
 
-const BtnLike = ({checkBtnLike}: {checkBtnLike: boolean}): JSX.Element => {
+const BtnLike = ({checkBtnLike}: {checkBtnLike: TLocalStorage | undefined}): JSX.Element => {
     return (
         <>
             <svg viewBox="0 0 26 21" className={checkBtnLike ? 'btn_closeActive' : 'btn_close'}  xmlns="http://www.w3.org/2000/svg">
