@@ -123,10 +123,8 @@ const Static = React.memo(() => {
             </header>
 
             <main style={{marginTop: 40}}>
-                <ScrollRestoration
-                     
-                />
                 <Outlet/>
+                <ScrollRestoration/>
             </main>
 
             <footer className={styles.footer}>

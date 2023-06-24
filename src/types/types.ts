@@ -1,3 +1,11 @@
+export interface IStateStore {
+    lang: string,
+    valute: string,
+    basket: ILoaderData[],
+    sumProduct: number,
+    favority: TLocalStorage[],
+}
+
 export interface ILoaderData {
     id: number,
     name: string,
@@ -9,17 +17,9 @@ export interface ILoaderData {
     counter: number,
 }
 
-export interface IStateStore {
-    lang: string,
-    valute: string,
-    basket: ILoaderData[],
-    sumProduct: number,
-    favority: number[],
-}
-
 export interface IpropsSVG {
     aboutBasket: ILoaderData | undefined;
-    aboutFavority: boolean;
+    aboutFavority: TLocalStorage | undefined;
     callbackBasket: (idProduct: number, target: HTMLElement) => void;
     callbackFavor: (idProduct: number, target: HTMLElement) => void;
     index: number;
@@ -40,7 +40,7 @@ export interface IPropsBtnActive {
     addFavorProduct: (idProduct: number, target: HTMLElement) => void,
     data: ILoaderData,
     aboutBasket: ILoaderData | undefined,
-    aboutFavority: boolean,
+    aboutFavority: TLocalStorage | undefined,
     index: number,
     spanText?: string,
 }
@@ -74,8 +74,10 @@ export interface IPropsBasketCard {
     img: string,
     tags: string,
     counter: number,
-    checkBtnLike: boolean,
+    checkBtnLike: TLocalStorage | undefined,
 }
+
+export type IPropsFavorityCard = Omit<IPropsBasketCard, 'checkBtnLike' | 'counter'>
 
 export interface IIntlString {
     one: string,

@@ -31,7 +31,7 @@ const App = (): JSX.Element => {
       {
         path: '/favority',
         element: <FavorityPage/>
-      }
+      },
     ]
   }]);
 

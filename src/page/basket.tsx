@@ -14,6 +14,7 @@ const BasketPage = React.memo((): JSX.Element => {
     return (
         <>
             <h1 className='title_basket'>Корзина <b className='count_basket'>{stateValue.basket.length}</b></h1>
+            
             <section className='section_basket'>
                 <div className='contant_basket_product'>
                         <BasketList loader={loader} />

@@ -27,6 +27,10 @@
             height: 140px;
         }
 
+        @media screen and (max-width: 500px) {
+            width: 30%;
+        }
+
         &Picture {
             object-fit: cover;
             width: 100%;
@@ -53,6 +57,7 @@
 
     @media screen and (max-width: 500px) {
         justify-content: start;
+        margin-left: 20px;
     }
 
     &Price {
@@ -137,6 +142,12 @@
                 margin: 0 15px;
                 width: 10px;
                 font-size: 10px;
+                text-align: center;
+
+                @media screen and (max-width: 500px) {
+                    margin: 0 10px;
+                    font-size: 10px;
+                }
             }
 
             &Btn {
@@ -200,6 +211,18 @@
 .hr {
     border: 1px solid #13101B;
     margin-top: 30px;
+    margin-bottom: 30px;
+
+    @media screen and (max-width: 500px) {
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+}
+
+.hrFavority {
+    @media screen and (max-width: 500px) {
+       margin: 0;
+    }
 }
 
 .btnCLose {
@@ -211,4 +234,33 @@
     .BtnBasket();
     bottom: 0;
     right: 0;
+}
+
+.titleFavority {
+    @media screen and (max-width: 1000px) {
+        font-size: 30px;
+    }
+
+    @media screen and (max-width: 500px) {
+        font-size: 20px;
+    }
+}
+
+.containerFavority {
+    @media screen and (max-width: 500px) {
+        margin-bottom: 0;
+    }
+}
+
+.containerFavorityImg {
+    @media screen and (max-width: 500px) {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.contantFavorityAboutProduct {
+    @media screen and (max-width: 500px) {
+        justify-content: center;
+    }
 }
