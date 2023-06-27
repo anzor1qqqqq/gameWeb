@@ -1,5 +1,5 @@
-import '../style/btnClose.css'
 import { TLocalStorage } from '../types/types';
+import '../style/btnClose.css'
 
 const BtnLike = ({checkBtnLike}: {checkBtnLike: TLocalStorage | undefined}): JSX.Element => {
     return (

@@ -1,0 +1,41 @@
+// out: "../../style/imgFancy.css", compress: true, sourceMap: false
+
+.container_img_fancy {
+    &:not(:last-child) {
+        margin-right: 15px;
+    }
+}
+
+.contant_img_fancy {
+    width: 250px;
+    height: 160px;
+
+    @media screen and (max-width: 1200px) {
+        width: 200px;
+        height: 130px;
+    }
+
+    @media screen and (max-width: 1000px) {
+        width: 170px;
+        height: 120px;
+    }
+
+    @media screen and (max-width: 600px) {
+        width: 150px;
+        height: 100px;
+    }
+
+    @media screen and (max-width: 400px) {
+        width: 140px;
+    }
+
+    &-img {
+        width: inherit;
+        height: inherit;
+        border-radius: 15px;
+
+        @media screen and (max-width: 1200px) {
+            border-radius: 10px;
+        }
+    }
+}

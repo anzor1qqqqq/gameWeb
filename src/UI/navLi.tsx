@@ -1,6 +1,5 @@
-import React from 'react';
 
-const NavLi = ({text}) => {
+const NavLi = ({text}: {text: string}): JSX.Element => {
     const style = {
         fontStyle: 'normal',
         fontWeight: 600,
@@ -15,6 +14,6 @@ const NavLi = ({text}) => {
             <a href="#" style={style}>{text}</a>
         </>
     );
-}
+};
  
 export default NavLi;

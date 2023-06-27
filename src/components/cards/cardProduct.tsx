@@ -13,13 +13,10 @@ const CardProduct: FC<IpropsCard> = React.memo(({dataB, index, spanText}) => {
     const dispatch = useDispatch(); 
     const stateValue = useSelector((state: IStateStore) => state);
 
-    const data = dataB[index];
-
     let basket = stateValue.basket.find(item => item.id === index);
     let favority = stateValue.favority.find(item => item.id === index);
 
     const addFavorProduct = React.useCallback((idProduct: number, target: HTMLElement) => {
-        console.log(target.classList.contains('add') || target.closest('.add'));
         if (target.classList.contains('add') || target.closest('.add')) navig('/favority') 
         else {
             const dataBase = async() => {
@@ -50,7 +47,7 @@ const CardProduct: FC<IpropsCard> = React.memo(({dataB, index, spanText}) => {
             <CardBtnActive 
             addBusketProduct={addBusketProduct} 
             addFavorProduct={addFavorProduct} 
-            data={data} 
+            data={dataB} 
             aboutBasket={basket} 
             aboutFavority={favority} 
             index={index} 

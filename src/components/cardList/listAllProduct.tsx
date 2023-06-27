@@ -10,17 +10,17 @@ const ListAllProduct: FC<IpropsList> = React.memo(({dataB}) => {
             <h2 className='section_contant_main_title'>Все товары</h2>
 
             <div className='container_card_all'>
-                <CardProduct dataB={dataB} index={9}/>
-                <CardProduct dataB={dataB} index={7} spanText={'Новинкa'}/>
-                <CardProduct dataB={dataB} index={2} spanText={'Топ 4'}/>
-                <CardProduct dataB={dataB} index={10}/>
-                <CardProduct dataB={dataB} index={0} spanText={'Топ 4'}/>
-                <CardProduct dataB={dataB} index={6} spanText={'Хит продаж'}/>
-                <CardProduct dataB={dataB} index={1} spanText={'Топ 4'}/>
-                <CardProduct dataB={dataB} index={4} spanText={'Новинкa'}/>
-                <CardProduct dataB={dataB} index={3} spanText={'Топ 4'}/>
-                <CardProduct dataB={dataB} index={5}/>
-                <CardProduct dataB={dataB} index={11} spanText={'Новинкa'}/>
+                <CardProduct dataB={dataB[9]} index={9}/>
+                <CardProduct dataB={dataB[7]} index={7} spanText={'Новинкa'}/>
+                <CardProduct dataB={dataB[2]} index={2} spanText={'Топ 4'}/>
+                <CardProduct dataB={dataB[10]} index={10}/>
+                <CardProduct dataB={dataB[0]} index={0} spanText={'Топ 4'}/>
+                <CardProduct dataB={dataB[6]} index={6} spanText={'Хит продаж'}/>
+                <CardProduct dataB={dataB[1]} index={1} spanText={'Топ 4'}/>
+                <CardProduct dataB={dataB[4]} index={4} spanText={'Новинкa'}/>
+                <CardProduct dataB={dataB[3]} index={3} spanText={'Топ 4'}/>
+                <CardProduct dataB={dataB[5]} index={5}/>
+                <CardProduct dataB={dataB[11]} index={11} spanText={'Новинкa'}/>
             </div>
 
             <button className='btn_link_catalogy'>Перейти в каталог</button>

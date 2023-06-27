@@ -72,7 +72,7 @@ const SwiperSlider = (): JSX.Element => {
                         <div className='contant_price'>
                             <span className='price'>4999 P</span>
                             <span className='sale'>-25%</span>
-                            <span className='prev_price'>6999 P</span>
+                            <span className='prev_price'><s>6999 P</s></span>
                         </div>
 
                         <div className='contant_btn'>
@@ -98,7 +98,7 @@ const SwiperSlider = (): JSX.Element => {
                         <div className='contant_price'>
                             <span className='price'>4999 P</span>
                             <span className='sale'>-25%</span>
-                            <span className='prev_price'>6999 P</span>
+                            <span className='prev_price'><s>6999 P</s></span>
                         </div>
 
                         <div className='contant_btn'>
@@ -124,7 +124,7 @@ const SwiperSlider = (): JSX.Element => {
                         <div className='contant_price'>
                             <span className='price'>4999 P</span>
                             <span className='sale'>-25%</span>
-                            <span className='prev_price'>6999 P</span>
+                            <span className='prev_price'><s>6999 P</s></span>
                         </div>
 
                         <div className='contant_btn'>

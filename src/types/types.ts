@@ -1,3 +1,5 @@
+import { ComponentOptionsType as FancyboxOptionsType } from "@fancyapps/ui/types/Fancybox/options";
+
 export interface IStateStore {
     lang: string,
     valute: string,
@@ -12,9 +14,16 @@ export interface ILoaderData {
     price: number,
     sale: number,
     img: string,
+    gallery: string[],
     tags: string[],
     ganre: string,
     counter: number,
+}
+
+export type TLocalStorage = Omit<ILoaderData, 'counter'>
+
+export interface ILoader {
+    loader: TLocalStorage;
 }
 
 export interface IpropsSVG {
@@ -24,8 +33,6 @@ export interface IpropsSVG {
     callbackFavor: (idProduct: number, target: HTMLElement) => void;
     index: number;
 }
-
-export type TLocalStorage = Omit<ILoaderData, 'counter'>
 
 export interface IBasketRender extends ILoaderData {
     counter: number,
@@ -38,7 +45,7 @@ export interface IpropsList {
 export interface IPropsBtnActive {
     addBusketProduct: (idProduct: number, target: HTMLElement) => void,
     addFavorProduct: (idProduct: number, target: HTMLElement) => void,
-    data: ILoaderData,
+    data: TLocalStorage,
     aboutBasket: ILoaderData | undefined,
     aboutFavority: TLocalStorage | undefined,
     index: number,
@@ -57,7 +64,8 @@ export interface IErrorPage {
     statusText: string,
 }
 
-export interface IpropsCard extends IpropsList {
+export interface IpropsCard {
+    dataB: TLocalStorage,
     index: number,
     spanText?: string,
 }
@@ -72,15 +80,35 @@ export interface IPropsBasketCard {
     price: number,
     sale: number,
     img: string,
-    tags: string,
+    tags: string | string[],
     counter: number,
     checkBtnLike: TLocalStorage | undefined,
-}
+};
 
 export type IPropsFavorityCard = Omit<IPropsBasketCard, 'checkBtnLike' | 'counter'>
+
+export type IPropsProductBtnActive = IPropsFavorityCard & {
+    ganre: string,
+    gallery: string[]
+}
 
 export interface IIntlString {
     one: string,
     few: string,
     many: string,
+}
+
+export interface IFancyProps {
+    children?: React.ReactNode;
+    delegate?: string;
+    options?: Partial<FancyboxOptionsType>;
+}
+
+export interface IStateAboutBasketFavor {
+    basket: ILoaderData | undefined,
+    favor: TLocalStorage | undefined, 
+}
+
+export interface IPropsFancy {
+    gallery: string[],
 }

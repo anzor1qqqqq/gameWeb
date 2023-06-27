@@ -8,8 +8,8 @@ const BasketList: FC<IPropsBasketList> = ({loader}): JSX.Element => {
     const [basketRender, setBasketRender] = React.useState<IBasketRender[]>([]);
 
     const stateValue = useSelector((state: IStateStore) => state);
-
-    React.useEffect(() => {
+    
+    React.useMemo(() => {
         let obj: IBasketRender[] = [];
 
         stateValue.basket.forEach(item => {
@@ -45,7 +45,7 @@ const BasketList: FC<IPropsBasketList> = ({loader}): JSX.Element => {
                 img={item.img}
                 tags={item.tags[0]}
                 counter={item?.counter}
-                checkBtnLike={stateValue.favority.find(elem => elem.id === item.id)}
+                checkBtnLike={stateValue.favority.find(elem => elem.id === item.id)} 
             />
             )} 
         </div>
