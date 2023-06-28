@@ -5,6 +5,11 @@
     justify-content: start;
     margin-bottom: 100px;
 
+    /////////////////
+    position: relative;
+    z-index: 99;
+    //////////
+
     @media screen and (max-width: 1000px) {
         margin-bottom: 80px;
     }
@@ -216,6 +221,11 @@
         line-height: 100%;
         margin-right: 15px;
         text-decoration: none;
+        transition: 0.5s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
 
         @media screen and (max-width: 1200px) {
             font-size: 15px;
@@ -247,6 +257,11 @@
         background: rgba(255,255,255,0.02);
         padding: 10px;
         text-decoration: none;
+        transition: 0.5s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
 
         @media screen and (max-width: 1000px) {
             padding: 8px;
@@ -287,7 +302,6 @@
             font-size: 18px;
             line-height: 100%;
             margin-bottom: 10px;
-            text-wrap: nowrap;
 
             @media screen and (max-width: 1200px) {
                 font-size: 15px;
@@ -308,7 +322,6 @@
             font-size: 20px;
             font-weight: 600;
             line-height: 100%;
-            text-wrap: nowrap;
 
             @media screen and (max-width: 1200px) {
                 font-size: 15px;

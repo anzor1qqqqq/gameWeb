@@ -14,6 +14,7 @@ export interface ILoaderData {
     price: number,
     sale: number,
     img: string,
+    wallpaper: string[],
     gallery: string[],
     tags: string[],
     ganre: string,
@@ -21,6 +22,8 @@ export interface ILoaderData {
 }
 
 export type TLocalStorage = Omit<ILoaderData, 'counter'>
+
+export type TRandomList = Pick<ILoaderData, 'id'>
 
 export interface ILoader {
     loader: TLocalStorage;

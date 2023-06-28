@@ -1,6 +1,10 @@
 // out: "../../style/aboutProduct.css", compress: true, sourceMap: false
 
 .contant_about_product {
+    ///////////
+    position: relative;
+    z-index: 99;
+    ///////////
     margin-top: 100px;
 
     @media screen and (max-width: 1200px) {
@@ -63,5 +67,20 @@
 
     @media screen and (max-width: 1000px) {
         font-size: 20px;
+    }
+}
+
+.img_wallper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    filter: brightness(0.2);
+    z-index: 0;
+
+    @media screen and (max-width: 500px) {
+        filter: brightness(1);
+        filter: blur(75px);
     }
 }

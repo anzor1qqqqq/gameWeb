@@ -1,22 +1,24 @@
-import * as React from 'react';
-import { useNavigate, useResolvedPath } from 'react-router-dom';
-import { IntlNum } from '../../utilities/Intl';
+import * as React from 'react'
+
+import { useNavigate } from 'react-router-dom';
+
 import SVGBasketMobile from '../../svg/basketMobile';
+
+import { IntlNum } from '../../utilities/Intl';
+
 import { FC } from 'react';
 import { IPropsBtnActive } from '../../types/types';
+
 import '../../style/cardTopFour.css'
 
 const CardBtnActive: FC<IPropsBtnActive> = React.memo(({addBusketProduct, addFavorProduct, data, aboutBasket, aboutFavority, index, spanText}) => {
     const navig = useNavigate();
-    const path = useResolvedPath(location.pathname);
-
-    var r = /\d+/;
 
     const intl = new IntlNum(data.price, data.sale);
 
     if (window.innerWidth <= 700) {
         return (
-            <>
+            <article className='block_card' onClick={() => navig(`/product/${index}`)}>
                 <div className='contant_card'>
                     <img className='contant_card_image' src={data.img} alt="" />
                 </div>
@@ -41,15 +43,13 @@ const CardBtnActive: FC<IPropsBtnActive> = React.memo(({addBusketProduct, addFav
 
                     <SVGBasketMobile aboutBasket={aboutBasket} aboutFavority={aboutFavority} callbackBasket={addBusketProduct} callbackFavor={addFavorProduct} index={index}/>
                 </div>
-            </>
+            </article>
         );
     };
 
     return (
-        <>
-            <div className='contant_card' onClick={() => path.pathname === `/product/${path.pathname.match(r)?.slice(0, 1).join()}` 
-            ? navig(0)
-            :  navig(`/product/${index}`)}>
+        <article className='block_card' onClick={() => navig(`/product/${index}`)}>
+            <div className='contant_card'>
                     <img className='contant_card_image' src={data.img} alt="" />
                     {aboutBasket
                     ? <button className='contant_card_image_btn basket add' onClick={event => {event.stopPropagation(); addBusketProduct(index, event.target as HTMLElement)}}>Добавлено</button>
@@ -79,7 +79,7 @@ const CardBtnActive: FC<IPropsBtnActive> = React.memo(({addBusketProduct, addFav
                     )}
                 </div>
             </div>
-        </>
+        </article>
     );
 });
  

@@ -19,6 +19,7 @@ const ListAllProduct: FC<IpropsList> = React.memo(({dataB}) => {
                 <CardProduct dataB={dataB[1]} index={1} spanText={'Топ 4'}/>
                 <CardProduct dataB={dataB[4]} index={4} spanText={'Новинкa'}/>
                 <CardProduct dataB={dataB[3]} index={3} spanText={'Топ 4'}/>
+                <CardProduct dataB={dataB[8]} index={8} />
                 <CardProduct dataB={dataB[5]} index={5}/>
                 <CardProduct dataB={dataB[11]} index={11} spanText={'Новинкa'}/>
             </div>

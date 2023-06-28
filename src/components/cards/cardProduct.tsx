@@ -1,11 +1,15 @@
 import * as React from 'react';
+
 import { useDispatch, useSelector } from 'react-redux';
-import { addFavorite, addBusket } from '../../global/redux';
 import { useNavigate } from 'react-router-dom';
+
+import CardBtnActive from './cardBtnActive';
+
+import { addFavorite, addBusket } from '../../global/redux';
 import { dataFetch } from '../../utilities/auxFunc';
+
 import { FC } from 'react';
 import { IStateStore, IpropsCard, TLocalStorage } from '../../types/types';
-import CardBtnActive from './cardBtnActive';
 
 const CardProduct: FC<IpropsCard> = React.memo(({dataB, index, spanText}) => {
     const navig = useNavigate();
@@ -43,7 +47,7 @@ const CardProduct: FC<IpropsCard> = React.memo(({dataB, index, spanText}) => {
     }, []);
 
     return (
-        <article className='block_card'>
+        <>
             <CardBtnActive 
             addBusketProduct={addBusketProduct} 
             addFavorProduct={addFavorProduct} 
@@ -52,7 +56,7 @@ const CardProduct: FC<IpropsCard> = React.memo(({dataB, index, spanText}) => {
             aboutFavority={favority} 
             index={index} 
             spanText={spanText}/>
-        </article>
+        </>
     );
 });
  

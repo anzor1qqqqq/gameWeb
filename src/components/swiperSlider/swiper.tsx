@@ -60,8 +60,9 @@ const SwiperSlider = (): JSX.Element => {
             }}
             navigation
             speed={700}  
+            
         >
-            <SwiperSlide>
+            <SwiperSlide onClick={() => navig('/product/11')}>
                 <img className='contant_img' src={img1} alt="" />
                     <div className='contant_img_block'>
                         <div className='contant_img_block_info'>
@@ -77,17 +78,17 @@ const SwiperSlider = (): JSX.Element => {
 
                         <div className='contant_btn'>
                             {stateValue.basket.find(item => item.id === 11) 
-                            ? <button className='contant_btn_buy add' onClick={event => busketUpdate(event.target as HTMLElement)}>Добавлено</button>
-                            : <button className='contant_btn_buy' onClick={event => busketUpdate(event.target as HTMLElement)}>В корзину</button>}
+                            ? <button className='contant_btn_buy add' onClick={event => {event.stopPropagation(); busketUpdate(event.target as HTMLElement)}}>Добавлено</button>
+                            : <button className='contant_btn_buy' onClick={event => {event.stopPropagation(); busketUpdate(event.target as HTMLElement)}}>В корзину</button>}
 
                             {stateValue.favority.find(item => item.id === 11)
-                            ? <button className='contant_btn_favor add' onClick={event => favorUpdate(event.target as HTMLElement)}>Сохранен</button>
-                            : <button className='contant_btn_favor' onClick={event => favorUpdate(event.target as HTMLElement)}>В избранное</button>}
+                            ? <button className='contant_btn_favor add' onClick={event => {event.stopPropagation(); favorUpdate(event.target as HTMLElement)}}>Сохранен</button>
+                            : <button className='contant_btn_favor' onClick={event => {event.stopPropagation(); favorUpdate(event.target as HTMLElement)}}>В избранное</button>}
                         </div>
                     </div>
             </SwiperSlide>
 
-            <SwiperSlide>
+            <SwiperSlide onClick={() => navig('/product/11')}>
             <img className='contant_img' src={img2} alt="" />
                     <div className='contant_img_block'>
                         <div className='contant_img_block_info'>
@@ -103,17 +104,17 @@ const SwiperSlider = (): JSX.Element => {
 
                         <div className='contant_btn'>
                             {stateValue.basket.find(item => item.id === 11) 
-                            ? <button className='contant_btn_buy add' onClick={event => busketUpdate(event.target as HTMLElement)}>Добавлено</button>
-                            : <button className='contant_btn_buy' onClick={event => busketUpdate(event.target as HTMLElement)}>В корзину</button>}
+                            ? <button className='contant_btn_buy add' onClick={event => {event.stopPropagation(); busketUpdate(event.target as HTMLElement)}}>Добавлено</button>
+                            : <button className='contant_btn_buy' onClick={event => {event.stopPropagation(); busketUpdate(event.target as HTMLElement)}}>В корзину</button>}
 
                             {stateValue.favority.find(item => item.id === 11) 
-                            ? <button className='contant_btn_favor add' onClick={event => favorUpdate(event.target as HTMLElement)}>Сохранен</button>
-                            : <button className='contant_btn_favor' onClick={event => favorUpdate(event.target as HTMLElement)}>В избранное</button>}
+                            ? <button className='contant_btn_favor add' onClick={event => {event.stopPropagation(); favorUpdate(event.target as HTMLElement)}}>Сохранен</button>
+                            : <button className='contant_btn_favor' onClick={event => {event.stopPropagation(); favorUpdate(event.target as HTMLElement)}}>В избранное</button>}
                         </div>
                     </div>
             </SwiperSlide>
 
-            <SwiperSlide>
+            <SwiperSlide onClick={() => navig('/product/11')}>
                 <img className='contant_img' src={img3} alt="" />
                     <div className='contant_img_block'>
                         <div className='contant_img_block_info'>
@@ -129,12 +130,12 @@ const SwiperSlider = (): JSX.Element => {
 
                         <div className='contant_btn'>
                             {stateValue.basket.find(item => item.id  === 11) 
-                            ? <button className='contant_btn_buy add' onClick={event => busketUpdate(event.target as HTMLElement)}>Добавлено</button>
-                            : <button className='contant_btn_buy' onClick={event => busketUpdate(event.target as HTMLElement)}>В корзину</button>}
+                            ? <button className='contant_btn_buy add' onClick={event => {event.stopPropagation(); busketUpdate(event.target as HTMLElement)}}>Добавлено</button>
+                            : <button className='contant_btn_buy' onClick={event => {event.stopPropagation(); busketUpdate(event.target as HTMLElement)}}>В корзину</button>}
 
                             {stateValue.favority.find(item => item.id === 11)
-                            ? <button className='contant_btn_favor add' onClick={event => favorUpdate(event.target as HTMLElement)}>Сохранен</button>
-                            : <button className='contant_btn_favor' onClick={event => favorUpdate(event.target as HTMLElement)}>В избранное</button>}
+                            ? <button className='contant_btn_favor add' onClick={event => {event.stopPropagation(); favorUpdate(event.target as HTMLElement)}}>Сохранен</button>
+                            : <button className='contant_btn_favor' onClick={event => {event.stopPropagation(); favorUpdate(event.target as HTMLElement)}}>В избранное</button>}
                         </div>
                     </div>
             </SwiperSlide>

@@ -1,8 +1,12 @@
 import * as React from 'react';
+
 import { useSelector } from 'react-redux';
+
 import { Link } from 'react-router-dom';
+
 import { FC } from 'react';
 import { IPropsHeaderSearch, IStateStore } from '../../types/types';
+
 import logoBall from '../../img/logoBall.png';
 import '../../style/header.css';
 

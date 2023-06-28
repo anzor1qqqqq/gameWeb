@@ -11,6 +11,14 @@ const BasketPage = React.memo((): JSX.Element => {
     const loader = useLoaderData() as ILoaderData[];
     const stateValue = useSelector((state: IStateStore) => state);
 
+    React.useMemo(() => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "instant",
+        });
+    }, [])
+
     return (
         <>
             <h1 className='title_basket'>Корзина <b className='count_basket'>{stateValue.basket.length}</b></h1>

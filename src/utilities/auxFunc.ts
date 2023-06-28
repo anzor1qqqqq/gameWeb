@@ -12,7 +12,7 @@ export const dataFetch = async(method: MethodFetch, id: number = 0): Promise<TLo
     } else if (method === 'certain') {
         return data[id];
     } else if (method === 'random') {
-        const arrRandomNum: number[] = generRandomNum();
+        const arrRandomNum: number[] = generRandomNum(id);
 
         const arr = arrRandomNum.map(item => data[item])
         
@@ -20,13 +20,13 @@ export const dataFetch = async(method: MethodFetch, id: number = 0): Promise<TLo
     }
 };
 
-function generRandomNum(): number[] {
+function generRandomNum(id: number): number[] {
     const arr: number[] = [];
 
     while(arr.length < 4) {
         const randomNum = Math.floor(Math.random() * 10);
 
-        if (arr.indexOf(randomNum) === -1) {
+        if (arr.indexOf(randomNum) === -1 && id !== randomNum) {
             arr.push(randomNum);
         };
     };

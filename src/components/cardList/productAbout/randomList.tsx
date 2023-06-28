@@ -1,22 +1,26 @@
 import * as React from 'react';
+
 import CardProduct from '../../cards/cardProduct';
+
 import { dataFetch } from "../../../utilities/auxFunc";
-import { TLocalStorage } from '../../../types/types';
+
+import { FC } from 'react'
+import { TLocalStorage, TRandomList } from '../../../types/types';
+
 import '../../../style/aboutProduct.css'
 
-const RandomList = () => {
+const RandomList: FC<TRandomList> = React.memo(({id}) => {
     const [arrRandomNum, setArrRandomNum] = React.useState<TLocalStorage[]>([])
 
     React.useMemo(() => {
         const getRandomArr = async() => {
-            const arr = await dataFetch('random') as TLocalStorage[];
+            const arr = await dataFetch('random', id) as TLocalStorage[];
 
             setArrRandomNum(arr);
         };
 
         getRandomArr();
-    }, []);
-
+    }, [id]);
 
     return (
         <div className='container_random_product'>
@@ -29,6 +33,6 @@ const RandomList = () => {
             </div>
         </div>
     );
-};
+});
  
 export default RandomList;
