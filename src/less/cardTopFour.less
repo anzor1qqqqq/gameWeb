@@ -158,12 +158,14 @@
                     transform: scale(1.2);
                 }
             }
-
-            
         }
     }
+}
 
-    &:hover > .contant_card_image {
+.block_card {
+    cursor: pointer;
+
+    &:hover  .contant_card_image {
         filter: brightness(0.5);
 
         @media screen and (max-width: 700px) {
@@ -176,6 +178,7 @@
         }
     }
 }
+
 
 .block_info {
     margin-top: 20px;
@@ -190,6 +193,9 @@
 }
 
 .block_info_value {
+    display: flex;
+    align-items: center;
+    
     &_product {
         font-style: normal;
         font-weight: 500;
@@ -274,6 +280,10 @@
             border: 1px solid #38353F;
             transform: rotate(12.04deg);
             background-color: #38353F;
+
+            @media screen and (max-width: 500px) {
+                bottom: 40%;
+            }
         }
     }
 }

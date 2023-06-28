@@ -1,7 +1,13 @@
 import * as React from 'react';
+
 import { useDispatch, useSelector } from 'react-redux';
+
+import { createPortal } from 'react-dom';
 import { changeValute, changeLang } from '../../global/redux';
-import { ScrollRestoration } from "react-router-dom";
+import { Outlet } from 'react-router-dom';
+
+import { IStateStore } from '../../types/types';
+
 import HeaderSearch from '../../components/header/headerSearch';
 import NavLi from '../../UI/navLi';
 import user from '../../img/user.png';
@@ -12,8 +18,7 @@ import visa from '../../img/footer/Visa.png'
 import webMoney from '../../img/footer/webMoney.png'
 import verified from '../../img/footer/Subtract.png'
 import safeBrowsing from '../../img/footer/g.png'
-import { Outlet } from 'react-router-dom';
-import { IStateStore } from '../../types/types';
+
 import styles from '../../less/footer.module.less'
 import '../../style/header.css';
 
@@ -78,58 +83,106 @@ const Static = React.memo(() => {
     return (
         <>
             <header className='header'>
+            {window.innerWidth <= 500 
+            ? createPortal(
                 <div className='header_nav' ref={refBurger}>
-                    <div className='close_burger' onClick={() => switchBurgerMenu()}>X</div>
+                <div className='close_burger' onClick={() => switchBurgerMenu()}>X</div>
 
-                    <div className='header_nav_savings_account'>
-                        <span className='header_nav_savings_account_lang lang'>RU</span>
-                        <span className='header_nav_savings_account_lang'>/</span>
-                        <span className='header_nav_savings_account_lang valute'>₽</span>
-                        <button className='header_nav_savings_account_arrow_select' onClick={() => showUl()} ref={refbtn}>
-                            <svg width="8" height="5" viewBox="0 0 8 5" xmlns="http://www.w3.org/2000/svg">
-                                <path fillRule="evenodd" clipRule="evenodd" d="M4 2.59454L1.2543 5L0 3.50432L4 0L8 3.50432L6.7457 5L4 2.59454Z" fill="#77BE1D"/>
-                            </svg>
-                        </button>
-                       
+                <div className='header_nav_savings_account'>
+                    <span className='header_nav_savings_account_lang lang'>RU</span>
+                    <span className='header_nav_savings_account_lang'>/</span>
+                    <span className='header_nav_savings_account_lang valute'>₽</span>
+                    <button className='header_nav_savings_account_arrow_select' onClick={() => showUl()} ref={refbtn}>
+                        <svg width="8" height="5" viewBox="0 0 8 5" xmlns="http://www.w3.org/2000/svg">
+                            <path fillRule="evenodd" clipRule="evenodd" d="M4 2.59454L1.2543 5L0 3.50432L4 0L8 3.50432L6.7457 5L4 2.59454Z" fill="#77BE1D"/>
+                        </svg>
+                    </button>
+                   
 
-                        <div className='ul_valute' ref={refUl}>
-                            <ul className='ul_valute_list'>
-                                <li style={{marginBottom: 5}}><button className='ul_valute_list_btn_lang' onClick={() => dispatch(changeLang('RU'))}>Русский(RU)</button></li>
-                                <li><button className='ul_valute_list_btn_lang' onClick={() => dispatch(changeLang('EN'))}>English(EN)</button></li>
-                                <hr style={{background: "rgb(73 64 92)"}} />
-                                <div>
-                                    <button className='btn_valute' onClick={() => dispatch(changeValute('$'))}>$</button>
-                                    <button className='btn_valute' onClick={() => dispatch(changeValute('€'))}>€</button>
-                                    <button className='btn_valute' onClick={() => dispatch(changeValute('₽'))}>₽</button>
-                                </div>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div className='header_nav_bar'>
-                        <nav>
-                            <ul>
-                                <NavLi text={'Отзывы'}/>
-                                <NavLi text={'Гарантии'}/>
-                                <NavLi text={'Как купить'}/>
-                                <NavLi text={'Накопительная'}/>
-                                <NavLi text={'Заработай'}/>
-                            </ul>
-                        </nav>
-                    </div>
-
-                    <div className='header_nav_user'>
-                        <NavLi text={'Anzor'}/>
-                        <img className='header_nav_user_img' src={user} alt="" />
+                    <div className='ul_valute' ref={refUl}>
+                        <ul className='ul_valute_list'>
+                            <li style={{marginBottom: 5}}><button className='ul_valute_list_btn_lang' onClick={() => dispatch(changeLang('RU'))}>Русский(RU)</button></li>
+                            <li><button className='ul_valute_list_btn_lang' onClick={() => dispatch(changeLang('EN'))}>English(EN)</button></li>
+                            <hr style={{background: "rgb(73 64 92)"}} />
+                            <div>
+                                <button className='btn_valute' onClick={() => dispatch(changeValute('$'))}>$</button>
+                                <button className='btn_valute' onClick={() => dispatch(changeValute('€'))}>€</button>
+                                <button className='btn_valute' onClick={() => dispatch(changeValute('₽'))}>₽</button>
+                            </div>
+                        </ul>
                     </div>
                 </div>
+
+                <div className='header_nav_bar'>
+                    <nav>
+                        <ul>
+                            <NavLi text={'Отзывы'}/>
+                            <NavLi text={'Гарантии'}/>
+                            <NavLi text={'Как купить'}/>
+                            <NavLi text={'Накопительная'}/>
+                            <NavLi text={'Заработай'}/>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div className='header_nav_user'>
+                    <NavLi text={'Anzor'}/>
+                    <img className='header_nav_user_img' src={user} alt="" />
+                </div>
+            </div>, document.body
+            )
+            : <div className='header_nav' ref={refBurger}>
+            <div className='close_burger' onClick={() => switchBurgerMenu()}>X</div>
+
+            <div className='header_nav_savings_account'>
+                <span className='header_nav_savings_account_lang lang'>RU</span>
+                <span className='header_nav_savings_account_lang'>/</span>
+                <span className='header_nav_savings_account_lang valute'>₽</span>
+                <button className='header_nav_savings_account_arrow_select' onClick={() => showUl()} ref={refbtn}>
+                    <svg width="8" height="5" viewBox="0 0 8 5" xmlns="http://www.w3.org/2000/svg">
+                        <path fillRule="evenodd" clipRule="evenodd" d="M4 2.59454L1.2543 5L0 3.50432L4 0L8 3.50432L6.7457 5L4 2.59454Z" fill="#77BE1D"/>
+                    </svg>
+                </button>
+               
+
+                <div className='ul_valute' ref={refUl}>
+                    <ul className='ul_valute_list'>
+                        <li style={{marginBottom: 5}}><button className='ul_valute_list_btn_lang' onClick={() => dispatch(changeLang('RU'))}>Русский(RU)</button></li>
+                        <li><button className='ul_valute_list_btn_lang' onClick={() => dispatch(changeLang('EN'))}>English(EN)</button></li>
+                        <hr style={{background: "rgb(73 64 92)"}} />
+                        <div>
+                            <button className='btn_valute' onClick={() => dispatch(changeValute('$'))}>$</button>
+                            <button className='btn_valute' onClick={() => dispatch(changeValute('€'))}>€</button>
+                            <button className='btn_valute' onClick={() => dispatch(changeValute('₽'))}>₽</button>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+            <div className='header_nav_bar'>
+                <nav>
+                    <ul>
+                        <NavLi text={'Отзывы'}/>
+                        <NavLi text={'Гарантии'}/>
+                        <NavLi text={'Как купить'}/>
+                        <NavLi text={'Накопительная'}/>
+                        <NavLi text={'Заработай'}/>
+                    </ul>
+                </nav>
+            </div>
+
+            <div className='header_nav_user'>
+                <NavLi text={'Anzor'}/>
+                <img className='header_nav_user_img' src={user} alt="" />
+            </div>
+        </div>
+        }
 
                 <HeaderSearch callback={switchBurgerMenu}/>
             </header>
 
             <main style={{marginTop: 40}}>
                 <Outlet/>
-                <ScrollRestoration/>
             </main>
 
             <footer className={styles.footer}>

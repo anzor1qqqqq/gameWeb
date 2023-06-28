@@ -1,21 +1,35 @@
 import { TLocalStorage } from "../types/types"
 
-type Method = 'certain' | 'all';
+type MethodFetch = 'certain' | 'all' | 'random';
 
-export const dataFetch = async(method: Method, id?: number):  Promise<TLocalStorage | TLocalStorage[] | undefined> => {
+export const dataFetch = async(method: MethodFetch, id: number = 0): Promise<TLocalStorage | TLocalStorage[] | undefined> => {
+    const data: TLocalStorage[] = await fetch('../src/json/data-base.json')
+    .then(response => response.json())
+    .then(obj => obj);
+
     if (method === 'all') {
-        const data: TLocalStorage[] = await fetch('src/json/data-base.json')
-        .then(response => response.json())
-        .then(obj => obj);
-
         return data;
     } else if (method === 'certain') {
-        const data: TLocalStorage[] = await fetch('src/json/data-base.json')
-        .then(response => response.json())
-        .then(obj => obj);
+        return data[id];
+    } else if (method === 'random') {
+        const arrRandomNum: number[] = generRandomNum(id);
 
-        const certainData = data.find(item => item.id === id)
+        const arr = arrRandomNum.map(item => data[item])
+        
+        return arr;
+    }
+};
 
-        return certainData;
+function generRandomNum(id: number): number[] {
+    const arr: number[] = [];
+
+    while(arr.length < 4) {
+        const randomNum = Math.floor(Math.random() * 10);
+
+        if (arr.indexOf(randomNum) === -1 && id !== randomNum) {
+            arr.push(randomNum);
+        };
     };
+
+    return arr;
 };

@@ -1,15 +1,19 @@
 import * as React from 'react';
-import { IntlNum } from '../../../utilities/Intl';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+
+import { IntlNum } from '../../../utilities/Intl';
 import { dataFetch } from '../../../utilities/auxFunc';
 import { removeProductBasket, addFavorite, minusCounter, plusCounter } from '../../../global/redux';
+
 import { FC } from 'react';
 import { IPropsBasketCard, TLocalStorage } from '../../../types/types';
+
 import BasketCounterMinus from '../../../svg/basketCounterMinus';
 import BasketCounterPlus from '../../../svg/basketCounter';
 import BtnClose from '../../../svg/btnClose';
 import BtnLike from '../../../svg/btnLike';
+
 import styles from '../../../less/basket/basket.module.less'
 
 const BasketCard: FC<IPropsBasketCard> = React.memo(({nameProduct, id, price, sale, img, tags, counter, checkBtnLike}): JSX.Element => {
@@ -42,7 +46,7 @@ const BasketCard: FC<IPropsBasketCard> = React.memo(({nameProduct, id, price, sa
 
     return (
         <>
-            <div className={styles.containerBasket}>
+            <div className={styles.containerBasket} onClick={() => navig(`/product/${id}`)}>
                 <div className={styles.containerBasketImg}>
                     <img className={styles.containerBasketImgPicture} src={img} alt="" />
                 </div>
@@ -58,9 +62,9 @@ const BasketCard: FC<IPropsBasketCard> = React.memo(({nameProduct, id, price, sa
                         </div>
 
                         <div className={styles.contantBasketAboutProductPriceCounter}>
-                            <button className={styles.contantBasketAboutProductPriceCounterBtn} onClick={() => switchCounter('minus')}><BasketCounterMinus/></button>
+                            <button className={styles.contantBasketAboutProductPriceCounterBtn} onClick={e => {e.stopPropagation(); switchCounter('minus')}}><BasketCounterMinus/></button>
                             <span className={styles.contantBasketAboutProductPriceCounterNum}>{counter}</span>
-                            <button className={styles.contantBasketAboutProductPriceCounterBtn} onClick={() => switchCounter('plus')}><BasketCounterPlus/></button>
+                            <button className={styles.contantBasketAboutProductPriceCounterBtn} onClick={e => {e.stopPropagation(); switchCounter('plus')}}><BasketCounterPlus/></button>
                         </div>
                     </div>
 
@@ -70,11 +74,11 @@ const BasketCard: FC<IPropsBasketCard> = React.memo(({nameProduct, id, price, sa
                     </div>
                 </div>
                 
-                <button className={styles.btnCLose} onClick={() => deleteProduct(id)}><BtnClose/></button>
-                <button className={styles.btnLike} onClick={() => checkBtnLike 
+                <button className={styles.btnCLose} onClick={e => {e.stopPropagation(); deleteProduct(id)}}><BtnClose/></button>
+                <button className={styles.btnLike} onClick={e => {e.stopPropagation(); checkBtnLike 
                 ? navig('/favority')
                 : addFavor(id)
-                }><BtnLike checkBtnLike={checkBtnLike}/></button>
+                }}><BtnLike checkBtnLike={checkBtnLike}/></button>
             </div>
 
             <hr className={styles.hr} />

@@ -1,11 +1,16 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+
 import ErrorPage from './page/error';
 import MainMenu from './page/mainMenu';
 import Static from './page/static/static';
 import BasketPage from './page/basket';
 import FavorityPage from './page/favority';
+import ProductPageInfo from './page/product';
+
 import { dataFetch } from './utilities/auxFunc';
+
 import { TLocalStorage } from './types/types';
+
 import './style/header.css'
 
 const App = (): JSX.Element => {
@@ -32,6 +37,13 @@ const App = (): JSX.Element => {
         path: '/favority',
         element: <FavorityPage/>
       },
+      {
+        path: '/product/:id',
+        element: <ProductPageInfo/>,
+        loader: ({params}): Promise<TLocalStorage | TLocalStorage[] | undefined> => {
+          return dataFetch('certain', Number(params.id));  
+        }
+      }
     ]
   }]);
 

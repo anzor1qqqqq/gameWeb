@@ -4,7 +4,9 @@
         "name": "Minecraft",
         "price": 5999,
         "sale": 5,
-        "img": "https://play-lh.googleusercontent.com/bW71VrpnDqzGg0HS-_E-LPFFYggr7Ui47c9uNHgLT8D2E1TZq7Gm7Evj8VYJ8rQOafc=w3840-h2160-rw",
+        "img": "https://www.minecraft.net/content/dam/games/minecraft/key-art/MCV-PMP_Trails-and-Tales_Update-Carousel_1080x600.jpg",
+        "wallpaper": "https://play-lh.googleusercontent.com/bW71VrpnDqzGg0HS-_E-LPFFYggr7Ui47c9uNHgLT8D2E1TZq7Gm7Evj8VYJ8rQOafc=w3840-h2160-rw",
+        "gallery": ["https://www.minecraft.net/content/dam/games/minecraft/screenshots/Ancient_City_2.png", "https://www.minecraft.net/content/dam/games/minecraft/screenshots/Mangrove_House.png", "https://www.minecraft.net/content/dam/games/minecraft/screenshots/Warden_2.png"],
         "tags": ["Microsoft Store", "Ключ"],
         "ganre": "Песочница"
     },
@@ -14,6 +16,8 @@
         "price": 399,
         "sale": 10,
         "img": "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/en_US/games/switch/s/shape-of-the-world-switch/hero",
+        "wallpaper": "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/en_US/games/switch/s/shape-of-the-world-switch/hero",
+        "gallery": ["https://cdn.cloudflare.steamstatic.com/steam/apps/642610/ss_bf125facfc449a65ae8d374b7c6bedaaaefb882e.1920x1080.jpg?t=1640021970", "https://cdn.cloudflare.steamstatic.com/steam/apps/642610/ss_3a020fbd7225c00a668bcefc2bc784fd1a7255d8.1920x1080.jpg?t=1640021970", "https://cdn.cloudflare.steamstatic.com/steam/apps/642610/ss_a6b1c820703f48fd801c60b7f52549b7aca70693.1920x1080.jpg?t=1640021970"],
         "tags": ["Origin", "Буст"],
         "ganre": "Инди"
     },
@@ -22,7 +26,9 @@
         "name": "Journey",
         "price": 500,
         "sale": 50,
-        "img": "https://png.pngtree.com/thumb_back/fw800/20160920/pngtree-desert-in-hopes-background-photo-666938.jpg",
+        "img": "https://i.discogs.com/nRqdRubVZOtHRTHkw950En6FgsUHe829OyfSnW1tmv4/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ1MzM1/MTctMTQyNDQ3NTk4/OS0yNTE0LmpwZWc.jpeg",
+        "wallpaper": "https://www.wallpapertip.com/wmimgs/12-123589_journey-indie-fantasy-adventure-family-cartoon-wallpaper-games.jpg",
+        "gallery": ["https://cdn.cloudflare.steamstatic.com/steam/apps/638230/ss_d4c7bfb15df749b78b6957320a4a23d71d531858.1920x1080.jpg?t=1687369461", "https://cdn.cloudflare.steamstatic.com/steam/apps/638230/ss_c7741b2d22bdd5e5765816c9ef1b1e675616ce81.1920x1080.jpg?t=1687369461", "https://cdn.cloudflare.steamstatic.com/steam/apps/638230/ss_ed77e7844e32c4cb181ce585fa1a368285c66ec5.1920x1080.jpg?t=1687369461"],
         "tags": ["Steam", "Ключ"],
         "ganre": "Приключенческая игра"
     },
@@ -32,6 +38,8 @@
         "price": 199,
         "sale": 0,
         "img": "https://image.api.playstation.com/vulcan/ap/rnd/202109/1515/2dRV04Oe5azrGYbw5pwwdlE4.jpg",
+        "wallpaper": "https://cdn1.epicgames.com/fd0183d33a5a40ff8cd4a6ebb52f6ace/item/EGS_AShortHike_AdamRobinsonYu_S1-2560x1440-614ee8b90f19e64c5a04f7e6a5939880.jpg",
+        "gallery": ["https://cdn.cloudflare.steamstatic.com/steam/apps/1055540/ss_f2123fea859e299736a3e99d130238c784d53e75.1920x1080.jpg?t=1626188953", "https://cdn.cloudflare.steamstatic.com/steam/apps/1055540/ss_0e864bf975bb71f238de6861fc8fd3d6ed6e4ce8.1920x1080.jpg?t=1626188953", "https://cdn.cloudflare.steamstatic.com/steam/apps/1055540/ss_a22817e259c4220cad0c25db315f417b6d3641b8.1920x1080.jpg?t=1626188953"],
         "tags": ["Steam", "Ключ"],
         "ganre": "Приключенческая игра"
     },
@@ -41,6 +49,8 @@
         "price": 260,
         "sale": 70,
         "img": "https://www.spawnfirst.com/wp-content/uploads/2014/07/Flower.jpg",
+        "wallpaper": "https://images.hdqwalls.com/download/flower-desktop-art-2560x1440.jpg",
+        "gallery": ["https://cdn.cloudflare.steamstatic.com/steam/apps/966330/ss_cd7169b1c15b99902efe121d77ee733d2c849ae1.1920x1080.jpg?t=1687368706", "https://cdn.cloudflare.steamstatic.com/steam/apps/966330/ss_3fa2fc3bdbdf8b23acf3cb96de944d853510e948.1920x1080.jpg?t=1687368706", "https://cdn.cloudflare.steamstatic.com/steam/apps/966330/ss_47f8648fbe28ba35f4f6bbb6da5514224e6b35c9.1920x1080.jpg?t=1687368706"],
         "tags": ["Steam", "Ключ"],
         "ganre": "Приключенческая игра"
     },
@@ -50,6 +60,8 @@
         "price": 699,
         "sale": 0,
         "img": "https://i.playground.ru/p/X6m5TVpqc7fcdTS0167sDg.png",
+        "wallpaper": "https://images.hdqwalls.com/download/the-witness-2016-video-game-4k-3840x2400.jpg",
+        "gallery": ["https://cdn.cloudflare.steamstatic.com/steam/apps/210970/ss_9c73ac83c8acfb69db6166f239fdba2ffa099b32.1920x1080.jpg?t=1598383120", "https://cdn.cloudflare.steamstatic.com/steam/apps/210970/ss_6a7964a4dede8ad7d8b4e413e8b291defbbaa55b.1920x1080.jpg?t=1598383120", "https://cdn.cloudflare.steamstatic.com/steam/apps/210970/ss_583fdbf6aa66a179d60a2261bab7b10c102e36e8.1920x1080.jpg?t=1598383120"],
         "tags": ["Origin", "Ключ"],
         "ganre": "Приключенческая игра"
     },
@@ -59,6 +71,8 @@
         "price": 880,
         "sale": 0,
         "img": "https://i.ytimg.com/vi/DT6sVEf1fz4/maxresdefault.jpg",
+        "wallpaper": "https://rare-gallery.com/resol/2560x1440/467703-nature-flowers-shrubs-trees-eastshade.jpg",
+        "gallery": ["https://cdn.cloudflare.steamstatic.com/steam/apps/715560/ss_aa4b7d54e27c38b0d0b06d8c769e2917c106c4c0.1920x1080.jpg?t=1667001486", "https://cdn.cloudflare.steamstatic.com/steam/apps/715560/ss_770adce8349bfaa3a590a3e6b7dea909b55aa10a.1920x1080.jpg?t=1667001486", "https://cdn.cloudflare.steamstatic.com/steam/apps/715560/ss_5741a51a8db7d59b843f85d284906545833043e9.1920x1080.jpg?t=1667001486"],
         "tags": ["Origin", "Буст"],
         "ganre": "Приключенческая игра"
     },
@@ -68,6 +82,8 @@
         "price": 999,
         "sale": 15,
         "img": "https://idpixel.ru/news/873/main_2x.jpg",
+        "wallpaper": "https://wallpapers.net/web/wallpapers/little-big-planet-3-hd-wallpaper-for-desktop-mobiles/3840x2160.jpg",
+        "gallery": ["https://staggerd.com/wp-content/uploads/2014/11/littlebigplanet-3-shooter-trailer-ps4.jpg", "https://portagame.ru/katalog/game/ps4-game/ps4-littlebigplanet-3-rus_5.jpg", "https://img.g2a.com/1500x844/1x1x0/ps4-little-big-planet-3-all-physical/5d5dfc2c7e696c7c8264c1f2"],
         "tags": ["Steam", "Ключ"],
         "ganre": "Платформер"
     },
@@ -77,6 +93,8 @@
         "price": 999,
         "sale": 0,
         "img": "https://www.ferra.ru/images/465/465809.jpg",
+        "wallpaper": "https://i.pinimg.com/originals/f3/08/6a/f3086a10200161e181cf0c53b1304ccf.jpg",
+        "gallery": ["https://sfx.thelazy.net/media/presetscreenshots/UnravelTwo_2018-06-28_15-26-27.bmp.png", "https://i.ytimg.com/vi/_s_2WOTzlxY/maxresdefault.jpg", "https://i.playground.ru/p/GU1z-BbqksIAGziXzKH7Kw.jpeg"],
         "tags": ["Steam", "Ключ"],
         "ganre": "Головоломка"
     },
@@ -86,6 +104,8 @@
         "price": 349,
         "sale": 0,
         "img": "https://www.readjunk.com/wp-content/uploads/2017/06/SeasonsCover.jpg",
+        "wallpaper": "https://sun9-65.userapi.com/BGZoCa6YJMco6BnVlTJ-pdONNhfz7GUgz6Y_Zw/fx_G7aigLiw.jpg    ",
+        "gallery": ["https://cdn.cloudflare.steamstatic.com/steam/apps/366320/ss_cd264834e59727a4d72780592cb92d856273710c.1920x1080.jpg?t=1666984504", "https://cdn.cloudflare.steamstatic.com/steam/apps/366320/ss_8f39f97bf025b8edc2e65d535e2198ed40f7d736.1920x1080.jpg?t=1666984504", "https://cdn.cloudflare.steamstatic.com/steam/apps/366320/ss_8b280c9d9245669bd83546cdc535a41799299283.1920x1080.jpg?t=1666984504"], 
         "tags": ["Steam", "Ключ"],
         "ganre": "Инди"
     },
@@ -95,6 +115,8 @@
         "price": 450,
         "sale": 5,
         "img": "https://img.opencritic.com/game/4509/o/sHW9AkqW.jpg",
+        "wallpaper": "https://steamuserimages-a.akamaihd.net/ugc/911282858091983357/74CE7A36614941C35B797E04A485E056986994F0/?imw=512&amp;imh=310&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=true",
+        "gallery": ["https://cdn.cloudflare.steamstatic.com/steam/apps/580200/ss_4c4abdffb3054e6de4d8a4009f678cc3d5c597e2.1920x1080.jpg?t=1667366210", "https://cdn.cloudflare.steamstatic.com/steam/apps/580200/ss_0c5ffa20492107e382dc19b79fde84e67ad5e525.1920x1080.jpg?t=1667366210", "https://cdn.cloudflare.steamstatic.com/steam/apps/580200/ss_44ebb010345049e629f5c5c20bb9baa29d66916c.1920x1080.jpg?t=1667366210"],
         "tags": ["Steam", "Аккаунт"],
         "ganre": "Инди"
     },
@@ -104,6 +126,8 @@
         "price": 3999,
         "sale": 15,
         "img": "https://pic.rutubelist.ru/video/88/71/8871482860d4152a819f485116f12b24.jpg",
+        "wallpaper": "https://rare-gallery.com/resol/2560x1440/84571-need-for-speed-heat-need-for-speed-games-hd-4k.jpg",
+        "gallery": ["https://boomkeys.store/public/sc11678429518.webp", "https://hyperpc.ru/images/support/articles/need-for-speed-unbound/gallery/need-for-speed-unbound-gallery-03.jpg", "https://hyperpc.ru/images/support/articles/need-for-speed-unbound/gallery/need-for-speed-unbound-gallery-01.jpg"],
         "tags": ["Origin", "Ключ"],
         "ganre": "Инди"
     }
