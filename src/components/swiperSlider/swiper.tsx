@@ -1,14 +1,19 @@
-import { addBusket, addFavorite } from '../../global/redux';
-import { useDispatch, useSelector } from 'react-redux';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation } from 'swiper';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import { addBusket, addFavorite } from '../../global/redux';
+import { Autoplay, Pagination, Navigation } from 'swiper';
 import { dataFetch } from '../../utilities/auxFunc';
+
 import { IStateStore, TLocalStorage } from '../../types/types';
+
 import logo from '../../img/slider/b10d8aa265c089eb54d1e1666fef2c17 1.svg';
 import img1 from '../../img/slider/1.jpg';
 import img2 from '../../img/slider/2.jpg';
-import img3 from '../../img/slider/3.jpg'
+import img3 from '../../img/slider/3.jpg';
+
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
