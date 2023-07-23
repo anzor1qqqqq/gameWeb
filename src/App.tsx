@@ -6,6 +6,7 @@ import Static from './page/static/static';
 import BasketPage from './page/basket';
 import FavorityPage from './page/favority';
 import ProductPageInfo from './page/product';
+import SortingPage from './page/sorting';
 
 import { dataFetch } from './utilities/auxFunc';
 
@@ -42,8 +43,15 @@ const App = (): JSX.Element => {
         element: <ProductPageInfo/>,
         loader: ({params}): Promise<TLocalStorage | TLocalStorage[] | undefined> => {
           return dataFetch('certain', Number(params.id));  
-        }
-      }
+        },
+      },
+      {
+        path: '/sorting',
+        element: <SortingPage/>,
+        loader: (): Promise<TLocalStorage | TLocalStorage[] | undefined> => {
+          return dataFetch('all');  
+        },
+      },
     ]
   }]);
 

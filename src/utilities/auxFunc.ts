@@ -1,4 +1,4 @@
-import { TLocalStorage } from "../types/types"
+import { TLocalStorage, IMinMax} from "../types/types"
 
 type MethodFetch = 'certain' | 'all' | 'random';
 
@@ -17,7 +17,7 @@ export const dataFetch = async(method: MethodFetch, id: number = 0): Promise<TLo
         const arr = arrRandomNum.map(item => data[item])
         
         return arr;
-    }
+    };
 };
 
 function generRandomNum(id: number): number[] {
@@ -32,4 +32,25 @@ function generRandomNum(id: number): number[] {
     };
 
     return arr;
+};
+
+export function minMaxPrice(data: TLocalStorage[]): IMinMax {
+    let min = 0;
+    let max = 0;
+
+    data.forEach((item, i) => {
+        if (i === 0) {
+            min = item.price;
+            max = item.price;
+        } else if (item.price < min) {
+            min = item.price;
+        } else if (item.price > max) {
+            max = item.price;
+        };
+    });
+
+    return {
+        min,
+        max,
+    };
 };

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, Link } from 'react-router-dom';
 import SwiperSlider from '../components/swiperSlider/swiper';
 import ListTopProduct from '../components/cardList/listTopProduct'
 import ListAllProduct from '../components/cardList/listAllProduct';
@@ -20,8 +20,10 @@ const MainMenu = React.memo((): JSX.Element => {
             </section>
 
             <section className='section_contant_main'>
-                <ListAllProduct dataB={loader}/>
+                <ListAllProduct dataB={loader} sort={false}/>
             </section> 
+
+            <Link to={'/sorting'} className='btn_link_catalogy'>Перейти в каталог</Link>
         </>
     );
 });

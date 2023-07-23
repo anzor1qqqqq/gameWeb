@@ -1,0 +1,79 @@
+// out: "../../style/rangePrice.css", compress: true, sourceMap: false
+
+.container_range_price {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.slider-track {
+  width: 94%;
+  height: 2px;
+  position: absolute;
+  margin: auto;
+  top: -3px;
+  bottom: 0;
+  border-radius: 5px;
+  background: linear-gradient(to right, #1E1C27 3.31722%, #FFFFFF 3.31722%, #FFFFFF 99.6333%, #1E1C27 99.6333%);
+}
+
+.input_range_price {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  outline: none;
+  position: absolute;
+  margin: auto;
+  background-color: transparent;
+  pointer-events: none;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+}
+
+input[type="range"]::-webkit-slider-runnable-track{
+  -webkit-appearance: none;
+  height: 5px;
+}
+
+input[type="range"]::-moz-range-track{
+  -moz-appearance: none;
+  height: 5px;
+}
+
+input[type="range"]::-ms-track{
+  appearance: none;
+  height: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  background-color: #77BE1D;
+  cursor: w-resize;
+  margin-top: -9px;
+  pointer-events: auto;
+  border-radius: 50%;
+}
+
+input[type="range"]::-moz-range-thumb{
+  -webkit-appearance: none;
+  height: 1.7em;
+  width: 1.7em;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #3264fe;
+  pointer-events: auto;
+}
+
+input[type="range"]::-ms-thumb{
+  appearance: none;
+  height: 1.7em;
+  width: 1.7em;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #3264fe;
+  pointer-events: auto;
+}

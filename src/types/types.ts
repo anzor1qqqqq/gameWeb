@@ -18,6 +18,7 @@ export interface ILoaderData {
     gallery: string[],
     tags: string[],
     ganre: string,
+    category?: string,
     counter: number,
 }
 
@@ -42,7 +43,8 @@ export interface IBasketRender extends ILoaderData {
 }
 
 export interface IpropsList {
-    dataB: ILoaderData[]
+    dataB: ILoaderData[],
+    sort?: boolean,
 }
 
 export interface IPropsBtnActive {
@@ -114,4 +116,13 @@ export interface IStateAboutBasketFavor {
 
 export interface IPropsFancy {
     gallery: string[],
+}
+
+export interface IMinMax {
+    min: number,
+    max: number
+}
+
+export interface IPriceRange {
+    callback: (method: 'one' | 'two') => void,
 }
