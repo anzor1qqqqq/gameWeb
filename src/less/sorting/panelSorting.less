@@ -261,3 +261,34 @@ details[open] {
     font-weight: 400;
     padding: 15px;
 }
+
+.container_list_product_sorting {
+    display: flex;
+    flex-direction: column;
+
+    &-sorting {
+        display: flex;
+        justify-content: end;
+        margin-bottom: 40px;
+
+        & > #sort_price {
+            border-radius: 10px;
+            background: #1B1729;
+            padding: 17px 20px;
+            border: none;
+            outline: none;
+            box-shadow: none;
+            color: #FFF;
+            font-size: 15px;
+            font-weight: 400;
+            cursor: pointer;
+
+            & > .option_sorting {
+                color: #FFF;
+                font-size: 15px;
+                font-weight: 400;
+                margin-bottom: 25px;
+            }
+        }
+    }
+}

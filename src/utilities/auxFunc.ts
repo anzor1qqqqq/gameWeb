@@ -34,18 +34,26 @@ function generRandomNum(id: number): number[] {
     return arr;
 };
 
+export const getSalePrice = (price: number, sale: number): number => {
+    return price - (price * (sale / 100));
+}
+
 export function minMaxPrice(data: TLocalStorage[]): IMinMax {
-    let min = 0;
-    let max = 0;
+    let min: number = 0;
+    let max: number = 0;
 
     data.forEach((item, i) => {
+        let numPrice: number = item.price;
+
+        if (item.sale !== 0) numPrice = getSalePrice(item.price, item.sale);
+
         if (i === 0) {
-            min = item.price;
-            max = item.price;
-        } else if (item.price < min) {
-            min = item.price;
-        } else if (item.price > max) {
-            max = item.price;
+            min = numPrice;
+            max = numPrice;
+        } else if (numPrice < min) {
+            min = numPrice;
+        } else if (numPrice > max) {
+            max = numPrice;
         };
     });
 

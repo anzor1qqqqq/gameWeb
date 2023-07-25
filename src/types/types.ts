@@ -122,7 +122,3 @@ export interface IMinMax {
     min: number,
     max: number
 }
-
-export interface IPriceRange {
-    callback: (method: 'one' | 'two') => void,
-}
