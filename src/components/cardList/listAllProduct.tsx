@@ -1,13 +1,19 @@
 import * as React from 'react'
 
 import CardProduct from '../cards/cardProduct'; 
+import Loading from '../loading/loading';
 
 import { FC } from 'react';
 import { IpropsList } from '../../types/types';
 
 import '../../style/mainMenu.css'
 
-const ListAllProduct: FC<IpropsList> = React.memo(({dataB, sort}) => {
+const ListAllProduct: FC<IpropsList> = React.memo(({dataB, sort, startWait}) => {
+
+    if (startWait) {
+        return <Loading/>
+    };
+
     return (    
         <>
             {!sort && <h2 className='section_contant_main_title'>Все товары</h2>}

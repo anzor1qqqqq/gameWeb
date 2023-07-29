@@ -41,7 +41,8 @@
 
 .contant_all_sort {
     margin-right: 30px;
-    width: 40%;
+    width: 25%;
+    max-width: 300px;
 }
 
 .contant_input_sort {
@@ -248,6 +249,10 @@ details[open] {
     font-size: 16px;
     font-weight: 400;
     padding: 15px;
+
+    &:hover {
+        opacity: 0.8;
+    }
 }
 
 .search_sort_btn {
@@ -260,11 +265,16 @@ details[open] {
     font-size: 16px;
     font-weight: 400;
     padding: 15px;
+
+    &:hover {
+        opacity: 0.8;
+    }
 }
 
 .container_list_product_sorting {
     display: flex;
     flex-direction: column;
+    width: 75%;
 
     &-sorting {
         display: flex;
@@ -291,4 +301,9 @@ details[open] {
             }
         }
     }
+}
+
+.title_empty {
+    text-align: center;
+    margin-top: 50px;
 }

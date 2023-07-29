@@ -1,4 +1,4 @@
-import { TLocalStorage, IMinMax} from "../types/types"
+import { TLocalStorage, IMinMax, ISetingSort, ILoaderData } from "../types/types"
 
 type MethodFetch = 'certain' | 'all' | 'random';
 
@@ -35,7 +35,7 @@ function generRandomNum(id: number): number[] {
 };
 
 export const getSalePrice = (price: number, sale: number): number => {
-    return price - (price * (sale / 100));
+    return parseInt(String(price - (price * (sale / 100))));
 }
 
 export function minMaxPrice(data: TLocalStorage[]): IMinMax {
@@ -61,4 +61,68 @@ export function minMaxPrice(data: TLocalStorage[]): IMinMax {
         min,
         max,
     };
+};
+
+export const allParamSort = (objProduct: ILoaderData[], objSort: ISetingSort): ILoaderData[] => {
+    let resulArr: ILoaderData[] = objProduct;
+
+    resulArr = resulArr.filter(item => item.sale 
+        ? parseInt(String(item.price - (item.price * (item.sale / 100)))) >= objSort.value.min_price && 
+        parseInt(String(item.price - (item.price * (item.sale / 100)))) <= objSort.value.max_price
+        : item.price >= objSort.value.min_price && item.price <= objSort.value.max_price
+    );
+
+    if (objSort.activate.length !== 0) {
+        resulArr = resulArr.filter(item => item.tags[1] === 'Ключ' && objSort.activate.includes('key')
+        ? true
+        : item.tags[1] === 'Буст' && objSort.activate.includes('bust') 
+        ? true
+        : item.tags[1] === 'Аккаунт' && objSort.activate.includes('account') 
+        ? true
+        : false
+        );
+    };
+
+    if (objSort.platform.length !== 0 && resulArr.length !== 0) {
+        resulArr = resulArr.filter(item => item.tags[0] === 'Steam' && objSort.platform.includes('steam')
+        ? true
+        : item.tags[0] === 'Origin' && objSort.platform.includes('origin') 
+        ? true
+        : item.tags[0] === 'Microsoft Store' && objSort.platform.includes('microsoft_store') 
+        ? true
+        : false
+        );
+    };
+
+    if (objSort.ganre.length !== 0 && resulArr.length !== 0) {
+        resulArr = resulArr.filter(item => item.ganre === 'Песочницы' && objSort.ganre.includes('sandbox')
+        ? true
+        : item.ganre === 'Инди' && objSort.ganre.includes('indie') 
+        ? true
+        : item.ganre === 'Приключенческие игры' && objSort.ganre.includes('aventure') 
+        ? true
+        : item.ganre === 'Платформер' && objSort.ganre.includes('platformer') 
+        ? true
+        : item.ganre === 'Головоломки' && objSort.ganre.includes('puzzle')  
+        ? true 
+        : item.ganre === 'Гонки' && objSort.ganre.includes('races') 
+        ? true
+        : item.ganre === 'Экшн' && objSort.ganre.includes('action') 
+        ? true
+        : false
+        );
+    };
+
+    if (objSort.activeBtn.length !== 0 && resulArr.length !== 0) {
+        resulArr = resulArr.filter(item => item.sale !== 0 && objSort.activeBtn.includes('sale')
+        ? true
+        : item?.category === 'Новинкa' && objSort.activeBtn.includes('new') 
+        ? true
+        : item?.category === 'Хит продаж' && objSort.activeBtn.includes('hit') 
+        ? true
+        : false
+        );
+    };
+
+    return resulArr;
 };

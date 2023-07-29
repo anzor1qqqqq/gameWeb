@@ -1,25 +1,17 @@
 import * as React from 'react';
 
-import { dataFetch, minMaxPrice } from '../../../utilities/auxFunc';
-
-import { IMinMax, TLocalStorage } from '../../../types/types';
-
 import '../../../style/rangePrice.css'
 
-const PriceRange = (): JSX.Element => {
-    const [ObjMinMax, setObjMinMax] = React.useState<IMinMax>();
-    
-    React.useEffect(() => {
-        const data = async () => {
-            const obj = minMaxPrice(await dataFetch('all') as TLocalStorage[]);
+import { FC } from 'react';
+import { IMinMax, IPriceRange } from '../../../types/types';
 
-            setObjMinMax(obj);
-        };
+const PriceRange: FC<IPriceRange> = ({minValue, maxValue}): JSX.Element => {
+    const [valueInput, setValueInput] = React.useState<IMinMax>({
+        min: minValue,
+        max: maxValue,
+    });
 
-        data();
-    }, []);
-
-    function sortPriceRange(method: 'one' | 'two') {
+    const sortPriceRange = (method: 'one' | 'two') => {
         const sliderOne = document.getElementById("slider-1") as HTMLInputElement;
         const sliderTwo = document.getElementById("slider-2") as HTMLInputElement;
 
@@ -31,9 +23,14 @@ const PriceRange = (): JSX.Element => {
         const miniGap = 200;
 
         method === 'one' ? slideOne() : method === 'two' ? slideTwo() : '';
+
         function slideOne() {
             if (parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= miniGap) {
                 sliderOne.value = String(parseInt(sliderTwo.value) - miniGap);
+            } else if (+sliderTwo.value === maxValue) {
+                setValueInput({min: +sliderOne.value, max: maxValue});    
+            } else {
+                setValueInput({...valueInput, min: +sliderOne.value});
             };
 
             inputLeft.value = sliderOne.value;
@@ -41,9 +38,13 @@ const PriceRange = (): JSX.Element => {
             fillColor();
         };
 
-        function slideTwo(){
+        function slideTwo() {
             if (parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= miniGap){
                 sliderTwo.value = String(parseInt(sliderOne.value) + miniGap);
+            } else if (+sliderOne.value === minValue) {
+                setValueInput({min: minValue, max: +sliderTwo.value});    
+            } else {
+                setValueInput({...valueInput, max: +sliderTwo.value});
             };
 
             inputRight.value = sliderTwo.value;
@@ -59,19 +60,14 @@ const PriceRange = (): JSX.Element => {
         };
     };
     
-    if (ObjMinMax)  {
-        return (
-            <div className='container_range_price'>
-                <div className="slider-track"></div>
-                <input className='input_range_price' type="range" id="slider-1"  min={ObjMinMax.min} max={ObjMinMax.max} onChange={() => sortPriceRange('one')}/>
-                <input className='input_range_price' type="range" id="slider-2"  min={ObjMinMax.min} max={ObjMinMax.max} onChange={() => sortPriceRange('two')}/>
-            </div>
-        );
-    } else {
-        return (
-            <></>
-        );
-    };
+    return (
+        <div className='container_range_price'>
+            <div className="slider-track"></div>
+
+            <input className='input_range_price' type="range" name='min_price' id="slider-1" min={minValue} max={maxValue} value={valueInput.min} onChange={() => sortPriceRange('one')}/>
+            <input className='input_range_price' type="range" name='max_price' id="slider-2" min={minValue} max={maxValue} value={valueInput.max} onChange={() => sortPriceRange('two')}/>
+        </div>
+    );
 };
  
 export default PriceRange; 
