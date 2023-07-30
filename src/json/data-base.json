@@ -161,5 +161,16 @@
         "gallery": ["https://assets.rpgsite.net/images/images/000/049/295/original/KCD_Sep292016_10.jpg", "https://www.digiseller.ru/preview/730077/p1_3059501_b5d5abcc.jpg", "https://disgustingmen.com/wp-content/uploads/2017/12/kingdom-come-deliverance2.jpg"],
         "tags": ["Steam", "Ключ"],
         "ganre": "Приключенческие игры"
+    },
+    {
+        "id": 14,
+        "name": "We Were Here Forever",
+        "price": 650,
+        "sale": 0,
+        "img": "https://i.playground.ru/e/YDG9iCaBvsqRFZe8BWNIZw.jpeg",
+        "wallpaper": "../src/img/cardProduct/preview/weWereHere.jpg",
+        "gallery": ["https://cdn.akamai.steamstatic.com/steam/apps/1341290/ss_aa6def930b8bac921a64094ba1bac69148b7f2dc.1920x1080.jpg?t=1682429498", "https://cdn.akamai.steamstatic.com/steam/apps/1341290/ss_1d11524ae8bd060494a77a5a9de467898af38337.1920x1080.jpg?t=1682429498", "https://cdn.akamai.steamstatic.com/steam/apps/1341290/ss_29d598c21ee3f0f62d189eef51d9ad3904a78a92.1920x1080.jpg?t=1682429498"],
+        "tags": ["Steam", "Ключ"],
+        "ganre": "Головоломки"
     }
 ]
