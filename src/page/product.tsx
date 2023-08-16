@@ -31,7 +31,7 @@ const ProductPageInfo = () => {
         document.body.style.backgroundColor = '#040208';
 
         header.style.position = 'relative';
-        header.style.zIndex = '99';
+        header.style.zIndex = '90';
 
         return () => {
             header.style.position = '';

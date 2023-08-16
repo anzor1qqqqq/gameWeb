@@ -1,5 +1,7 @@
 import { createSlice, configureStore, PayloadAction } from "@reduxjs/toolkit";
+
 import { IStateStore, ILoaderData, TLocalStorage } from "../types/types";
+
 import { saveBasket, saveFavority } from "./localStorage/saveLocalStorage";
 
 const localBasket: ILoaderData[] = JSON.parse(localStorage.getItem('basket') as string) || [];

@@ -14,10 +14,11 @@ export interface ILoaderData {
     price: number,
     sale: number,
     img: string,
-    wallpaper: string[],
+    wallpaper: string,
     gallery: string[],
     tags: string[],
     ganre: string,
+    category?: string,
     counter: number,
 }
 
@@ -42,7 +43,9 @@ export interface IBasketRender extends ILoaderData {
 }
 
 export interface IpropsList {
-    dataB: ILoaderData[]
+    dataB: ILoaderData[],
+    sort?: boolean,
+    startWait?: boolean, 
 }
 
 export interface IPropsBtnActive {
@@ -114,4 +117,30 @@ export interface IStateAboutBasketFavor {
 
 export interface IPropsFancy {
     gallery: string[],
+}
+
+export interface IMinMax {
+    min: number,
+    max: number
+}
+
+export interface IPriceRange {
+    minValue: number, 
+    maxValue: number,
+}
+
+export interface ISortingPanel {
+    callback: (form: HTMLFormElement | null) => void,
+    callbackReset: (minMax: IMinMax) => void,
+    callbackSwitchWindowSort: () => void,
+}
+
+export interface ISetingSort {
+    value: {
+        [key: string]: number,
+    },
+    activate: string[],
+    platform: string[],
+    ganre: string[],
+    activeBtn: string[],
 }

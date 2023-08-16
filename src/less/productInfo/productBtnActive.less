@@ -7,7 +7,7 @@
 
     /////////////////
     position: relative;
-    z-index: 99;
+    z-index: 70;
     //////////
 
     @media screen and (max-width: 1000px) {
@@ -212,8 +212,6 @@
     &_buy {
         display: inline-block;
         padding: 20px 40px;
-        border-radius: 15px;
-        background: #77BE1D;
         border: none;
         color: #FFF;
         font-size: 18px;
@@ -221,7 +219,14 @@
         line-height: 100%;
         margin-right: 15px;
         text-decoration: none;
+        border-radius: 15px;
+        border: 2px solid rgba(255, 255, 255, 0.10);
         transition: 0.5s;
+        background-color: #77BE1D;
+
+        &.active {
+            background-color: transparent;
+        }
 
         &:hover {
             transform: scale(1.1);
@@ -242,11 +247,6 @@
             padding: 9px 25px;
             border-radius: 8px;
             font-size: 10px;
-        }
-
-        &.active {
-            background-color: white;
-            color: #77BE1D;
         }
     }
 
