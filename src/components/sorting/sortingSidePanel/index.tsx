@@ -8,8 +8,9 @@ import { FC } from 'react';
 import { IMinMax, TLocalStorage, ISortingPanel } from '../../../types/types';
 
 import SvgArrowSort from '../../../svg/SVGSort/arrowBtn';
+import BtnClose from '../../../svg/btnClose';
 
-const SortingPanelSideBar: FC<ISortingPanel> = React.memo(({callback, callbackReset}): JSX.Element => {
+const SortingPanelSideBar: FC<ISortingPanel> = React.memo(({callback, callbackReset, callbackSwitchWindowSort}): JSX.Element => {
     const [ObjMinMax, setObjMinMax] = React.useState<IMinMax>();
 
     const refForm = React.useRef<HTMLFormElement>(null);
@@ -188,6 +189,8 @@ const SortingPanelSideBar: FC<ISortingPanel> = React.memo(({callback, callbackRe
     
                     <button className='search_sort_btn' type='submit' onClick={e => {e.preventDefault(); callback(refForm.current)}}>Применить</button>
                     <button className='reset_sort_btn' onClick={e => {e.preventDefault(); callbackReset(ObjMinMax)}}>Сбросить фильтры</button>
+
+                    {window.innerWidth <= 700 && <button className='btn_close_sort' onClick={e => {e.preventDefault(); callbackSwitchWindowSort()}}><BtnClose/></button>}
                 </form>
             </div>
         );

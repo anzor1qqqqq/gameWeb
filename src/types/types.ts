@@ -132,6 +132,7 @@ export interface IPriceRange {
 export interface ISortingPanel {
     callback: (form: HTMLFormElement | null) => void,
     callbackReset: (minMax: IMinMax) => void,
+    callbackSwitchWindowSort: () => void,
 }
 
 export interface ISetingSort {

@@ -9,6 +9,8 @@ import { getSalePrice, allParamSort } from '../utilities/auxFunc';
 
 import { ILoaderData, ISetingSort, IMinMax } from "../types/types";
 
+import SortIcon from '../svg/SVGSort/sortIcon';
+
 import '../style/panelSorting.css'
 
 const SortingPage = () => {
@@ -53,6 +55,18 @@ const SortingPage = () => {
     };
 
     const acceptSort = React.useCallback((form: HTMLFormElement | null) => {
+        if (window.innerWidth <= 700) {
+            const elemSortWindow = document.querySelector('.contant_all_sort.active') as HTMLDivElement;
+
+            elemSortWindow.classList.remove('active');
+        };
+
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+        });
+
         startTransition(() => {
             const meanForm = new FormData(form as HTMLFormElement);
 
@@ -93,6 +107,18 @@ const SortingPage = () => {
     }, []);
 
     const resetSort = React.useCallback((minMaxObj: IMinMax) => {
+        if (window.innerWidth <= 700) {
+            const elemSortWindow = document.querySelector('.contant_all_sort.active') as HTMLDivElement;
+
+            elemSortWindow.classList.remove('active');
+        };
+           
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+        });
+
         startTransition(() => {
             const inputRangeMin = document.querySelector('#slider-1') as HTMLInputElement;
             const inputRangeMax = document.querySelector('#slider-2') as HTMLInputElement;
@@ -122,21 +148,32 @@ const SortingPage = () => {
         })
     }, []);
 
+    const switchWindowSort = React.useCallback(() => {
+        const sortBlock = document.querySelector('.contant_all_sort') as HTMLDivElement;
+
+        sortBlock.classList.contains('active')
+        ? sortBlock.classList.remove('active')
+        : sortBlock.classList.add('active')
+    }, []);
+
     return (
         <section>
-            <h1 className='main_title_sort'>Каталог товаров</h1>
+            <div className='container_list_product_sorting-sorting'>
+                {window.innerWidth <= 700 
+                ? <button className='btn_sort_mobile' onClick={e => {e.preventDefault(); switchWindowSort()}}><SortIcon/></button> 
+                : <h1 className='main_title_sort'>Каталог товаров</h1>}
+
+                <select id="sort_price" onChange={e => changeSelect(e.target.value)}>
+                    <option className='option_sorting' value="minus">Сначала дешевые</option>
+                    <option className='option_sorting' value="plus">Сначала дорогие</option>
+                    <option className='option_sorting' value="word">По алфавиту</option>
+                </select>
+            </div>
 
             <div className="container_sort_product">
-                <SortingPanelSideBar callback={acceptSort} callbackReset={resetSort} />
+                <SortingPanelSideBar callback={acceptSort} callbackReset={resetSort} callbackSwitchWindowSort={switchWindowSort}/>
 
                 <div className='container_list_product_sorting'>
-                    <div className='container_list_product_sorting-sorting'>
-                        <select id="sort_price" onChange={e => changeSelect(e.target.value)}>
-                            <option className='option_sorting' value="minus">Сначала дешевые</option>
-                            <option className='option_sorting' value="plus">Сначала дорогие</option>
-                            <option className='option_sorting' value="word">По алфавиту</option>
-                        </select>
-                    </div>
                     
                     {dataSorting.length === 0 
                     ? <h2 className='title_empty'>Пусто</h2>
