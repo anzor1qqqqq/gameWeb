@@ -40,6 +40,23 @@ const ProductPageInfo = () => {
         };
     }, []);
 
+    const switchBtnInfo = (elem: HTMLButtonElement) => {
+        if (!elem.classList.contains('active')) {
+            const elemBlockInfo = document.querySelectorAll('.block_info_product') as NodeListOf<HTMLDivElement>;
+            const btnProductInfo = document.querySelectorAll('.btn_product_info') as NodeListOf<HTMLButtonElement>;
+
+            const id = +elem.id;
+
+            elemBlockInfo.forEach((item, i) => {
+                btnProductInfo[i].classList.remove('active')
+                item.classList.remove('active');
+            });
+
+            elem.classList.add('active');
+            elemBlockInfo[id].classList.add('active')
+        };
+    };
+
     return (
         <section>
             <ProductInfo loader={loader}/>
@@ -50,8 +67,73 @@ const ProductPageInfo = () => {
             }
 
             <div className="contant_about_product">
-                <h3 className="contant_about_product_title">Полное погружение в Тамриэль</h3>
-                <p className="contant_about_product_parag">Признайтесь, вы ведь тоже сразу после анонса нового поколения VR-шлемов захотели увидеть на них TES V? Тодд Говард вот точно захотел и, как это обычно бывает, воплотил желание в жизнь. Очередной Skyrim предлагает написать историю Довакина по-новому — буквально его же руками. Игра поддерживает все современные устройства (Oculus Rift, HTC Vive, Windows Mixed Reality, Valve Index) и не требует дополнительных настроек: просто жмите «Новая игра» и размещайтесь поудобнее в стартовой телеге. Стрельба из лука, поединки на мечах, колдовство — всё здесь осуществляется при помощи «ручных» контроллеров, но это лишь самые базовые удобства. Bethesda переработала меню, инвентарь и панель быстрого доступа, чтобы обеспечить действительно невиданный игровой опыт. Всё это — с полным набором дополнений и, разумеется, возможностью ставить моды. Путешествия по Скайриму никогда не были такими иммерсивными!</p>
+                <div className='block_btn_switch'>
+                    <button id='0' className='btn_product_info active' onClick={e => switchBtnInfo(e.target as HTMLButtonElement)}>Описание товара</button>
+                    <button id='1' className='btn_product_info' onClick={e => switchBtnInfo(e.target as HTMLButtonElement)}>Системные требования</button>
+                    <button id='2' className='btn_product_info' onClick={e => switchBtnInfo(e.target as HTMLButtonElement)}>Активация</button>
+                </div>
+
+                <div className='block_info_product active'>
+                    <h3 className="contant_about_product_title">{loader.titleDescription}</h3>
+                    {loader.description.split(/\n/).map((item, i) => 
+                        <p className="contant_about_product_parag" key={i}>{item}</p>    
+                    )}
+                </div>
+
+                <div className='block_info_product'>
+                    <h5>Минимальные системные требования</h5>
+
+                    <div className='block_system'>
+                        <span className='option_system'>ОС</span>
+                        <span className='option_info'>{loader.system.min.OC}</span>
+
+                        <span className='option_system'>Процессор</span>
+                        <span className='option_info'>{loader.system.min.processor}</span>
+
+                        <span className='option_system'>Оперативная память</span>
+                        <span className='option_info'>{loader.system.min.memory}</span>
+
+                        <span className='option_system'>Видеокарта</span>
+                        <span className='option_info'>{loader.system.min.card}</span>
+
+                        <span className='option_system'>Место на диске</span>
+                        <span className='option_info'>{loader.system.min.disk}</span>
+                    </div>
+                    
+                    {loader.system.recomen && 
+                        <>
+                            <hr />
+                            
+                            <h5 id='rec'>Рекомендованные системные требования</h5>
+
+                            <div className='block_system'>
+                                <span className='option_system'>ОС</span>
+                                <span className='option_info'>{loader.system.recomen.OC}</span>
+        
+                                <span className='option_system'>Процессор</span>
+                                <span className='option_info'>{loader.system.recomen.processor}</span>
+        
+                                <span className='option_system'>Оперативная память</span>
+                                <span className='option_info'>{loader.system.recomen.memory}</span>
+        
+                                <span className='option_system'>Видеокарта</span>
+                                <span className='option_info'>{loader.system.recomen.card}</span>
+        
+                                <span className='option_system'>Место на диске</span>
+                                <span className='option_info'>{loader.system.recomen.disk}</span>
+                            </div>
+                        </>
+                    }
+                </div>
+
+                <div className='block_info_product'>
+                    {loader.activation.map((item, i) => 
+                        <div className='block_activity' key={i}>
+                            <span className='num_activ'>{i+1}</span>
+                            <p>{item}</p>
+                        </div>
+                    )}
+                </div>
             </div>
 
             <RandomList id={loader.id}/>

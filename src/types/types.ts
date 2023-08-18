@@ -1,5 +1,13 @@
 import { ComponentOptionsType as FancyboxOptionsType } from "@fancyapps/ui/types/Fancybox/options";
 
+interface systemInfo {
+    OC: string,
+    processor: string,
+    memory: string,
+    card: string,
+    disk: string,
+}
+
 export interface IStateStore {
     lang: string,
     valute: string,
@@ -20,6 +28,13 @@ export interface ILoaderData {
     ganre: string,
     category?: string,
     counter: number,
+    titleDescription: string,
+    description: string,
+    system: {
+        min: systemInfo,
+        recomen: systemInfo
+    },
+    activation: string[]
 }
 
 export type TLocalStorage = Omit<ILoaderData, 'counter'>

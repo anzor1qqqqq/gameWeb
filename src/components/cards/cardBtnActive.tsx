@@ -16,7 +16,7 @@ const CardBtnActive: FC<IPropsBtnActive> = React.memo(({addBusketProduct, addFav
 
     const intl = new IntlNum(data.price, data.sale);
 
-    if (window.innerWidth <= 700) {
+    if (window.innerWidth <= 820) {
         return (
             <article className='block_card' onClick={() => navig(`/product/${index}`)}>
                 <div className='contant_card'>
