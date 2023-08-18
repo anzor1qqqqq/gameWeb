@@ -1,18 +1,20 @@
 // out: "../../style/aboutProduct.css", compress: true, sourceMap: false
 
 .contant_about_product {
-    ///////////
     position: relative;
     z-index: 70;
-    ///////////
-    margin-top: 100px;
+    margin-top: 80px;
 
     @media screen and (max-width: 1200px) {
-        margin-top: 80px;
+        margin-top: 70px;
     }
 
     @media screen and (max-width: 1000px) {
         margin-top: 60px;
+    }
+
+    @media screen and (max-width: 500px) {
+        margin-top: 0;
     }
 
     &_title {
@@ -29,6 +31,14 @@
         @media screen and (max-width: 1000px) {
             font-size: 15px;
         }
+
+        @media screen and (max-width: 600px) {
+            font-size: 12px;
+        }
+
+        @media screen and (max-width: 500px) {
+            font-size: 10px;
+        }
     }
 
     &_parag {
@@ -42,6 +52,10 @@
 
         @media screen and (max-width: 1000px) {
             font-size: 12px;
+        }
+
+        @media screen and (max-width: 500px) {
+            font-size: 10px;
         }
     }
 }
@@ -68,6 +82,10 @@
     @media screen and (max-width: 1000px) {
         font-size: 20px;
     }
+
+    @media screen and (max-width: 600px) {
+        font-size: 15px;
+    }
 }
 
 .img_wallper {
@@ -82,5 +100,160 @@
     @media screen and (max-width: 500px) {
         filter: brightness(1);
         filter: blur(75px);
+    }
+}
+
+.block_btn_switch {
+    margin-bottom: 40px;
+
+    & > .btn_product_info {
+        border: none;
+        background-color: transparent;
+        font-size: 20px;
+        color: #868686;
+
+        &:not(:last-child) {
+            margin-right: 40px;
+        }
+
+        &.active {
+            border-bottom: 1px solid #FFF;
+            padding-bottom: 10px;
+            color: #FFFFFF;
+
+            @media screen and (max-width: 500px) {
+                border-bottom: none;
+                padding-bottom: 0;
+                color: #77BE1D;
+            }
+        }
+
+        @media screen and (max-width: 1000px) {
+            font-size: 15px;
+        }
+
+        @media screen and (max-width: 600px) {
+            font-size: 12px;
+        }
+
+        @media screen and (max-width: 500px) {
+            font-size: 10px;
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        overflow-x: scroll;
+        white-space: nowrap;
+        padding-bottom: 15px;
+    }
+}
+
+.block_info_product {
+    display: none;
+
+    & > h5 {
+        margin-bottom: 25px;
+
+        @media screen and (max-width: 1000px) {
+            font-size: 15px;
+        }
+
+        @media screen and (max-width: 600px) {
+            font-size: 12px;
+        }
+
+        @media screen and (max-width: 500px) {
+            font-size: 10px;
+        }
+    }
+
+    &.active {
+        display: block;
+    }
+}
+
+.block_system {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+
+    & > .option_system {
+        color: #868686;
+        font-size: 16px;
+
+        @media screen and (max-width: 1000px) {
+            font-size: 12px;
+        }
+
+        @media screen and (max-width: 500px) {
+            font-size: 10px;
+        }
+    }
+
+    & > .option_info {
+        color: #fff;
+        font-size: 16px;
+
+        @media screen and (max-width: 1000px) {
+            font-size: 12px;
+        }
+
+        @media screen and (max-width: 500px) {
+            font-size: 10px;
+        }
+    }
+
+ 
+}
+
+#rec {
+    margin-top: 30px;
+}
+
+.block_activity {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+        margin-bottom: 25px;
+    }
+
+    & > p {
+        margin: 0;
+
+        @media screen and (max-width: 1000px) {
+            font-size: 12px;
+        }
+
+        @media screen and (max-width: 500px) {
+            font-size: 10px;
+        }
+    }
+}
+
+.num_activ {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #77BE1D;
+    margin-right: 20px;
+    font-size: 16px;
+
+    @media screen and (max-width: 1000px) {
+        width: 20px;
+        height: 20px;
+        margin-right: 15px;
+        font-size: 10px;
+        padding: 10px;
+    }
+
+    @media screen and (max-width: 400px) {
+        width: 15px;
+        height: 15px;
+        margin-right: 15px;
+        font-size: 10px;
     }
 }

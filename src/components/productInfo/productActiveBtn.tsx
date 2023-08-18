@@ -1,13 +1,19 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { addFavorite, addBusket } from '../../global/redux';
+
 import { Link } from 'react-router-dom';
+
 import { IntlNum } from '../../utilities/Intl';
 import { dataFetch } from '../../utilities/auxFunc';
+
 import ProductFancyBox from "../../components/productInfo/productFancybox";
+
 import { FC } from 'react'
 import { IPropsProductBtnActive, IStateStore, TLocalStorage } from "../../types/types";
+
 import SvgCheckMark from '../../svg/svgCheckMark';
 import BtnLike from '../../svg/btnLike';
+
 import '../../style/productBtnActive.css'
 
 const ProductBtnActive: FC<IPropsProductBtnActive> = ({nameProduct, id, price, sale, img, tags, ganre, gallery}) => {
