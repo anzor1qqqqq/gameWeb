@@ -22,7 +22,7 @@ import safeBrowsing from '../../img/footer/g.png'
 import styles from '../../less/footer.module.less'
 import '../../style/header.css';
 
-const Static = React.memo(() => {
+const Static = () => {
     const stateValue = useSelector((state: IStateStore) => state);
     const dispatch = useDispatch();
 
@@ -259,6 +259,6 @@ const Static = React.memo(() => {
             </footer>
         </>
     );
-})
+}
  
 export default Static;

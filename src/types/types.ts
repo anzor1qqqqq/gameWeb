@@ -74,7 +74,7 @@ export interface IPropsBtnActive {
 }
 
 export interface IPropsHeaderSearch {
-    callback: () => void;
+    callback: () => void,
 }
 
 export interface IErrorPage {
