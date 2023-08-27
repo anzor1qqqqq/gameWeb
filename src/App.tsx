@@ -7,6 +7,8 @@ import BasketPage from './page/basket';
 import FavorityPage from './page/favority';
 import ProductPageInfo from './page/product';
 import SortingPage from './page/sorting';
+import AdvantagPage from './page/advantages';
+import HelperPage from './page/helper';
 
 import { dataFetch } from './utilities/auxFunc';
 
@@ -52,6 +54,14 @@ const App = (): JSX.Element => {
           return dataFetch('all');  
         },
       },
+      {
+        path: '/advantages',
+        element: <AdvantagPage/>,
+      },
+      {
+        path: '/helper',
+        element: <HelperPage/>,
+      }
     ]
   }]);
 

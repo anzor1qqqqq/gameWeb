@@ -16,7 +16,7 @@ const MainMenu = React.memo((): JSX.Element => {
     return (
         <>
             <section>
-                <SwiperSlider/>
+                <SwiperSlider product={loader[11]}/>
             </section>
             
             <section className='section_contant_main'>

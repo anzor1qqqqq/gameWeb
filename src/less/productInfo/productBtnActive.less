@@ -5,17 +5,11 @@
     justify-content: start;
     margin-bottom: 100px;
 
-    /////////////////
     position: relative;
     z-index: 70;
-    //////////
 
     @media screen and (max-width: 1000px) {
-        margin-bottom: 80px;
-    }
-
-    @media screen and (max-width: 700px) {
-        margin-bottom: 70px;
+        margin-bottom: 50px;
     }
 
     @media screen and (max-width: 600px) {
@@ -30,11 +24,7 @@
 
 .contant_img_product {
     width: 350px;
-    height: 400px;
-    
-    @media screen and (max-width: 1200px) {
-        height: 350px;
-    }
+    height: inherit;
 
     @media screen and (max-width: 1000px) {
         width: 300px;
@@ -42,7 +32,16 @@
 
     @media screen and (max-width: 500px) {
         width: 250px;
-        height: 300px;
+    }
+
+    @media screen and (max-width: 600px) {
+        width: 320px;
+        height: 430px;
+    }
+
+    @media screen and (max-width: 400px) {
+        width: 270px;
+        height: 430px;
     }
 
     &-img {
@@ -94,7 +93,6 @@
         }
 
         @media screen and (max-width: 700px) {
-            font-size: 20px;
             margin-bottom: 10px;
         }
     }
@@ -112,7 +110,7 @@
         }
 
         @media screen and (max-width: 1000px) {
-            font-size: 9px;
+            font-size: 10px;
             margin-bottom: 15px;
         }
 
@@ -141,11 +139,7 @@
         margin-bottom: 20px;
     }
 
-    @media screen and (max-width: 700px) {
-        margin-bottom: 0;
-    }
-
-    &_sale {
+    & > #price_sale {
         color: #FFF;
         font-size: 36px;
         font-weight: 700;
@@ -161,12 +155,12 @@
         }
 
         @media screen and (max-width: 700px) {
-            font-size: 20px;
+            font-size: 24px;
             margin-right: 15px;
         }
     }
 
-    &_procent {
+    & > #sale {
         color: #77BE1D;
         font-size: 24px;
         font-weight: 700;
@@ -177,17 +171,12 @@
             font-size: 20px;
         }
 
-        @media screen and (max-width: 1000px) {
-            font-size: 15px;
-        }
-
         @media screen and (max-width: 700px) {
-            font-size: 10px;
             margin-right: 15px;
         }
     }
 
-    &-price {
+    & > #old_price {
         color: rgba(255, 255, 255, 0.2);
         font-size: 24px;
         font-weight: 700;
@@ -195,14 +184,6 @@
 
         @media screen and (max-width: 1200px) {
             font-size: 20px;
-        }
-
-        @media screen and (max-width: 1000px) {
-            font-size: 15px;
-        }
-
-        @media screen and (max-width: 700px) {
-            font-size: 10px;
         }
     }
 }
@@ -257,7 +238,6 @@
         @media screen and (max-width: 700px) {
             padding: 9px 25px;
             border-radius: 8px;
-            font-size: 10px;
         }
     }
 
@@ -291,28 +271,20 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     margin-bottom: 40px;
-    gap: 30px;
+    row-gap: 10px;
+    column-gap: 50px;
 
     @media screen and (max-width: 1000px) {
-        flex-direction: column;
-    }
-
-    @media screen and (max-width: 400px) {
-        grid-template-columns: repeat(1, 1fr);
+        align-items: center;
+        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(4, 1fr);
+
+        column-gap: 30px;
+        row-gap: 5px;
+        margin-bottom: 20px;
     }
     
     &-info {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        @media screen and (max-width: 400px) {
-            flex-direction: row;
-            justify-content: start;
-            align-items: center;
-        }
-
         &-title {
             color: #FFF;
             font-size: 18px;
@@ -325,7 +297,7 @@
 
             @media screen and (max-width: 1000px) {
                 opacity: 0.5;
-                font-size: 10px;
+                font-size: 15px;
             }
 
             @media screen and (max-width: 400px) {
@@ -343,14 +315,6 @@
 
             @media screen and (max-width: 1200px) {
                 font-size: 15px;
-            }
-
-            @media screen and (max-width: 1000px) {
-                font-size: 10px;
-            }
-
-            @media screen and (max-width: 1000px) {
-                font-size: 8px;
             }
         }
     }
@@ -379,7 +343,28 @@
 
 .fancy_portal {
     width: 100%;
-    overflow-x: scroll;
+    overflow-x: auto;
     margin: 40px auto 30px;
     padding-bottom: 10px;
+}
+
+#ganre {
+    @media screen and (max-width: 1000px) {
+        grid-column: 2 / 3;
+        grid-row: -5 / -4;
+    }
+}
+
+#platform {
+    @media screen and (max-width: 1000px) {
+        grid-column: 2 / 3 ;
+        grid-row: 2 / 3;
+    }
+}
+
+#country {
+    @media screen and (max-width: 1000px) {
+        grid-column: 2 / 3;
+        grid-row: -3 / -2;
+    }
 }

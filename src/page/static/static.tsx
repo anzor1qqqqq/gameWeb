@@ -92,7 +92,7 @@ const Static = () => {
                     <span className='header_nav_savings_account_lang lang'>RU</span>
                     <span className='header_nav_savings_account_lang'>/</span>
                     <span className='header_nav_savings_account_lang valute'>₽</span>
-                    <button className='header_nav_savings_account_arrow_select' onClick={() => showUl()} ref={refbtn}>
+                    <button className='header_nav_savings_account_arrow_select' onClick={showUl} ref={refbtn}>
                         <svg width="8" height="5" viewBox="0 0 8 5" xmlns="http://www.w3.org/2000/svg">
                             <path fillRule="evenodd" clipRule="evenodd" d="M4 2.59454L1.2543 5L0 3.50432L4 0L8 3.50432L6.7457 5L4 2.59454Z" fill="#77BE1D"/>
                         </svg>
@@ -116,11 +116,11 @@ const Static = () => {
                 <div className='header_nav_bar'>
                     <nav>
                         <ul>
+                            <NavLi text={'Каталог'} link={'sorting'}/>
+                            <NavLi text={'Поддержка'} link={'helper'}/>
+                            <NavLi text={'Преимущества'} link={'advantages'}/>
                             <NavLi text={'Отзывы'}/>
                             <NavLi text={'Гарантии'}/>
-                            <NavLi text={'Как купить'}/>
-                            <NavLi text={'Накопительная'}/>
-                            <NavLi text={'Заработай'}/>
                         </ul>
                     </nav>
                 </div>
@@ -162,11 +162,11 @@ const Static = () => {
             <div className='header_nav_bar'>
                 <nav>
                     <ul>
+                        <NavLi text={'Каталог'} link={'sorting'}/>
+                        <NavLi text={'Поддержка'} link={'helper'}/>
+                        <NavLi text={'Преимущества'} link={'advantages'}/>
                         <NavLi text={'Отзывы'}/>
                         <NavLi text={'Гарантии'}/>
-                        <NavLi text={'Как купить'}/>
-                        <NavLi text={'Накопительная'}/>
-                        <NavLi text={'Заработай'}/>
                     </ul>
                 </nav>
             </div>
@@ -215,7 +215,6 @@ const Static = () => {
                                 <ul className={styles.contantAboutCompanyUl}>
                                     <li className={styles.contantAboutCompanyUlLi}>Каталог</li>
                                     <li className={styles.contantAboutCompanyUlLi}>Акции</li>
-                                    <li className={styles.contantAboutCompanyUlLi}>Личный кабинет</li>
                                 </ul>
                             </nav>
                         </div>

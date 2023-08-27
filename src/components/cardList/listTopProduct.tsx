@@ -1,7 +1,10 @@
 import * as React from 'react';
+
 import CardProduct from '../cards/cardProduct'; 
+
 import { FC } from 'react';
 import { IpropsList } from '../../types/types';
+
 import '../../style/mainMenu.css'
 
 const ListTopProduct: FC<IpropsList> = React.memo(({dataB}) => {

@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { ComponentOptionsType as FancyboxOptionsType } from "@fancyapps/ui/types/Fancybox/options";
 
 interface systemInfo {
@@ -96,22 +97,18 @@ export interface IPropsBasketList {
 }
 
 export interface IPropsBasketCard {
-    nameProduct: string,
-    id: number,
-    price: number,
-    sale: number,
-    img: string,
-    tags: string | string[],
+    product: TLocalStorage
     counter: number,
     checkBtnLike: TLocalStorage | undefined,
 };
 
 export type IPropsFavorityCard = Omit<IPropsBasketCard, 'checkBtnLike' | 'counter'>
 
-export type IPropsProductBtnActive = IPropsFavorityCard & {
-    ganre: string,
-    gallery: string[]
+export interface IPropsProductBtnActive {
+    product: TLocalStorage;
 }
+
+export type TypePropsFavority = IPropsProductBtnActive;
 
 export interface IIntlString {
     one: string,
@@ -159,3 +156,11 @@ export interface ISetingSort {
     ganre: string[],
     activeBtn: string[],
 }
+
+export interface IPropsInputSearch {
+    listLi: ILoaderData[], 
+    MListLi: React.Dispatch<React.SetStateAction<ILoaderData[]>>,
+    callback?: () => void,
+}
+
+export type TypePropsInput = Pick<IPropsInputSearch, 'callback'>

@@ -5,7 +5,12 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 
-    @media screen and (max-width: 700px) {
+    @media screen and (min-width: 2400px) {
+        grid-template-columns: repeat(4, 400px);
+        justify-content: space-between;
+    }
+
+    @media screen and (max-width: 800px) {
         display: flex;
         flex-direction: column;
         align-items: start;
@@ -28,28 +33,33 @@
         font-style: normal;
         font-weight: 600;
         font-size: 32px;
-        line-height: 130%;
 
         @media screen and (max-width: 1200px) {
             margin-top: 50px;
             font-size: 25px;
-            line-height: 120%;
         }
 
         @media screen and (max-width: 500px) {
-            margin-bottom: 15px;
             font-size: 20px;
-            line-height: 100%;
         }
     }
 }
 
 .container_card_all {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 
-    @media screen and (max-width: 700px) {
+    @media screen and (min-width: 2400px) {
+        grid-template-columns: repeat(4, 400px);
+        justify-content: space-between;
+    }
+
+    @media screen and (max-width: 1500px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media screen and (max-width: 800px) {
         display: flex;
         flex-direction: column;
         align-items: start;
@@ -57,6 +67,21 @@
 
     @media screen and (max-width: 500px) {
         align-items: self-start;
+    }
+
+    &-sorting {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+
+        @media screen and (max-width: 2100px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media screen and (max-width: 800px) {
+            display: flex;
+            flex-direction: column;
+        }
     }
 }
 
@@ -69,7 +94,6 @@
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
-    line-height: 130%;
     text-align: center;
     color: #366EDC;
     padding: 15px 0;
@@ -82,7 +106,7 @@
         margin-top: 35px;
     }
 
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 800px) {
         width: 100%;
         border-radius: 5px;
         font-size: 10px;

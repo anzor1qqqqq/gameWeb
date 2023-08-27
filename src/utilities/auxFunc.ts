@@ -24,7 +24,7 @@ function generRandomNum(id: number): number[] {
     const arr: number[] = [];
 
     while(arr.length < 4) {
-        const randomNum = Math.floor(Math.random() * 10);
+        const randomNum = Math.floor(Math.random() * 14);
 
         if (arr.indexOf(randomNum) === -1 && id !== randomNum) {
             arr.push(randomNum);
@@ -60,6 +60,18 @@ export function minMaxPrice(data: TLocalStorage[]): IMinMax {
     return {
         min,
         max,
+    };
+};
+
+export const throtling = (func: () => void, ms: number = 300) => {
+    let timer: any;
+
+    return (...args: any) => {
+        clearTimeout(timer);
+
+        timer = setTimeout(() => {
+            func.apply(this, args);
+        }, ms);
     };
 };
 

@@ -1,4 +1,5 @@
 import { IpropsSVG } from '../types/types';
+
 import '../style/svgMobile.css'
 
 const SVGBasketMobile = ({aboutBasket, aboutFavority, callbackBasket, callbackFavor, index}: IpropsSVG): JSX.Element => {
