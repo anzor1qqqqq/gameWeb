@@ -35,11 +35,6 @@
         padding: 20px;
     }
 
-    @media screen and (max-width: 500px) {
-        border-radius: 8px;
-        padding: 10px;
-    }
-
     &_info {
         margin-bottom: 50px;
 
@@ -48,6 +43,8 @@
         }
 
         @media screen and (max-width: 1000px) {
+            display: flex;
+            position: relative;
             margin-bottom: 30px;
         }
 
@@ -69,16 +66,16 @@
             @media screen and (max-width: 1000px) {
                 font-size: 15px;
             }
-
-            @media screen and (max-width: 500px) {
-                font-size: 10px;
-            }
         }
 
         &_checkbox {
             position: absolute;
             z-index: -1;
             opacity: 0;
+
+            @media screen and (max-width: 600px) {
+                right: 0;
+            }
 
             &+label {
                 display: inline-flex;
@@ -95,8 +92,13 @@
                 border-radius: 50%;
                 background-repeat: no-repeat;
                 background-position: center center;
-                transition: 0.5s;
                 cursor: pointer;
+
+                @media screen and (max-width: 600px) {
+                    position: absolute;
+                    right: 0;
+                    margin-right: 0;
+                }
 
                 @media screen and (max-width: 500px) {
                     margin-right: 10px;
@@ -104,8 +106,10 @@
             }
 
             &:checked+label::before {
-                border-color: green;
-                background-image: url('src/svg/SVGPay/radio.svg');
+                border-radius: 50%;
+                border: 5px solid #06030e;
+                background: #77BE1D;
+                box-shadow: 0 0 0 1px #77BE1D;
             }
         }
     }
@@ -131,18 +135,44 @@
     @media screen and (max-width: 1200px) {
         padding: 10px 20px;
         border-radius: 10px;
-        font-size: 15px;
+        font-size: 16px;
     }
 
     @media screen and (max-width: 1000px) {
         padding: 7px 15px;
         border-radius: 7px;
-        font-size: 10px;
     }
 
     @media screen and (max-width: 500px) {
         padding: 5px 10px;
         border-radius: 5px;
-        font-size: 7px;
+    }
+}
+
+.list_pay_variants {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 10px;
+    padding: 0;
+    margin-bottom: 10px;
+
+    @media screen and (max-width: 600px) {
+        justify-content: start;
+        width: 100%;
+    }
+}
+
+.li_pay_variants {
+    list-style: none;
+}
+
+.contant_input_emain {
+    width: 50%;
+    margin: 0 auto 20px;
+
+    @media screen and (max-width: 600px) {
+        width: 100%;
+        margin: 0 0 20px 0;
     }
 }

@@ -1,21 +1,64 @@
 import * as React from 'react';
+
 import Qiwi from '../../svg/SVGPay/qiwi';
 import WebMoney from '../../svg/SVGPay/webMoney';
 import MasterCard from '../../svg/SVGPay/mastercard';
 import Visa from '../../svg/SVGPay/visa';
 import Bitcoin from '../../svg/SVGPay/bitcoin';
 import SamPay from '../../svg/SVGPay/samPay';
+
 import '../../style/payVariant.css'
 
 const PayVariant = React.memo((): JSX.Element => {
+    const activeBlock = (id?: number): void => {
+        if (id !== undefined) {
+            const doc = document.querySelectorAll('.contant_block_pay_card') as NodeListOf<HTMLElement>;
 
-    const activeBlock = (id: number): void => {
-        const doc = document.querySelectorAll('.contant_block_pay_card') as NodeListOf<HTMLElement>;
+            doc.forEach((item: HTMLElement) => item.classList.remove('active'));
 
-        doc.forEach((item: HTMLElement) => item.classList.remove('active'));
-
-        doc[id].classList.add('active');
+            doc[id].classList.add('active');
+        }
     };
+
+    if (window.innerWidth <= 600) {
+        return (
+            <div className='container_pay_variant'>
+                <ul className='list_pay_variants'>
+                    <li className='li_pay_variants'>
+                        <div className='contant_block_pay_card_info'>
+                            <input className='contant_block_pay_card_info_checkbox' type="radio" name="pay" id='pay1'/>
+                            <label className='contant_block_pay_card_info_text' htmlFor='pay1'>Электронные кошельки</label>
+                        </div>
+                    </li>
+
+                    <li className='li_pay_variants'>
+                        <div className='contant_block_pay_card_info'>
+                            <input className='contant_block_pay_card_info_checkbox' type="radio" name="pay" id='pay2'/>
+                            <label className='contant_block_pay_card_info_text' htmlFor='pay2'>Банковские карты</label>
+                        </div>
+                    </li>
+
+                    <li className='li_pay_variants'>
+                        <div className='contant_block_pay_card_info'>
+                            <input className='contant_block_pay_card_info_checkbox' type="radio" name="pay" id='pay4'/>
+                            <label className='contant_block_pay_card_info_text' htmlFor='pay4'>Samsung pay</label>
+                        </div>
+                    </li>
+
+                    <li className='li_pay_variants'>
+                        <div className='contant_block_pay_card_info'>
+                            <input className='contant_block_pay_card_info_checkbox' type="radio" name="pay" id='pay3'/>
+                            <label className='contant_block_pay_card_info_text' htmlFor='pay3'>Криптовалюта</label>
+                        </div>
+                    </li>
+                </ul>
+
+                <div className='contant_input_emain'>
+                    <input className='input_basket_email' type="text" placeholder='Укажите почту' />
+                </div>
+            </div>
+        )
+    }
 
     return (
         <div className='container_pay_variant'>
@@ -58,7 +101,7 @@ const PayVariant = React.memo((): JSX.Element => {
                 <article className='contant_block_pay_card'>
                     <div className='contant_block_pay_card_info'>
                         <input className='contant_block_pay_card_info_checkbox' type="radio" name="pay" id='pay4' onChange={() => activeBlock(3)} />
-                        <label className='contant_block_pay_card_info_text' htmlFor='pay4'>Электронные кошельки</label>
+                        <label className='contant_block_pay_card_info_text' htmlFor='pay4'>Samsung pay</label>
                     </div>
 
                     <div>

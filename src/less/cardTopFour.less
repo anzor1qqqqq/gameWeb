@@ -1,12 +1,10 @@
 // out: "../style/cardTopFour.css", compress: true, sourceMap: false
 
 .block_card {
-    @media screen and (max-width: 700px) {
+    max-width: 400px;
+    
+    @media screen and (max-width: 800px) {
         display: flex;
-        width: 70%;
-    }
-
-    @media screen and (max-width: 500px) {
         width: 100%;
     }
 }
@@ -17,25 +15,24 @@
     width: 100%;
 
     @media screen and (max-width: 1300px) {
-        height: 400px;
+        height: 300px;
     }
 
-    @media screen and (max-width: 1200px) {
-        height: 300px;
+    @media screen and (max-width: 1250px) {
+        height: 200px;
     }
 
     @media screen and (max-width: 1000px) {
         height: 200px;
     }
 
-    @media screen and (max-width: 700px) {
-        width: 50%;
+    @media screen and (max-width: 800px) {
+        width: 30%;
         height: 150px;
     }
 
-    @media screen and (max-width: 500px) {
-        width: 40%;
-        height: 110px;
+    @media screen and (max-width: 400px) {
+        width: 100px;
     }
 
     &_image {
@@ -44,7 +41,7 @@
         object-fit: cover;
         border-radius: 10px;
 
-        @media screen and (max-width: 700px) {
+        @media screen and (max-width: 800px) {
             width: 100%;
         }
 
@@ -63,10 +60,8 @@
                 border-radius: 12px;
                 border: none;
                 padding: 17px 42px;
-                font-style: normal;
                 font-weight: 700;
                 font-size: 18px;
-                line-height: 130%;
                 color: #FFFFFF;
 
                 @media screen and (max-width: 1100px) {
@@ -98,14 +93,11 @@
             &.top, &.new, &.hit {            
                 top: 5%;
                 left: 10%;
-                font-style: normal;
                 font-weight: 800;
                 font-size: 16px;
-                line-height: 130%;
                 font-style: italic;
                 padding: 5px 10px;
                 border-radius: 5px;
-
 
                 @media screen and (max-width: 1100px) {
                     font-size: 10px;
@@ -168,7 +160,7 @@
     &:hover  .contant_card_image {
         filter: brightness(0.5);
 
-        @media screen and (max-width: 700px) {
+        @media screen and (max-width: 800px) {
             filter: none;
         }
 
@@ -179,95 +171,67 @@
     }
 }
 
-
 .block_info {
     margin-top: 20px;
 
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 800px) {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: start;
         margin-left: 15px;
         margin-top: 0;
+        flex: 1;
+    }
+
+    @media screen and (max-width: 500px) {
+        margin-left: 10px;
     }
 }
 
 .block_info_value {
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: 1000px) {
+        justify-content: space-between;
+    }
+
+    @media screen and (max-width: 800px) {
+        justify-content: start;
+    }
     
     &_product {
-        font-style: normal;
         font-weight: 500;
         font-size: 24px;
-        line-height: 130%;
         color: #FFFFFF;
         margin-right: 20px;
 
         @media screen and (max-width: 1200px) {
-            font-size: 20px;
-            line-height: 120%;
+            font-size: 18px;
             margin-right: 10px;
-        }
-
-        @media screen and (max-width: 1000px) {
-            font-size: 15px;
-            line-height: 100%;
-            margin-right: 5px;
-        }
-
-        @media screen and (max-width: 500px) {
-            font-size: 10px;
-            line-height: 100%;
         }
     }
 
     &_procent_sale {
-        font-style: normal;
         font-weight: 500;
         font-size: 18px;
-        line-height: 130%;
         color: #77BE1D;
         margin-right: 20px;
 
         @media screen and (max-width: 1200px) {
-            font-size: 15px;
-            line-height: 120%;
+            font-size: 16px;
             margin-right: 10px;
-        }
-
-        @media screen and (max-width: 1000px) {
-            font-size: 10px;
-            line-height: 100%;
-            margin-right: 5px;
-        }
-
-        @media screen and (max-width: 500px) {
-            font-size: 7px;
-            margin-right: 5px;
         }
     }
 
     &_for_sale {
         position: relative;
-        font-style: normal;
         font-weight: 400;
         font-size: 18px;
-        line-height: 130%;
         color: rgba(255, 255, 255, 0.2);
 
         @media screen and (max-width: 1200px) {
-            font-size: 15px;
-            line-height: 120%;
-        }
-
-        @media screen and (max-width: 1000px) {
-            font-size: 10px;
-            line-height: 100%;
-        }
-
-        @media screen and (max-width: 500px) {
-            font-size: 7px;
+            font-size: 16px;
         }
 
         &:after {
@@ -295,36 +259,30 @@
         margin-top: 10px;
     }
 
-    @media screen and (max-width: 1000px) {
-        margin-top: 7px;
-    }
-
     &_name {
-        font-style: normal;
         font-weight: 400;
         font-size: 16px;
-        line-height: 130%;
         color: #FFFFFF;
 
         @media screen and (max-width: 1200px) {
-            font-size: 12px;
-            line-height: 120%;
+            font-size: 14px;
             margin-bottom: 10px;
         }
 
         @media screen and (max-width: 1000px) {
-            font-size: 9px;
-            line-height: 100%;
             margin-bottom: 5px;
         }
 
         @media screen and (max-width: 500px) {
-            width: 80px;
-            font-size: 8px;
+            width: 190px;
             margin-bottom: 0;
             white-space: nowrap;
             overflow: hidden; 
             text-overflow: ellipsis;
+        }
+
+        @media screen and (max-width: 400px) {
+            width: 140px;
         }
     }
 }
@@ -332,15 +290,11 @@
 .block_info_tags {
     margin-top: 10px;
 
-    @media screen and (max-width: 1200px) {
-        margin-top: 5px;
-    }
-
     &_name {
-        font-style: normal;
+        display: inline-flex;
+        align-items: center;
         font-weight: 500;
         font-size: 14px;
-        line-height: 130%;
         color: #747474;
 
         &:not(:last-child) {
@@ -350,8 +304,8 @@
         &::before {
             content: '';
             display: inline-block;
-            width: 10px;
-            height: 10px;
+            width: 1em;
+            height: 1em;
             border-radius: 50%;
             background: #3D394A;
             opacity: 0.5;
@@ -360,39 +314,9 @@
 
         @media screen and (max-width: 1200px) {
             font-size: 10px;
-            line-height: 120%;
 
             &:not(:last-child) {
                 margin-right: 10px;
-            }
-
-            &::before {
-                width: 5px; 
-                height: 5px;
-                margin-right: 5px;
-            }
-        }
-
-        @media screen and (max-width: 1000px) {
-            font-size: 8px;
-            line-height: 100%;
-
-            &:not(:last-child) {
-                margin-right: 8px;
-            }
-
-            &::before {
-                width: 4px; 
-                height: 4px;
-                margin-right: 4px;
-            }
-        }
-
-        @media screen and (max-width: 500px) {
-            font-size: 5px;
-
-            &:not(:last-child) {
-                margin-right: 5px;
             }
         }
     }

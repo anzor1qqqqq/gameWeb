@@ -47,7 +47,7 @@ const SortingPage = () => {
         } else if (method === 'word') {
             const sortArr: ILoaderData[] = arr.sort((currentElem: ILoaderData, nextElem: ILoaderData): number => {
 
-                return currentElem.name.localeCompare(nextElem.name)
+                return currentElem.name.localeCompare(nextElem.name);
             });
 
             setDataSorting([...sortArr.reverse()]);

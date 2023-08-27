@@ -2,12 +2,13 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
+import PriceProduct from '../../UI/priceProduct';
 
 import { addBusket, addFavorite } from '../../global/redux';
 import { Autoplay, Pagination, Navigation } from 'swiper';
 import { dataFetch } from '../../utilities/auxFunc';
 
-import { IStateStore, TLocalStorage } from '../../types/types';
+import { IStateStore, TLocalStorage, ILoaderData } from '../../types/types';
 
 import logo from '../../img/slider/b10d8aa265c089eb54d1e1666fef2c17 1.svg';
 import img1 from '../../img/slider/1.jpg';
@@ -19,7 +20,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import '../../style/swiperSlider.css';
 
-const SwiperSlider = (): JSX.Element => {
+const SwiperSlider = ({product}: {product: ILoaderData}): JSX.Element => {
     const dispatch = useDispatch();
     const stateValue = useSelector((state: IStateStore) => state);
 
@@ -76,9 +77,7 @@ const SwiperSlider = (): JSX.Element => {
                         </div>
 
                         <div className='contant_price'>
-                            <span className='price'>4999 P</span>
-                            <span className='sale'>-25%</span>
-                            <span className='prev_price'><s>6999 P</s></span>
+                            <PriceProduct product={product}/>
                         </div>
 
                         <div className='contant_btn'>
@@ -102,9 +101,7 @@ const SwiperSlider = (): JSX.Element => {
                         </div>
 
                         <div className='contant_price'>
-                            <span className='price'>4999 P</span>
-                            <span className='sale'>-25%</span>
-                            <span className='prev_price'><s>6999 P</s></span>
+                            <PriceProduct product={product}/>
                         </div>
 
                         <div className='contant_btn'>
@@ -128,9 +125,7 @@ const SwiperSlider = (): JSX.Element => {
                         </div>
 
                         <div className='contant_price'>
-                            <span className='price'>4999 P</span>
-                            <span className='sale'>-25%</span>
-                            <span className='prev_price'><s>6999 P</s></span>
+                            <PriceProduct product={product}/>
                         </div>
 
                         <div className='contant_btn'>

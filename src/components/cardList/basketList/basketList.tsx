@@ -1,6 +1,9 @@
 import * as React from 'react';
+
 import { useSelector } from 'react-redux';
+
 import BasketCard from '../../cards/basket/basketCard';
+
 import { FC } from 'react';
 import { IPropsBasketList, IBasketRender, IStateStore } from '../../../types/types';
 
@@ -38,12 +41,7 @@ const BasketList: FC<IPropsBasketList> = ({loader}): JSX.Element => {
             {basketRender.map(item => 
                 <BasketCard 
                 key={item.id} 
-                id={item.id}
-                nameProduct={item.name} 
-                price={item.price}
-                sale={item.sale}
-                img={item.img}
-                tags={item.tags[0]}
+                product={item}
                 counter={item?.counter}
                 checkBtnLike={stateValue.favority.find(elem => elem.id === item.id)} 
             />

@@ -28,10 +28,11 @@ const ProductPageInfo = () => {
 
     React.useEffect(() => {
         const header = document.querySelector('header') as HTMLHeadElement;
+
         document.body.style.backgroundColor = '#040208';
 
         header.style.position = 'relative';
-        header.style.zIndex = '90';
+        header.style.zIndex = '88';
 
         return () => {
             header.style.position = '';

@@ -39,12 +39,7 @@ const FavorityPage = (): JSX.Element => {
                 {stateValue.favority.map(item => 
                     <FavorityCard 
                     key={item.id}
-                    id={item.id}
-                    nameProduct={item.name}
-                    price={item.price}
-                    sale={item.sale}
-                    img={item.img}
-                    tags={item.tags[0]}
+                    product={item}
                     />
                 )}
             </section>

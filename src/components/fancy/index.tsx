@@ -20,7 +20,7 @@ function Fancybox(props: IFancyProps) {
     };
   });
 
-  return <div id='portal' style={{display: 'flex', position: 'relative', zIndex: 99}} ref={containerRef}>{props.children}</div>;
+  return <div id='portal' style={{display: 'flex', position: 'relative', zIndex: 80}} ref={containerRef}>{props.children}</div>;
 }
 
 export default Fancybox;

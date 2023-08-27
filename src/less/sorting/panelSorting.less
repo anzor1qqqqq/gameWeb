@@ -48,7 +48,6 @@
 .container_sort_product {
     display: flex;
     position: relative;
-    margin-top: 50px;
 }
 
 .contant_all_sort {
@@ -354,6 +353,10 @@ details[open] {
         justify-content: space-between;
         margin-bottom: 40px;
         align-items: center;
+
+        @media screen and (max-width: 500px) {
+            margin-bottom: 30px;
+        }
 
         & > #sort_price {
             border-radius: 10px;

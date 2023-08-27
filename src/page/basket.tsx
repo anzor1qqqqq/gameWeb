@@ -1,14 +1,19 @@
 import * as React from 'react';
+
 import { useLoaderData } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+
+import BasketList from '../components/cardList/basketList/basketList';
 import PayVariant from '../components/payVariant/payVariant';
 import PayWindow from '../components/payVariant/payWindow';
+
 import { ILoaderData, IStateStore } from '../types/types';
-import BasketList from '../components/cardList/basketList/basketList';
+
 import '../style/basketMainList.css'
 
 const BasketPage = React.memo((): JSX.Element => {
     const loader = useLoaderData() as ILoaderData[];
+    
     const stateValue = useSelector((state: IStateStore) => state);
 
     React.useMemo(() => {

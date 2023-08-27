@@ -3,10 +3,10 @@ import { addFavorite, addBusket } from '../../global/redux';
 
 import { Link } from 'react-router-dom';
 
-import { IntlNum } from '../../utilities/Intl';
-import { dataFetch } from '../../utilities/auxFunc';
-
 import ProductFancyBox from "../../components/productInfo/productFancybox";
+import PriceProduct from '../../UI/priceProduct';
+
+import { dataFetch } from '../../utilities/auxFunc';
 
 import { FC } from 'react'
 import { IPropsProductBtnActive, IStateStore, TLocalStorage } from "../../types/types";
@@ -16,23 +16,21 @@ import BtnLike from '../../svg/btnLike';
 
 import '../../style/productBtnActive.css'
 
-const ProductBtnActive: FC<IPropsProductBtnActive> = ({nameProduct, id, price, sale, img, tags, ganre, gallery}) => {
+const ProductBtnActive: FC<IPropsProductBtnActive> = ({product}) => {
     const stateValue = useSelector((state: IStateStore) => state);
     const dispatch = useDispatch();
 
-    const intl = new IntlNum(price, sale);
-
-    const basket = stateValue.basket.find(item => item.id === id);
-    const favor = stateValue.favority.find(item => item.id === id);
+    const basket = stateValue.basket.find(item => item.id === product.id);
+    const favor = stateValue.favority.find(item => item.id === product.id);
 
     const changeBasket = async() => {
-        const data = await dataFetch('certain', id) as TLocalStorage;
+        const data = await dataFetch('certain', product.id) as TLocalStorage;
 
         dispatch(addBusket(data));
     };
 
     const changeFavor = async() => {
-        const data = await dataFetch('certain', id) as TLocalStorage;
+        const data = await dataFetch('certain', product.id) as TLocalStorage;
 
         dispatch(addFavorite(data));
     };
@@ -41,28 +39,20 @@ const ProductBtnActive: FC<IPropsProductBtnActive> = ({nameProduct, id, price, s
         <div className='container_product_info'>
 
             <div className='contant_img_product'>
-                <img className='contant_img_product-img' src={img} alt="" />
+                <img className='contant_img_product-img' src={product.img} alt="" />
             </div>
 
             {window.innerWidth <= 600 
-            ? <div className='fancy_portal'> <ProductFancyBox gallery={gallery}/> </div>
+            ? <div className='fancy_portal'> <ProductFancyBox gallery={product.gallery}/> </div>
             : ''
             }
 
             <div className='contant_product_about'>
-                <h1 className='contant_product_about_name'>{nameProduct}</h1>
+                <h1 className='contant_product_about_name'>{product.name}</h1>
                 <span className='contant_product_about_avail'>В наличии</span>
                 
                 <div className='contant_price_product'>
-                    {sale 
-                    ? 
-                        <>
-                           <span className='contant_price_product_sale'>{intl.getPriceSale()}</span> 
-                           <span className='contant_price_product_procent'>{intl.getProcent()}</span>
-                           <span className='contant_price_product-price'><s>{intl.getPrice()}</s></span>
-                        </>
-                    : <span className='contant_price_product_sale'>{intl.getPrice()}</span>
-                    }
+                    <PriceProduct product={product}/>
                 </div>
 
                 <div className='contant_btn_product'>
@@ -78,25 +68,15 @@ const ProductBtnActive: FC<IPropsProductBtnActive> = ({nameProduct, id, price, s
                 </div>
 
                 <div className='contant_product_ganre'>
-                    <div className='contant_product_ganre-info'>
                         <span className='contant_product_ganre-info-title'>Жанр</span>
-                        <span className='contant_product_ganre-info-text'>{ganre}</span>
-                    </div>
-
-                    <div className='contant_product_ganre-info'>
                         <span className='contant_product_ganre-info-title'>Платформа</span>
-                        <span className='contant_product_ganre-info-text'>{tags[0]}</span>
-                    </div>
-
-                    <div className='contant_product_ganre-info'>
                         <span className='contant_product_ganre-info-title'>Регион активации</span>
-                        <span className='contant_product_ganre-info-text'>Страны СНГ</span>
-                    </div>
-
-                    <div className='contant_product_ganre-info'>
                         <span className='contant_product_ganre-info-title'>Тип товара</span>
-                        <span className='contant_product_ganre-info-text'>{tags[1]}</span>
-                    </div>
+                        
+                        <span id='ganre' className='contant_product_ganre-info-text'>{product.ganre}</span>
+                        <span id='platform' className='contant_product_ganre-info-text '>{product.tags[0]}</span>
+                        <span id='country' className='contant_product_ganre-info-text'>Страны СНГ</span>
+                        <span id='type' className='contant_product_ganre-info-text'>{product.tags[1]}</span>
                 </div>
 
                 <div className='contant_warranty'>
@@ -104,7 +84,6 @@ const ProductBtnActive: FC<IPropsProductBtnActive> = ({nameProduct, id, price, s
                     <span className='contant_warranty_text'>Гарантия качества</span>
                 </div>
             </div>
-
             
         </div>
     );
