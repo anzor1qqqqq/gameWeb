@@ -1,0 +1,81 @@
+// out: "../../style/details.css", compress: true, sourceMap: false
+
+.FAQ_details_title {
+    border-radius: 10px;
+    border: 1px solid #13101B;
+
+    &:not(:last-child) {
+        margin-bottom: 35px;
+
+        @media screen and (max-width: 1500px) {
+            margin-bottom: 30px;
+        }
+
+        @media screen and (max-width: 600px) {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.FAQ_summary_description {
+    &.active {
+        background: linear-gradient(166deg, rgba(19, 16, 27, 0.49) 0%, rgba(19, 16, 27, 0.44) 100%);
+        border-bottom: 1px solid #13101B;
+    }
+
+    &_text {
+        position: relative;
+    }
+
+    & .FAQ_summary_description_text-text  {
+        color: #FFF;
+        font-size: 28px;
+        font-weight: 800;
+        line-height: 130%; 
+        padding: 20px 100px 20px 40px;
+
+        @media screen and (max-width: 1700px) {
+            font-size: 20px;
+        }
+
+        @media screen and (max-width: 1500px) {
+            font-size: 18px;
+        }
+
+        @media screen and (max-width: 600px) {
+            font-size: 16px;
+            padding: 20px 100px 20px 20px;   
+        }
+    }
+}
+
+.FAQ_description_text {
+    & > p {
+        color: #FFF;
+        font-size: 19px;
+        font-weight: 500;
+        line-height: 180%; 
+        padding: 20px 100px 20px 40px;
+        margin: 0;
+
+        @media screen and (max-width: 1500px) {
+            font-size: 17px;
+            padding: 20px 50px 20px 40px;
+        }
+
+        @media screen and (max-width: 600px) {
+            font-size: 14px;
+            padding: 20px; 
+        }
+
+        @media screen and (max-width: 500px) {
+            font-size: 14px;
+        }
+    }
+    
+}
+
+.FAQ_btn {
+    position: absolute;
+    right: 5%;
+}
