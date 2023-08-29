@@ -14,10 +14,6 @@ import 'animate.css';
 const ProductPageInfo = () => {
     const loader = useLoaderData() as TLocalStorage;
 
-    const style = {
-        background: `linear-gradient(180deg, rgba(6, 3, 15, 0.00) 0%, #06030F 100%), url(${loader.wallpaper}), lightgray -26.733px -89.589px / 124.011% 129.255% no-repeat`,
-    };
-
     React.useMemo(() => {
         window.scrollTo({
             top: 0,
@@ -29,6 +25,18 @@ const ProductPageInfo = () => {
     React.useEffect(() => {
         const header = document.querySelector('header') as HTMLHeadElement;
 
+        const section = document.querySelector('section') as HTMLElement;
+        const blockBacground = document.querySelector('.img_wallper') as HTMLElement;
+
+        const div = document.createElement('div');
+
+        blockBacground ? blockBacground.remove() : '';
+
+        div.classList.add('img_wallper');
+        div.style.background = `linear-gradient(rgba(6, 3, 15, 0) 0%, rgb(6, 3, 15) 100%), url(${loader.wallpaper}), -26.733px -89.589px / 124.011% 129.255% no-repeat rgb(6, 3, 15)`;
+
+        section.append(div);
+
         document.body.style.backgroundColor = '#040208';
 
         header.style.position = 'relative';
@@ -39,7 +47,7 @@ const ProductPageInfo = () => {
             header.style.zIndex = '';
             document.body.style.backgroundColor = '';
         };
-    }, []);
+    }, [loader.id]);
 
     const switchBtnInfo = (elem: HTMLButtonElement) => {
         if (!elem.classList.contains('active')) {
@@ -138,8 +146,6 @@ const ProductPageInfo = () => {
             </div>
 
             <RandomList id={loader.id}/>
-
-            <div className='img_wallper animate__animated animate__fadeIn animate__duration-3s animate__delay-1s' style={style}></div>
         </section>
     );
 };

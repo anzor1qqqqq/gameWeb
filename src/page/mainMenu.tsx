@@ -13,10 +13,12 @@ import '../style/mainMenu.css'
 const MainMenu = React.memo((): JSX.Element => {
     const loader = useLoaderData() as ILoaderData[];
 
+    const productSlider: ILoaderData = loader.find(item => item.id === 11) as ILoaderData;
+
     return (
         <>
             <section>
-                <SwiperSlider product={loader[11]}/>
+                <SwiperSlider product={productSlider}/>
             </section>
             
             <section className='section_contant_main'>
