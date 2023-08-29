@@ -1,0 +1,246 @@
+// out: false, compress: true, sourceMap: false
+
+.MARGINRIGHT {
+    margin-right: 20px;
+
+    @media screen and (max-width: 500px) {
+        margin-right: 10px;
+    }
+}
+
+.BtnBasket {
+    position: absolute;
+    background-color: #06030e;
+    border: none;
+}
+
+.containerBasket {
+    display: flex;
+    margin-bottom: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.4s;
+
+    &Img {
+        width: 20%;
+        height: 240px;
+        
+        @media screen and (max-width: 1600px) {
+            width: 30%;
+        }
+
+        @media screen and (max-width: 500px) {
+            display: block;
+            height: 120px;
+        }
+
+        &Picture {
+            object-fit: cover;
+            width: 100%;
+            height: inherit;
+            border-radius: 10px;
+
+            @media screen and (max-width: 1000px) {
+                border-radius: 7px;
+            }
+        }
+
+        &Favor {
+            display: flex;
+            width: 200px;
+        
+            @media screen and (max-width: 500px) {
+                width: 150px;
+            }
+
+            @media screen and (max-width: 400px) {
+                width: 100px;
+            }
+        }
+    }
+}
+
+.contantBasketAboutProduct {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    margin-left: 30px;
+    
+
+    @media screen and (max-width: 1000px) {
+        margin-left: 20px;
+    }
+
+    @media screen and (max-width: 500px) {
+        justify-content: start;
+        margin-left: 10px;
+    }
+
+    &Price {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 35px;
+
+        @media screen and (max-width: 1000px) {
+            margin-bottom: 20px;
+        }
+
+        @media screen and (max-width: 500px) {
+            margin-bottom: 15px;
+        }
+
+        &Counter {
+            display: flex;
+            align-items: center;
+
+            @media screen and (max-width: 500px) {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+            
+            &Num {
+                display: inline-block;
+                margin: 0 15px;
+                width: 10px;
+                font-size: 18px;
+                text-align: center;
+
+                @media screen and (max-width: 500px) {
+                    margin: 0 10px;
+                }
+            }
+
+            &Btn {
+                background-color: #06030e;
+                border: none;
+            }
+        }
+    }
+
+    &Name {
+        font-size: 25px;
+        line-height: 100%;
+        color: #FFFFFF;
+        margin-bottom: 30px;
+
+        @media screen and (max-width: 1200px) {
+            margin-bottom: 25px;
+        }
+
+        @media screen and (max-width: 1000px) {
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        @media screen and (max-width: 500px) {
+            width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        @media screen and (max-width: 500px) {
+            width: 150px;
+        }
+    }
+
+    &Info {
+        display: flex;
+        flex-direction: column;
+
+        &Region, &Service {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.3);
+            margin-bottom: 10px;
+
+            @media screen and (max-width: 1200px) {
+                font-size: 14px;
+                margin-bottom: 9px;
+            }
+
+                @media screen and (max-width: 1000px) {
+                    display: inline-flex;
+                    flex-direction: column;
+                }
+
+            & > b {
+                color: #FFFFFF;
+            } 
+        }
+    }
+}
+
+.hr {
+    border: 1px solid #13101B;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    @media screen and (max-width: 500px) {
+        margin-bottom: 15px;
+    }
+}
+
+.btnCLose {
+    .BtnBasket();
+    right: 0;
+    top: 0;
+    padding: 0;
+    line-height: 100%
+}
+
+.btnLike {
+    .BtnBasket();
+    bottom: 0;
+    right: 0;
+    padding: 0;
+}
+
+.titleFavority {
+    font-size: 32px;
+}
+
+.containerFavority {
+    @media screen and (max-width: 500px) {
+        margin-bottom: 0;
+    }
+}
+
+.priceInfo {
+    & > span:nth-child(1) {
+        font-size: 30px;
+        color: #FFFFFF;
+        .MARGINRIGHT();
+
+        @media screen and (max-width: 1200px) {
+            font-size: 25px;
+        }
+
+        @media screen and (max-width: 1000px) {
+            font-size: 18px;
+        }
+    }
+
+    & > span:nth-child(2) {
+        font-size: 20px;
+            color: #77BE1D;
+            .MARGINRIGHT();
+
+            @media screen and (max-width: 1200px) {
+                font-size: 16px;
+            }
+    }
+
+    & > span:nth-child(3) {
+        font-size: 20px;
+        color: #FFFFFF;
+        opacity: 0.2;
+
+        @media screen and (max-width: 1200px) {
+            font-size: 16px;
+        }
+    }
+}

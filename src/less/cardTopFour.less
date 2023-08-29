@@ -1,15 +1,49 @@
 // out: "../style/cardTopFour.css", compress: true, sourceMap: false
 
+.block_card {
+    max-width: 400px;
+    
+    @media screen and (max-width: 800px) {
+        display: flex;
+        width: 100%;
+    }
+}
+
 .contant_card {
     position: relative;
     height: 450px;
     width: 100%;
+
+    @media screen and (max-width: 1300px) {
+        height: 300px;
+    }
+
+    @media screen and (max-width: 1250px) {
+        height: 200px;
+    }
+
+    @media screen and (max-width: 1000px) {
+        height: 200px;
+    }
+
+    @media screen and (max-width: 800px) {
+        width: 30%;
+        height: 150px;
+    }
+
+    @media screen and (max-width: 400px) {
+        width: 100px;
+    }
 
     &_image {
         width: inherit;
         height: inherit;
         object-fit: cover;
         border-radius: 10px;
+
+        @media screen and (max-width: 800px) {
+            width: 100%;
+        }
 
         &_btn {
             position: absolute;
@@ -26,11 +60,21 @@
                 border-radius: 12px;
                 border: none;
                 padding: 17px 42px;
-                font-style: normal;
                 font-weight: 700;
                 font-size: 18px;
-                line-height: 130%;
                 color: #FFFFFF;
+
+                @media screen and (max-width: 1100px) {
+                    border-radius: 5px;
+                    padding: 10px 35px;
+                    font-size: 10px;
+                }
+
+                @media screen and (max-width: 1000px) {
+                    border-radius: 5px;
+                    padding: 5px 20px;
+                    font-size: 7px;
+                }
 
                 &:hover {
                     transform: scale(1.1);
@@ -49,13 +93,23 @@
             &.top, &.new, &.hit {            
                 top: 5%;
                 left: 10%;
-                font-style: normal;
                 font-weight: 800;
                 font-size: 16px;
-                line-height: 130%;
                 font-style: italic;
                 padding: 5px 10px;
                 border-radius: 5px;
+
+                @media screen and (max-width: 1100px) {
+                    font-size: 10px;
+                    padding: 5px 5px;
+                    border-radius: 3px;
+                }
+
+                @media screen and (max-width: 1000px) {
+                    font-size: 7px;
+                    padding: 4px 4px;
+                    border-radius: 3px;
+                }
             }
 
             &.top {
@@ -74,9 +128,19 @@
                 top: 3%;
                 right: 7%;
                 background: #FFFFFF;
-                border-radius: 38px;
+                border-radius: 50%;
                 border: none;
                 padding: 11px 13px;
+
+                @media screen and (max-width: 1100px) {
+                    padding: 5px 7px;
+                    border-radius: 50%;
+                }
+
+                @media screen and (max-width: 1000px) {
+                    padding: 2px 6px;
+                    border-radius: 50%;
+                }
 
                 &:hover {
                     transform: scale(1.1);
@@ -86,13 +150,19 @@
                     transform: scale(1.2);
                 }
             }
-
-            
         }
     }
+}
 
-    &:hover > .contant_card_image {
+.block_card {
+    cursor: pointer;
+
+    &:hover  .contant_card_image {
         filter: brightness(0.5);
+
+        @media screen and (max-width: 800px) {
+            filter: none;
+        }
 
         &_btn {
             opacity: 1;
@@ -103,35 +173,66 @@
 
 .block_info {
     margin-top: 20px;
+
+    @media screen and (max-width: 800px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        margin-left: 15px;
+        margin-top: 0;
+        flex: 1;
+    }
+
+    @media screen and (max-width: 500px) {
+        margin-left: 10px;
+    }
 }
 
 .block_info_value {
+    display: flex;
+    align-items: center;
 
+    @media screen and (max-width: 1000px) {
+        justify-content: space-between;
+    }
+
+    @media screen and (max-width: 800px) {
+        justify-content: start;
+    }
+    
     &_product {
-        font-style: normal;
         font-weight: 500;
         font-size: 24px;
-        line-height: 130%;
         color: #FFFFFF;
         margin-right: 20px;
+
+        @media screen and (max-width: 1200px) {
+            font-size: 18px;
+            margin-right: 10px;
+        }
     }
 
     &_procent_sale {
-        font-style: normal;
         font-weight: 500;
         font-size: 18px;
-        line-height: 130%;
         color: #77BE1D;
         margin-right: 20px;
+
+        @media screen and (max-width: 1200px) {
+            font-size: 16px;
+            margin-right: 10px;
+        }
     }
 
     &_for_sale {
         position: relative;
-        font-style: normal;
         font-weight: 400;
         font-size: 18px;
-        line-height: 130%;
         color: rgba(255, 255, 255, 0.2);
+
+        @media screen and (max-width: 1200px) {
+            font-size: 16px;
+        }
 
         &:after {
             content: '';
@@ -143,6 +244,10 @@
             border: 1px solid #38353F;
             transform: rotate(12.04deg);
             background-color: #38353F;
+
+            @media screen and (max-width: 500px) {
+                bottom: 40%;
+            }
         }
     }
 }
@@ -150,12 +255,35 @@
 .block_info_title {
     margin-top: 15px;
 
+    @media screen and (max-width: 1200px) {
+        margin-top: 10px;
+    }
+
     &_name {
-        font-style: normal;
         font-weight: 400;
         font-size: 16px;
-        line-height: 130%;
         color: #FFFFFF;
+
+        @media screen and (max-width: 1200px) {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        @media screen and (max-width: 1000px) {
+            margin-bottom: 5px;
+        }
+
+        @media screen and (max-width: 500px) {
+            width: 190px;
+            margin-bottom: 0;
+            white-space: nowrap;
+            overflow: hidden; 
+            text-overflow: ellipsis;
+        }
+
+        @media screen and (max-width: 400px) {
+            width: 140px;
+        }
     }
 }
 
@@ -163,10 +291,10 @@
     margin-top: 10px;
 
     &_name {
-        font-style: normal;
+        display: inline-flex;
+        align-items: center;
         font-weight: 500;
         font-size: 14px;
-        line-height: 130%;
         color: #747474;
 
         &:not(:last-child) {
@@ -176,12 +304,35 @@
         &::before {
             content: '';
             display: inline-block;
-            width: 10px;
-            height: 10px;
+            width: 1em;
+            height: 1em;
             border-radius: 50%;
             background: #3D394A;
             opacity: 0.5;
             margin-right: 7px;
         }
+
+        @media screen and (max-width: 1200px) {
+            font-size: 10px;
+
+            &:not(:last-child) {
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+.icon_like {
+    width: 21px;
+    height: 20px;
+
+    @media screen and (max-width: 1100px) {
+        width: 15px;
+        height: 15px;
+    }
+
+    @media screen and (max-width: 1000px) {
+        width: 10px;
+        height: 10px;
     }
 }

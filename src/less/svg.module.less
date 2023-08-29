@@ -1,0 +1,29 @@
+// out: "../style/svgMobile.css", compress: true, sourceMap: false
+
+.containerSVG {
+    display: flex;   
+    margin-top: 15px;
+
+    @media screen and (max-width: 800px) {
+        margin-top: auto;
+    }
+}
+
+.iconSvgBasketLike {
+    width: 20px;
+    height: 20px;
+    fill: #1E1C27;
+
+    &.add {
+        fill: #77BE1D;
+    }
+
+    @media screen and (max-width: 500px) {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+.contantBasket {
+    margin-right: 15px;
+}

@@ -1,0 +1,219 @@
+// out: "../../style/aboutProduct.css", compress: true, sourceMap: false
+
+.contant_about_product {
+    position: relative;
+    z-index: 70;
+    margin-top: 80px;
+
+    @media screen and (max-width: 1200px) {
+        margin-top: 70px;
+    }
+
+    @media screen and (max-width: 1000px) {
+        margin-top: 60px;
+    }
+
+    @media screen and (max-width: 500px) {
+        margin-top: 0;
+    }
+
+    &_title {
+        color: #FFF;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 100%;
+        margin-bottom: 15px;
+
+        @media screen and (max-width: 1200px) {
+            font-size: 20px;
+        }
+    }
+
+    &_parag {
+        color: #9D9AA6;
+        font-size: 17px;
+        line-height: 150%;
+
+        @media screen and (max-width: 1200px) {
+            font-size: 15px;
+        }
+
+        @media screen and (max-width: 1000px) {
+            font-size: 14px;
+        }
+    }
+}
+
+.container_random_product {
+    position: relative;
+    z-index: 85;
+    margin-top: 70px;
+
+    @media screen and (max-width: 1000px) {
+        margin-top: 50px;
+    }
+}
+
+.title_random_product {
+    margin-bottom: 35px;
+    color: #FFF;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 130%;
+
+    @media screen and (max-width: 1200px) {
+        font-size: 30px;
+    }
+}
+
+.img_wallper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    opacity: 0;
+    filter: brightness(0.2);
+    z-index: 0;
+    animation: imgView 1s 1 linear 1s alternate forwards; 
+
+    @media screen and (max-width: 500px) {
+        filter: brightness(1);
+        filter: blur(75px);
+    }
+}
+
+.block_btn_switch {
+    margin-bottom: 40px;
+    overflow-x: auto;
+    white-space: nowrap;
+
+    & > .btn_product_info {
+        border: none;
+        background-color: transparent;
+        font-size: 20px;
+        color: #868686;
+
+        &:not(:last-child) {
+            margin-right: 40px;
+        }
+
+        &.active {
+            border-bottom: 1px solid #FFF;
+            padding-bottom: 10px;
+            color: #FFFFFF;
+
+            @media screen and (max-width: 500px) {
+                border-bottom: none;
+                padding-bottom: 0;
+                color: #77BE1D;
+            }
+        }
+
+        @media screen and (max-width: 1000px) {
+            font-size: 15px;
+        }
+
+    }
+
+    @media screen and (max-width: 500px) {
+        padding-bottom: 15px;
+    }
+}
+
+.block_info_product {
+    display: none;
+
+    & > h5 {
+        margin-bottom: 25px;
+
+        @media screen and (max-width: 1000px) {
+            font-size: 20px;
+        }
+    }
+
+    &.active {
+        display: block;
+    }
+}
+
+.block_system {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+
+    & > .option_system {
+        color: #868686;
+        font-size: 16px;
+
+        @media screen and (max-width: 1000px) {
+            font-size: 15px;
+        }
+    }
+
+    & > .option_info {
+        color: #fff;
+        font-size: 16px;
+
+        @media screen and (max-width: 1000px) {
+            font-size: 15px;
+        }
+    }
+
+ 
+}
+
+#rec {
+    margin-top: 30px;
+}
+
+.block_activity {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+        margin-bottom: 25px;
+    }
+
+    & > p {
+        margin: 0;
+
+        @media screen and (max-width: 1000px) {
+            font-size: 15px;
+        }
+    }
+}
+
+.num_activ {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5lh;
+    height: 1.5lh;
+    border-radius: 50%;
+    border: 1px solid #77BE1D;
+    margin-right: 20px;
+    font-size: 16px;
+
+    @media screen and (max-width: 1000px) {
+        margin-right: 15px;
+        font-size: 10px;
+        padding: 10px;
+    }
+
+    @media screen and (max-width: 400px) {
+        margin-right: 15px;
+        font-size: 10px;
+    }
+}
+
+
+@keyframes imgView {
+    0% {
+       opacity: 0;
+    } 50% {
+        opacity: .5;
+    } 100% {
+        opacity: 1;
+    }
+}
