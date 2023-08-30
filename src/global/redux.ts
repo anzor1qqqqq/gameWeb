@@ -5,6 +5,7 @@ import { IStateStore, ILoaderData, TLocalStorage } from "../types/types";
 import { saveBasket, saveFavority } from "./localStorage/saveLocalStorage";
 
 const localBasket: ILoaderData[] = JSON.parse(localStorage.getItem('basket') as string) || [];
+
 const localFavority: TLocalStorage[] = JSON.parse(localStorage.getItem('favority') as string) || [];
 
 const slice = createSlice({
