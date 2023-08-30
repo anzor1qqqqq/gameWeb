@@ -1,4 +1,4 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter, createHashRouter } from 'react-router-dom';
 
 import ErrorPage from './page/error';
 import MainMenu from './page/mainMenu';
@@ -17,7 +17,7 @@ import { TLocalStorage } from './types/types';
 import './style/header.css'
 
 const App = (): JSX.Element => {
-  const router = createBrowserRouter([{
+  const router = createHashRouter([{
     path: '/',
     element: <Static/>,
     errorElement: <ErrorPage/>,

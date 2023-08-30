@@ -9,7 +9,6 @@ import RandomList from "../components/cardList/productAbout/randomList";
 import { TLocalStorage } from "../types/types";
 
 import '../style/aboutProduct.css'
-import 'animate.css';
 
 const ProductPageInfo = () => {
     const loader = useLoaderData() as TLocalStorage;
