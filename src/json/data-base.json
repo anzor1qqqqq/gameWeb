@@ -429,7 +429,7 @@
         "price": 1249,
         "sale": 0,
         "img": "https://www.digiseller.ru/preview/578692/p1_3605123_534cdbcd.jpg",
-        "wallpaper": "/img/cropped.jpg",
+        "wallpaper": "./img/cropped.jpg",
         "gallery": ["https://cdn.akamai.steamstatic.com/steam/apps/270880/ss_f0c114cadf2c3c02f54608c6751d5936a534061c.1920x1080.jpg?t=1691585934", "https://cdn.akamai.steamstatic.com/steam/apps/270880/ss_99f46224d938ffad95b2b69db405f9dce9235ca2.1920x1080.jpg?t=1691585934", "https://cdn.akamai.steamstatic.com/steam/apps/270880/ss_4bbea7261c38400b4f459cddc3886822704da784.1920x1080.jpg?t=1691585934"],
         "tags": ["Steam", "Ключ"],
         "ganre": "Приключенческая игра",
