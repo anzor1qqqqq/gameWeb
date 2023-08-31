@@ -10,4 +10,4 @@
 
 ## Сайт проекта
 
-Сайт находится по сслыке - anzor1qqqqq.github.io/gameWeb/
+Сайт находится по сслыке - https://anzor1qqqqq.github.io/gameWeb/
